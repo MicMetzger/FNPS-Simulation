@@ -4,7 +4,7 @@ import java.util.*;
 
 
 /**
- * The type Item.
+ * 
  */
 public abstract class Item {
 	private String name;
