@@ -27,12 +27,6 @@ public abstract class Pet extends Item {
 	public Pet() {}
 
 
-	@Override
-	public String toString() {
-		return "Pet{} " + super.toString();
-	}
-
-
 	public Breed getBreed() {
 		return breed;
 	}
@@ -60,6 +54,16 @@ public abstract class Pet extends Item {
 
 	public void setHealthy(boolean healthy) {
 		this.healthy = healthy;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Pet{" +
+				"breed=" + breed +
+				", age=" + age +
+				", healthy=" + healthy +
+				"} " + super.toString();
 	}
 
 }
