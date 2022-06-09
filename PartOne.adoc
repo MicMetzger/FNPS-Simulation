@@ -1,0 +1,23 @@
+= OOAD Project 2
+Michael Metz <mime9599@colorado.edu>; Sam Goto <osgo1115@colorado.edu>
+June 9, 2022
+:doctype: book
+:toc:
+:icons: font
+:url-quickref: https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/
+
+== Part One
+
+[]
+. What are three ways modern Java interfaces differ from a traditional OO interface design that
+describes only function signatures and return types to be implemented? Provide a Java code example of each.
++
+    * _(Note: Interface Segregation Principle)_ 
+    * _(Note: Single Responsibility Principle)_
+    * 
+
+. Describe the differences and relationship between abstraction and encapsulation. Provide a Java
+code example that illustrates the difference. 
++
+    (Text)
+
