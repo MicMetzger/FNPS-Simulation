@@ -2,14 +2,13 @@ import java.util.*;
 
 
 
-
 /**
  * The type Cat.
  */
 public class Cat extends Pet {
 	// The Color
 	public String color;
-	// The Housebroken	
+	// The Housebroken
 	public boolean housebroken;
 	// The Purebred
 	public boolean purebred;
