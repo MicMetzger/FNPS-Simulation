@@ -3,7 +3,6 @@ import java.util.stream.*;
 
 
 
-
 /**
  *
  *
@@ -11,7 +10,6 @@ import java.util.stream.*;
 public abstract class Supplies extends Item {
 	// 
 	private static final ArrayList<Supplies> inventory = new ArrayList<>();
-
 
 	/**
 	 *
