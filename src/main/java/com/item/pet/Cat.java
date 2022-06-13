@@ -1,37 +1,24 @@
-import java.io.*;
-import java.lang.invoke.*;
-import java.nio.charset.*;
+package main.java.com.item.pet;
 import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
 
 
 
 
 /**
- * The type Dog.
+ * The type Cat.
  */
-public class Dog extends Pet {
-	/**
-	 * The Size.
-	 */
-	public double  size;
-	/**
-	 * The Color.
-	 */
-	public String  color;
-	/**
-	 * The Housebroken.
-	 */
+public class Cat extends Pet {
+	// The Color
+	public String color;
+	// The Housebroken	
 	public boolean housebroken;
-	/**
-	 * The Purebred.
-	 */
+	// The Purebred
 	public boolean purebred;
 
 
 	/**
-	 * Instantiates a new Dog.
+	 * Constructor
+	 * Instantiates a new Cat, aswell as it's parent classes.
 	 *
 	 * @param name          the name
 	 * @param dayArrived    the day arrived
@@ -42,14 +29,12 @@ public class Dog extends Pet {
 	 * @param breed         the breed
 	 * @param age           the age
 	 * @param healthy       the healthy
-	 * @param size          the size
 	 * @param color         the color
 	 * @param housebroken   the housebroken
 	 * @param purebred      the purebred
 	 */
-	public Dog(String name, Date dayArrived, Date daySold, double purchasePrice, double listPrice, double salePrice, Breed breed, int age, boolean healthy, double size, String color, boolean housebroken, boolean purebred) {
+	public Cat(String name, Date dayArrived, Date daySold, double purchasePrice, double listPrice, double salePrice, Breed breed, int age, boolean healthy, String color, boolean housebroken, boolean purebred) {
 		super(name, dayArrived, daySold, purchasePrice, listPrice, salePrice, breed, age, healthy);
-		this.size = size;
 		this.color = color;
 		this.housebroken = housebroken;
 		this.purebred = purebred;
@@ -57,19 +42,18 @@ public class Dog extends Pet {
 
 
 	/**
-	 * Instantiates a new Dog.
+	 * Constructor
+	 * Instantiates a new Cat as well as it's parent class.
 	 *
 	 * @param breed       the breed
 	 * @param age         the age
 	 * @param healthy     the healthy
-	 * @param size        the size
 	 * @param color       the color
 	 * @param housebroken the housebroken
 	 * @param purebred    the purebred
 	 */
-	public Dog(Breed breed, int age, boolean healthy, double size, String color, boolean housebroken, boolean purebred) {
+	public Cat(Breed breed, int age, boolean healthy, String color, boolean housebroken, boolean purebred) {
 		super(breed, age, healthy);
-		this.size = size;
 		this.color = color;
 		this.housebroken = housebroken;
 		this.purebred = purebred;
@@ -77,15 +61,15 @@ public class Dog extends Pet {
 
 
 	/**
-	 * Instantiates a new Dog.
+	 * Constructor
+	 * Instantiates a new Cat, it's parent values are left null.
 	 *
-	 * @param size        the size
 	 * @param color       the color
 	 * @param housebroken the housebroken
 	 * @param purebred    the purebred
 	 */
-	public Dog(double size, String color, boolean housebroken, boolean purebred) {
-		this.size = size;
+	public Cat(String color, boolean housebroken, boolean purebred) {
+		super();
 		this.color = color;
 		this.housebroken = housebroken;
 		this.purebred = purebred;
@@ -93,28 +77,28 @@ public class Dog extends Pet {
 
 
 	/**
-	 * Instantiates a new Dog.
+	 * Constructor
+	 * Instantiates a new Cat of state values null, and instantiates its parent class.
 	 *
 	 * @param breed   the breed
 	 * @param age     the age
 	 * @param healthy the healthy
 	 */
-	public Dog(Breed breed, int age, boolean healthy) {
+	public Cat(Breed breed, int age, boolean healthy) {
 		super(breed, age, healthy);
 	}
 
 
 	/**
-	 * Instantiates a new Dog.
+	 * Default constructor of a Cat object.
 	 */
-	public Dog() {}
+	public Cat() {super();}
 
 
 	@Override
 	public String toString() {
-		return "Dog{" +
-				"size=" + size +
-				", color='" + color + '\'' +
+		return "Cat{" +
+				"color='" + color + '\'' +
 				", housebroken=" + housebroken +
 				", purebred=" + purebred +
 				"} " + super.toString();
@@ -122,27 +106,7 @@ public class Dog extends Pet {
 
 
 	/**
-	 * Gets size.
-	 *
-	 * @return the size
-	 */
-	public double getSize() {
-		return size;
-	}
-
-
-	/**
-	 * Sets size.
-	 *
-	 * @param size the size
-	 */
-	public void setSize(double size) {
-		this.size = size;
-	}
-
-
-	/**
-	 * Gets color.
+	 * Gets the cat's color type.
 	 *
 	 * @return the color
 	 */
@@ -152,9 +116,9 @@ public class Dog extends Pet {
 
 
 	/**
-	 * Sets color.
+	 * Sets color type.
 	 *
-	 * @param color the color
+	 * @param color the cat's color
 	 */
 	public void setColor(String color) {
 		this.color = color;
@@ -162,9 +126,9 @@ public class Dog extends Pet {
 
 
 	/**
-	 * Is housebroken boolean.
+	 * Is the cat housebroken.
 	 *
-	 * @return the boolean determining if the dog is housebroken or not.
+	 * @return the boolean
 	 */
 	public boolean isHousebroken() {
 		return housebroken;
@@ -172,7 +136,7 @@ public class Dog extends Pet {
 
 
 	/**
-	 * Sets housebroken.
+	 * Sets housebroken status.
 	 *
 	 * @param housebroken the housebroken
 	 */
@@ -182,7 +146,7 @@ public class Dog extends Pet {
 
 
 	/**
-	 * Is the dog a purebred.
+	 * Is the cat a purebred.
 	 *
 	 * @return the boolean
 	 */
@@ -199,6 +163,5 @@ public class Dog extends Pet {
 	public void setPurebred(boolean purebred) {
 		this.purebred = purebred;
 	}
-
 
 }

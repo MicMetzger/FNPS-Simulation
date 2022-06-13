@@ -1,3 +1,9 @@
+package main.java.com.item.supplies;
+import main.java.com.item.pet.Pet;
+
+
+
+
 public class Food extends Supplies {
 	private int  size;
 	private Pet  animal;

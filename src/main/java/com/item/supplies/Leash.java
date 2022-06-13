@@ -1,7 +1,8 @@
-public class Toy extends Supplies {
+package main.java.com.item.supplies;
+public class Leash extends Supplies {
   
   // The animal
-  private Pet animal;
+  private String animal;
 
 /**
  * Instantiates a new Leash
@@ -9,7 +10,7 @@ public class Toy extends Supplies {
  * @param animal the animal
  */
 
- public Toy(Pet animal) {
+ public Leash(String animal) {
   this.animal = animal;
  }
 
@@ -18,14 +19,14 @@ public class Toy extends Supplies {
   * Default constructor
   */
 
-  public Toy() {}
+  public Leash() {}
 
   /**
    * Gets the animal
    * 
    * @return the animal
    */
-  public Pet getAnimal() {
+  public String getAnimal() {
     return animal;
   }
 
@@ -34,7 +35,7 @@ public class Toy extends Supplies {
    * 
    * @param animal the animal
    */
-  public void setAnimal(Pet animal) {
+  public void setAnimal(String animal) {
     this.animal = animal;
   }
 

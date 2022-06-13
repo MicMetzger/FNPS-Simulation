@@ -1,4 +1,5 @@
-import java.util.*;
+package main.java.com.item;
+import java.util.Date;
 
 
 /**
@@ -159,16 +160,15 @@ public abstract class Item {
 	}
 
 
-	@Override
-	public String toString() {
-		return "Item{" +
+	public void print() {
+		System.out.println("Item{" +
 				"name='" + name + '\'' +
 				", dayArrived=" + dayArrived +
 				", daySold=" + daySold +
 				", purchasePrice=" + purchasePrice +
 				", listPrice=" + listPrice +
 				", salePrice=" + salePrice +
-				'}';
+				'}');
 	}
 
 }

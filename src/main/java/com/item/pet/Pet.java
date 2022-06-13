@@ -1,9 +1,11 @@
+package main.java.com.item.pet;
+import main.java.com.item.Item;
 import java.util.*;
 
 
 
 
-public abstract class Pet extends Item {
+public class Pet extends Item {
 	private Breed   breed;
 	private int     age;
 	private boolean healthy;
@@ -18,13 +20,50 @@ public abstract class Pet extends Item {
 
 
 	public Pet(Breed breed, int age, boolean healthy) {
+		super();
 		this.breed = breed;
 		this.age = age;
 		this.healthy = healthy;
 	}
 
 
-	public Pet() {}
+	public Pet(Breed breed) { 
+		super();
+		this.breed = breed;
+	}
+
+
+	public Pet() {
+		super();
+	}
+
+
+	@Override
+	public void setName(String name) {
+		super.setName(name);
+	}
+
+
+	/**
+	 * Sets list price.
+	 *
+	 * @param listPrice the list price
+	 */
+	@Override
+	public void setListPrice(double listPrice) {
+		super.setListPrice(listPrice);
+	}
+
+
+	/**
+	 * Sets sale price.
+	 *
+	 * @param salePrice the sale price
+	 */
+	@Override
+	public void setSalePrice(double salePrice) {
+		super.setSalePrice(salePrice);
+	}
 
 
 	public Breed getBreed() {
