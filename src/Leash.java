@@ -9,6 +9,8 @@ public class Leash extends Supplies {
  * @param animal the animal
  */
 
+
+
  public Leash(Pet animal) {
   this.animal = animal;
  }
@@ -25,6 +27,7 @@ public class Leash extends Supplies {
    * 
    * @return the animal
    */
+
   public Pet getAnimal() {
     return animal;
   }

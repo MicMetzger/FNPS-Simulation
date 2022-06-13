@@ -13,7 +13,6 @@ public class Cat extends Pet {
 	// The Purebred
 	public boolean purebred;
 
-
 	/**
 	 * Constructor
 	 * Instantiates a new Cat, aswell as it's parent classes.
