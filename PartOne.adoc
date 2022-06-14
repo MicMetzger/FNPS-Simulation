@@ -19,5 +19,55 @@ describes only function signatures and return types to be implemented? Provide a
 . Describe the differences and relationship between abstraction and encapsulation. Provide a Java
 code example that illustrates the difference. 
 +
-    (Text)
+   The main difference between abstraction and encapsulation is that abstraction is used to only show relevant information to hide implementation details whereas encapsulation is used to hide and protect data by limiting access to some specific data.
+
+
++
+.Code Example
+[source,java]  
+---- 
+// --------------Abstraction---------------
+abstract class Computer {
+   // enforces the child classes to have the Boot method
+   public void Boot() {
+      // Do stuff to boot up the computer
+   }
+}
+
+public class MacBook extends Computer {
+   // extending the Computer abstract class, this the Boot method can be called
+   Boot();
+}
+
+
+// -------------Encapsulation--------------
+public class Student() {
+   // encapsulate the name, thus it'll only be accesible from the getter and setter defined below
+   private String name;
+   
+   /**
+   * Constructor
+   * @param name
+   */
+   Student(String name) {
+      this.name = name;
+   }
+   
+   
+   /**
+   *
+   * @return the name 
+   */
+   public String getName() {
+      return name;
+   }
+   /**
+   *  sets the name
+   * @param name
+   */
+   public setName(String name) {
+      this.name = name;
+   }
+}
+----
 
