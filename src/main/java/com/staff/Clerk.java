@@ -18,7 +18,7 @@ public class Clerk extends Employee {
 
 	@Override
 	public String getName() {
-		return name + " the Clerk ";
+		return name + ", the Clerk, ";
 	}
 
 

@@ -23,8 +23,8 @@ public abstract class Employee implements StoreObserver {
 
 
 	@Override
-	public void announce() {
-		System.out.println(getName() + "Enters the store...");
+	public void announce(String announcement) {
+		System.out.println(getName() + announcement);
 	}
 
 
@@ -47,21 +47,50 @@ public abstract class Employee implements StoreObserver {
 
 
 	private void arrival() {
-
+		String announcement = "enters the store...";
+		announce(announcement);
 	}
 
 
 	private void leave() {
+		String announcement = "leaves the store...";
+		announce(announcement);
+	}
+
+
+	private void feedAnimals() {
+		// String announcement = "feeds "; //TODO
 
 	}
 
 
 	private void processInventory() {
+		String announcement = "goes through store inventory...";
 
 	}
 
 
-	private void feedAnimals() {
+	private void CheckRegister() {
+		String announcement = "checks the register...";
+
+	}
+
+
+	private void GoToBank() {
+		String announcement = "goes to the bank...";
+
+	}
+
+
+	private void processDeliveries() {
+		String announcement = "goes through today's deliveries...";
+
+	}
+
+
+	private void PlaceAnOrder() {
+		// String announcement = "places an order for ";  //TODO
+
 
 	}
 

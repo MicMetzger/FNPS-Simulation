@@ -18,7 +18,7 @@ public class Trainer extends Employee {
 
 	@Override
 	public String getName() {
-		return name + " the Trainer ";
+		return name + ", the Trainer, ";
 	}
 
 
