@@ -1,11 +1,14 @@
 package main.java.com.item.supplies;
+
+
 /**
  * The type Cat liter.
  */
 public class CatLiter extends Supplies {
 	// The size of the cat liter.
-	private       int        size;
+	private int    size;
 	private String animal;
+
 
 	/**
 	 * Instantiates a new Cat liter.
@@ -40,6 +43,12 @@ public class CatLiter extends Supplies {
 	 */
 	public void setSize(int size) {
 		this.size = size;
+	}
+
+
+	@Override
+	public void update() {
+
 	}
 
 }

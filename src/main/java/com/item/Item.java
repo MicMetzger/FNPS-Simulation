@@ -1,12 +1,14 @@
 package main.java.com.item;
-import main.java.com.inventory.StoreComponent;
+import main.java.com.inventory.StoreObserver;
 import java.util.Date;
 
 
+
+
 /**
- * 
+ *
  */
-public abstract class Item implements StoreComponent {
+public abstract class Item implements StoreObserver {
 	private String name;
 	private Date   dayArrived;
 	private Date   daySold;

@@ -6,7 +6,7 @@ import java.util.List;
 
 
 
-public class Inventory implements StoreComponent {
+public abstract class Inventory implements StoreObserver {
 	private List<Item> stock = new ArrayList<>();
 
 
@@ -23,7 +23,8 @@ public class Inventory implements StoreComponent {
 
 
 	@Override
-	public void print() {
+	public void update() {
 		
 	}
+
 }

@@ -4,11 +4,11 @@ import java.util.Random;
 
 
 
-public class Clerk extends Employee {
+public class Trainer extends Employee {
 	private String name = "";
+	
 
-
-	public Clerk() {
+	public Trainer() {
 		super();
 		int num = new Random().nextInt(NAME_TEMPLATE.size());
 		this.name = NAME_TEMPLATE.get(num);
@@ -18,7 +18,7 @@ public class Clerk extends Employee {
 
 	@Override
 	public String getName() {
-		return name + " the Clerk ";
+		return name + " the Trainer ";
 	}
 
 
@@ -26,6 +26,5 @@ public class Clerk extends Employee {
 	public void setName(String name) {
 		this.name = name;
 	}
-
 
 }

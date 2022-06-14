@@ -5,7 +5,7 @@ import java.util.*;
 
 
 
-public class Pet extends Item {
+public abstract class Pet extends Item {
 	private Breed   breed;
 	private int     age;
 	private boolean healthy;
@@ -41,6 +41,30 @@ public class Pet extends Item {
 	@Override
 	public void setName(String name) {
 		super.setName(name);
+	}
+
+
+	@Override
+	public void announce() {
+		
+	}
+
+
+	@Override
+	public void update() {
+		
+	}
+
+
+	@Override
+	public void subscribe() {
+
+	}
+
+
+	@Override
+	public void unsubscribe() {
+
 	}
 
 
