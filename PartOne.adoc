@@ -28,14 +28,17 @@ code example that illustrates the difference.
 ---- 
 // --------------Abstraction---------------
 abstract class Computer {
+   ...
    // enforces the child classes to have the Boot method
    public void Boot() {
       // Do stuff to boot up the computer
    }
+   
+   ...
 }
 
 public class MacBook extends Computer {
-   // extending the Computer abstract class, this the Boot method can be called
+   // extending the Computer abstract class, thus the Boot method can be called
    Boot();
 }
 
@@ -63,7 +66,7 @@ public class Student() {
    }
    /**
    *  sets the name
-   * @param name
+   *  @param name
    */
    public setName(String name) {
       this.name = name;
