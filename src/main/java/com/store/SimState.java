@@ -14,6 +14,7 @@ public abstract class SimState extends Store {
 		orderSupplies = new OrderSupplies(this);
 		visitBank = new VisitBank(this);
 		currentState = startDay;
+		// TODO: Design endState and program clean exit.
 
 		if (cash < 0) {
 			currentState = visitBank;
