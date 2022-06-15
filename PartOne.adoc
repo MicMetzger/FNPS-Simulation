@@ -14,7 +14,26 @@ describes only function signatures and return types to be implemented? Provide a
 +
     * _(Note: Interface Segregation Principle)_ 
     * _(Note: Single Responsibility Principle)_
-    * 
+    * *Default Method* - allows its implementation classes to invoke the method without implementing it, and it can be overridden.
+    * *Static Method* - allows its implementation classes to invoke the method without implementing it, however it cannot be overridden.
+    * *Lamda expresions*  #TO DO
++
+.Example
+[source,java]
+----
+interface Animal {
+   // Default method: This can be invoked in implementing classes, and can be overridden
+   default void makeSound() {
+      Ssytem.out.println("###");
+   }
+   
+   // Static method: This method cannot be overridden
+   static void eat() {
+      System.out.println("Yum yum...");
+   }
+}
+
+----
 
 . Describe the differences and relationship between abstraction and encapsulation. Provide a Java
 code example that illustrates the difference. 
