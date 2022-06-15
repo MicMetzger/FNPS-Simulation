@@ -16,11 +16,11 @@ NOTE: Java 8 introduced default method and static method along with lambda expre
 +
     * _(Note: Interface Segregation Principle)_ 
     * _(Note: Single Responsibility Principle)_
-    * *Default Method* - allows its implementation classes to invoke the method without implementing it, and it can be overridden.
-    * *Static Method* - allows its implementation classes to invoke the method without implementing it, however it cannot be overridden.
-    * *Lamda expresions*  #TO DO
+    * *Default Method* - Allows its implementation classes to invoke the method without implementing it, and it can be overridden.
+    * *Static Method* - Allows its implementation classes to invoke the method directly from the interface, however it cannot be overridden.
+    * *Lamda expresions* - Allows to define functional interfaces in line and it can be called without implementing the interface.
 +
-.Example
+.Defaut and Static methods Example
 [source,java]
 ----
 interface Animal {
@@ -34,9 +34,26 @@ interface Animal {
       System.out.println("Yum yum...");
    }
 }
-
 ----
++
+.Lamda expressions example
+[source,java]
+----
+// Lamda expressions
+interface functionalInterface {
+   void speak(String name);
+}
 
+class Example {
+   public static void main(String[] args) {
+      // define the functional interface
+      functionalInterface example = (String name)->System.out.println("Hi, I am " + name);
+      // call the function
+      example.speak("Sam");
+   }
+}
+----
++
 . Describe the differences and relationship between abstraction and encapsulation. Provide a Java
 code example that illustrates the difference. 
 +
