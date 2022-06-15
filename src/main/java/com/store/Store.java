@@ -17,6 +17,7 @@ import java.util.ArrayList;
 public class Store {
 	ArrayList<Item>     inventory;
 	ArrayList<Employee> staff;
+	Employee currentStaff;
 	// List<StoreObserver> observers;
 	double              cash;
 	int                 day;
@@ -25,6 +26,7 @@ public class Store {
 	public Store() {
 		staff = new ArrayList<Employee>();
 		inventory = new ArrayList<Item>();
+		// currentStaff
 		cash = 0;
 		day = 0;
 		initItemsAndStaff();

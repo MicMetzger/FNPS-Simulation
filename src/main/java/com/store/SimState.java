@@ -46,7 +46,7 @@ class StartDay extends SimState {
 	@Override
 	void enterState() {
 		day++;
-
+		selectStaff();
 	}
 
 
