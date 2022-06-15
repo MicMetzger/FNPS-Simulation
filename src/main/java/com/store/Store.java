@@ -10,19 +10,29 @@ import main.java.com.staff.Clerk;
 import main.java.com.staff.Employee;
 import main.java.com.staff.Trainer;
 import java.util.ArrayList;
+import java.util.Random;
 
 
 
 
 public class Store {
+	/**
+	 * The stores Inventory.
+	 */
 	ArrayList<Item>     inventory;
 	ArrayList<Employee> staff;
-	Employee currentStaff;
+	Employee            currentStaff;
 	// List<StoreObserver> observers;
 	double              cash;
 	int                 day;
 
 
+	/**
+	 * Instantiates a new Store.
+	 * Main entry point.
+	 * 
+	 * Default constructor
+	 */
 	public Store() {
 		staff = new ArrayList<Employee>();
 		inventory = new ArrayList<Item>();
@@ -33,6 +43,10 @@ public class Store {
 	}
 
 
+	/**
+	 * Initiate starting objects.
+	 * TODO: Not finished. Need to setup randomization of  subclasses.
+	 */
 	public void initItemsAndStaff() {
 		staff.add(new Clerk());
 		staff.add(new Clerk());
@@ -50,9 +64,42 @@ public class Store {
 	}
 
 
+	/**
+	 * Select staff to man store for this day.
+	 */
 	void selectStaff() {
-		
+		int num = new Random().nextInt(4);
+		currentStaff = staff.get(num);
+
+		if (currentStaff.getWorkDays() <= 2) {
+			staff.forEach(employee -> {
+				if (employee != currentStaff) {
+					employee.dayoff();
+				}
+			});
+		}
+		else {
+			if (currentStaff.getWorkDays() >= 3) {
+				staff.forEach(employee -> {
+					if (employee != currentStaff) {
+						// currentStaff.dayoff();
+						currentStaff = employee;
+
+						staff.forEach(restream -> {
+							if (restream != currentStaff) {
+								restream.dayoff();
+							}
+							return;
+						});
+
+					}
+				});
+			}
+		}
 	}
+	
+	
+	
 	/*	
 	public void updateObserver() {
 		for (StoreObserver observer : observers) {

@@ -34,6 +34,11 @@ public abstract class SimState extends Store {
 
 
 
+/**
+ * Start day.
+ * 
+ * Daily route starting point.
+ */
 class StartDay extends SimState {
 	SimState simState;
 
@@ -46,7 +51,7 @@ class StartDay extends SimState {
 	@Override
 	void enterState() {
 		day++;
-		selectStaff();
+		selectStaff(); // TODO: Left Off
 	}
 
 
@@ -58,7 +63,7 @@ class StartDay extends SimState {
 
 	@Override
 	void nextState() {
-
+		
 	}
 
 }
@@ -66,6 +71,12 @@ class StartDay extends SimState {
 
 
 
+/**
+ * End day.
+ * Completion of daily route.
+ * 
+ * Clean-up and preparation for sequence restart.
+ */
 class EndDay extends SimState {
 	SimState simState;
 
@@ -96,6 +107,11 @@ class EndDay extends SimState {
 
 
 
+/**
+ * Order supplies.
+ * 
+ * 
+ */
 class OrderSupplies extends SimState {
 	SimState simState;
 
@@ -107,7 +123,10 @@ class OrderSupplies extends SimState {
 
 	@Override
 	void enterState() {
-
+		// TODO: Get price cap
+		if (cash <= 0) {
+			currentState = visitBank;
+		}
 	}
 
 

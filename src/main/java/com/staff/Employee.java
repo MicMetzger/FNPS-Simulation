@@ -104,4 +104,8 @@ public abstract class Employee implements StoreObserver {
 		workDays++;
 	}
 
+	
+	public void dayoff() {
+		workDays = 0;
+	}
 }
