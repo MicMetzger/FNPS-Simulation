@@ -19,9 +19,9 @@ public abstract class SimState extends Store {
 		RUNNING = true;
 		// TODO: Design endState and program clean exit.
 
-		if (cash < 0) {
+		/*if (cash < 0) {
 			currentState = visitBank;
-		}
+		}*/
 
 		// Initial Entry
 		currentState.enterState();
@@ -70,7 +70,7 @@ class StartDay extends SimState {
 
 	@Override
 	void nextState() {
-
+		// this.simState = 
 	}
 
 }
@@ -107,7 +107,7 @@ class EndDay extends SimState {
 
 	@Override
 	void nextState() {
-
+		// this.simState =
 	}
 
 }
@@ -144,7 +144,7 @@ class OrderSupplies extends SimState {
 
 	@Override
 	void nextState() {
-
+		// this.simState =
 	}
 
 }
@@ -175,7 +175,7 @@ class CheckInventory extends SimState {
 
 	@Override
 	void nextState() {
-
+		// this.simState =
 	}
 
 }
@@ -206,7 +206,7 @@ class VisitBank extends SimState {
 
 	@Override
 	void nextState() {
-
+		// this.simState =
 	}
 
 }
