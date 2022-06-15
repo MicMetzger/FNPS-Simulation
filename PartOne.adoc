@@ -12,11 +12,11 @@ June 9, 2022
 . What are three ways modern Java interfaces differ from a traditional OO interface design that
 describes only function signatures and return types to be implemented? Provide a Java code example of each.
 +
-NOTE: Java 8 introduced default method and static method along with lambda expressions.
+NOTE: Java 8 introduced default method and static method along with lamda expressions.
 +
     * _(Note: Interface Segregation Principle)_ 
     * _(Note: Single Responsibility Principle)_
-    * *Default Method* - Allows its implementation classes to invoke the method without implementing it, and it can be overridden.
+    * *Default Method* - Allows its implementation classes to invoke the method without implementing it in the class, and it can be overridden.
     * *Static Method* - Allows its implementation classes to invoke the method directly from the interface, however it cannot be overridden.
     * *Lamda expresions* - Allows to define functional interfaces in line and it can be called without implementing the interface.
 +
@@ -26,7 +26,7 @@ NOTE: Java 8 introduced default method and static method along with lambda expre
 interface Animal {
    // Default method: This can be invoked in implementing classes, and can be overridden
    default void makeSound() {
-      Ssytem.out.println("###");
+      System.out.println("###");
    }
    
    // Static method: This method cannot be overridden
