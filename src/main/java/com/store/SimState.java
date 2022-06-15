@@ -4,6 +4,7 @@ package main.java.com.store;
 public abstract class SimState extends Store {
 	public static SimState startDay, endDay, orderSupplies, checkInventory, visitBank;
 	public static SimState currentState;
+	public static SimState endState;
 
 
 	public SimState() {
@@ -26,6 +27,7 @@ public abstract class SimState extends Store {
 
 
 	abstract void exitState();
+	abstract void nextState();
 
 }
 
@@ -44,12 +46,18 @@ class StartDay extends SimState {
 	@Override
 	void enterState() {
 		day++;
-		
+
 	}
 
 
 	@Override
 	void exitState() {
+		// TODO: update information and report. Afterwards, call nextState()
+	}
+
+
+	@Override
+	void nextState() {
 
 	}
 
@@ -75,9 +83,14 @@ class EndDay extends SimState {
 
 	@Override
 	void exitState() {
-
+		// TODO: update information and report. Afterwards, call nextState()
 	}
 
+
+	@Override
+	void nextState() {
+		
+	}
 }
 
 
@@ -100,7 +113,13 @@ class OrderSupplies extends SimState {
 
 	@Override
 	void exitState() {
+		// TODO: update information and report. Afterwards, call nextState()
+	}
 
+
+	@Override
+	void nextState() {
+		
 	}
 
 }
@@ -117,15 +136,23 @@ class CheckInventory extends SimState {
 	}
 
 
+	@Override
 	void enterState() {
 
 	}
 
-
+	
+	@Override
 	void exitState() {
-
+		// TODO: update information and report. Afterwards, call nextState()
 	}
 
+
+	@Override
+	void nextState() {
+		
+	}
+	
 }
 
 
@@ -148,6 +175,12 @@ class VisitBank extends SimState {
 
 	@Override
 	void exitState() {
+		// TODO: update information and report. Afterwards, call nextState()
+	}
+
+
+	@Override
+	void nextState() {
 
 	}
 
