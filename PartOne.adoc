@@ -72,7 +72,6 @@ abstract class Computer {
    public void Boot() {
       // Do stuff to boot up the computer
    }
-   
    ...
 }
 
@@ -107,7 +106,7 @@ public class Student() {
    *  sets the name
    *  @param name
    */
-   public setName(String name) {
+   public void setName(String name) {
       this.name = name;
    }
 }
