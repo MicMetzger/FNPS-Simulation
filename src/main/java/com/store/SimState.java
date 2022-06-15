@@ -23,6 +23,7 @@ public abstract class SimState extends Store {
 			currentState = visitBank;
 		}
 
+		// Initial Entry
 		currentState.enterState();
 	}
 
@@ -57,7 +58,7 @@ class StartDay extends SimState {
 	@Override
 	void enterState() {
 		day++;
-		selectStaff(); // TODO: Left Off
+		selectStaff(); // TODO: %%%% Left Off %%%%
 	}
 
 
