@@ -2,9 +2,11 @@ package main.java.com.store;
 
 
 public abstract class SimState extends Store {
-	public static SimState startDay, endDay, orderSupplies, checkInventory, visitBank;
-	public static SimState currentState;
-	public static SimState endState;
+	// Package level access, static, state control variables
+	static SimState startDay, endDay, orderSupplies, checkInventory, visitBank;
+	static SimState currentState;
+	static SimState endState;
+	static boolean  RUNNING;
 
 
 	public SimState() {
@@ -14,6 +16,7 @@ public abstract class SimState extends Store {
 		orderSupplies = new OrderSupplies(this);
 		visitBank = new VisitBank(this);
 		currentState = startDay;
+		RUNNING = true;
 		// TODO: Design endState and program clean exit.
 
 		if (cash < 0) {
@@ -28,6 +31,8 @@ public abstract class SimState extends Store {
 
 
 	abstract void exitState();
+
+
 	abstract void nextState();
 
 }
@@ -37,7 +42,7 @@ public abstract class SimState extends Store {
 
 /**
  * Start day.
- * 
+ * <p>
  * Daily route starting point.
  */
 class StartDay extends SimState {
@@ -64,7 +69,7 @@ class StartDay extends SimState {
 
 	@Override
 	void nextState() {
-		
+
 	}
 
 }
@@ -75,7 +80,7 @@ class StartDay extends SimState {
 /**
  * End day.
  * Completion of daily route.
- * 
+ * <p>
  * Clean-up and preparation for sequence restart.
  */
 class EndDay extends SimState {
@@ -101,8 +106,9 @@ class EndDay extends SimState {
 
 	@Override
 	void nextState() {
-		
+
 	}
+
 }
 
 
@@ -110,8 +116,6 @@ class EndDay extends SimState {
 
 /**
  * Order supplies.
- * 
- * 
  */
 class OrderSupplies extends SimState {
 	SimState simState;
@@ -139,7 +143,7 @@ class OrderSupplies extends SimState {
 
 	@Override
 	void nextState() {
-		
+
 	}
 
 }
@@ -161,7 +165,7 @@ class CheckInventory extends SimState {
 
 	}
 
-	
+
 	@Override
 	void exitState() {
 		// TODO: update information and report. Afterwards, call nextState()
@@ -170,9 +174,9 @@ class CheckInventory extends SimState {
 
 	@Override
 	void nextState() {
-		
+
 	}
-	
+
 }
 
 
