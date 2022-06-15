@@ -44,7 +44,6 @@ public abstract class Pet extends Item {
 	}
 
 
-	@Override
 	public void announce() {
 		
 	}

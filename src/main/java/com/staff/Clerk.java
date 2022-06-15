@@ -8,6 +8,18 @@ public class Clerk extends Employee {
 	private String name = "";
 
 
+	public Clerk(int workDays, String name) {
+		super(workDays);
+		this.name = name;
+	}
+
+
+	public Clerk(String name) {
+		super();
+		this.name = name;
+	}
+
+
 	public Clerk() {
 		super();
 		int num = new Random().nextInt(NAME_TEMPLATE.size());

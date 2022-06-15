@@ -38,6 +38,12 @@ public class Supplies extends Item {
 
 
 	@Override
+	public void announce(String announcement) {
+		
+	}
+
+
+	@Override
 	public void update() {
 
 	}

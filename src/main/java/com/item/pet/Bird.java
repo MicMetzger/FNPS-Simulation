@@ -179,4 +179,10 @@ public class Bird extends Pet {
 		return papers;
 	}
 
+
+	@Override
+	public void announce(String announcement) {
+		
+	}
+
 }

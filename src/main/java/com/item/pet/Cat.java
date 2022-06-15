@@ -162,4 +162,10 @@ public class Cat extends Pet {
 		this.purebred = purebred;
 	}
 
+
+	@Override
+	public void announce(String announcement) {
+		
+	}
+
 }

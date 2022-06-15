@@ -174,4 +174,7 @@ public abstract class Item implements StoreObserver {
 				'}');
 	}
 
+
+	public abstract void announce();
+
 }

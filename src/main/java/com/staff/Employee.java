@@ -46,7 +46,7 @@ public abstract class Employee implements StoreObserver {
 	}
 
 
-	private void arrival() {
+	public void arrival() {
 		String announcement = "enters the store...";
 		announce(announcement);
 	}
@@ -94,5 +94,14 @@ public abstract class Employee implements StoreObserver {
 
 	}
 
+	
+	public int getWorkDays() {
+		return workDays;
+	}
+	
+	
+	public void incWorkDays() {
+		workDays++;
+	}
 
 }

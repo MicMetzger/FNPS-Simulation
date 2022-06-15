@@ -220,4 +220,9 @@ public class Dog extends Pet {
 	}
 
 
+	@Override
+	public void announce(String announcement) {
+		
+	}
+
 }
