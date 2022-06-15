@@ -5,7 +5,7 @@
 	<p style="color:red">Java SE 18</p>
 	<h2>Index</h2>
 	<ul>
-		<li style="list-style: none"><a href="#Part-1">Part #1</a></li>
+		<li style="list-style: none"><a href="PartOne.adoc">Part #1</a></li>
 		<li style="list-style: none"><a href="#Part-2">Part #2</a></li>
 	</ul>
 	<br>
