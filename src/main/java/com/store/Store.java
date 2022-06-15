@@ -40,6 +40,7 @@ public class Store {
 		cash = 0;
 		day = 0;
 		initItemsAndStaff();
+		new SimState(this);
 	}
 
 
@@ -97,8 +98,6 @@ public class Store {
 			}
 		}
 	}
-	
-	
 	
 	/*	
 	public void updateObserver() {

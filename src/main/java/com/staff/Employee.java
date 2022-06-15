@@ -2,16 +2,16 @@ package main.java.com.staff;
 import main.java.com.inventory.StoreObserver;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 
 
 
-public abstract class Employee implements StoreObserver {
+public class Employee implements StoreObserver {
 	private          int          workDays;
-	protected static List<String> NAME_TEMPLATE = new ArrayList<String>(Arrays.asList("Kevin", "Andrew", "Michelle", "David", "Sarah"));
+	Employee base;
+	static ArrayList<String> NAME_TEMPLATE = new ArrayList<String>(Arrays.asList("Kevin", "Andrew", "Michelle", "David", "Sarah"));
 
-
+	
 	public Employee(int workDays) {
 		this.workDays = workDays;
 	}
@@ -19,6 +19,18 @@ public abstract class Employee implements StoreObserver {
 
 	public Employee() {
 		workDays = 0;
+	}
+
+
+	@Override
+	public String getName() {
+		return base.getName();
+	}
+
+
+	@Override
+	public void setName(String name) {
+		base.setName(name);
 	}
 
 

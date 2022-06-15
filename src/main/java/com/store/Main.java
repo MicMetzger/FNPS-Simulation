@@ -1,10 +1,6 @@
-import main.java.com.store.Store;
-
-
-
-
+package main.java.com.store;
 public class Main {
     public static void main(String[] args) {
-	    Store store = new Store();
+	    Store storeSim = new Store();
     }
 }

@@ -1,21 +1,23 @@
 package main.java.com.store;
 
 
-public abstract class SimState extends Store {
+public class SimState {
 	// Package level access, static, state control variables
-	static SimState startDay, endDay, orderSupplies, checkInventory, visitBank;
-	static SimState currentState;
-	static SimState endState;
+	static State startDay, endDay, orderSupplies, checkInventory, visitBank;
+	static State currentState;
+	static State endState;
 	static boolean  RUNNING;
+	Store store;
 
 
-	public SimState() {
+	public SimState(Store sim) {
+		store = sim;
 		startDay = new StartDay(this);
 		endDay = new EndDay(this);
 		checkInventory = new CheckInventory(this);
 		orderSupplies = new OrderSupplies(this);
 		visitBank = new VisitBank(this);
-		currentState = startDay;
+		// currentState = startDay;
 		RUNNING = true;
 		// TODO: Design endState and program clean exit.
 
@@ -24,17 +26,36 @@ public abstract class SimState extends Store {
 		}*/
 
 		// Initial Entry
-		currentState.enterState();
+		startTheDay();
 	}
 
 
-	abstract void enterState();
+	public void startTheDay() {
+		currentState = startDay;
+		currentState.enterState();
+	}
+	
+	
+	public void setStoreState(State state) {
+		currentState = state;
+	}
+
+	
+	public State goVisitBankState() {
+		currentState = visitBank;
+		currentState.enterState();
+		return currentState;
+	}
+
+	public void exitStoreState() {
+		currentState.exitState();
+	}
 
 
-	abstract void exitState();
+	public void nextStoreState() {
+		currentState.nextState();
 
-
-	abstract void nextState();
+	}
 
 }
 
@@ -46,30 +67,29 @@ public abstract class SimState extends Store {
  * <p>
  * Daily route starting point.
  */
-class StartDay extends SimState {
+class StartDay implements State {
 	SimState simState;
-
-
+	
 	public StartDay(SimState simState) {
 		this.simState = simState;
 	}
-
-
+	
+	
 	@Override
-	void enterState() {
-		day++;
-		selectStaff(); // TODO: %%%% Left Off %%%%
+	public void enterState() {
+		simState.store.day++;
+		simState.store.selectStaff(); // TODO: %%%% Left Off %%%%
 	}
 
 
 	@Override
-	void exitState() {
+	public void exitState() {
 		// TODO: update information and report. Afterwards, call nextState()
 	}
 
 
 	@Override
-	void nextState() {
+	public void nextState() {
 		// this.simState = 
 	}
 
@@ -84,7 +104,7 @@ class StartDay extends SimState {
  * <p>
  * Clean-up and preparation for sequence restart.
  */
-class EndDay extends SimState {
+class EndDay implements State {
 	SimState simState;
 
 
@@ -94,19 +114,19 @@ class EndDay extends SimState {
 
 
 	@Override
-	void enterState() {
+	public void enterState() {
 
 	}
 
 
 	@Override
-	void exitState() {
+	public void exitState() {
 		// TODO: update information and report. Afterwards, call nextState()
 	}
 
 
 	@Override
-	void nextState() {
+	public void nextState() {
 		// this.simState =
 	}
 
@@ -118,33 +138,34 @@ class EndDay extends SimState {
 /**
  * Order supplies.
  */
-class OrderSupplies extends SimState {
+class OrderSupplies implements State {
 	SimState simState;
 
 
 	public OrderSupplies(SimState simState) {
+		super();
 		this.simState = simState;
 	}
 
 
 	@Override
-	void enterState() {
+	public void enterState() {
 		// TODO: Get price cap
-		if (cash <= 0) {
-			currentState = visitBank;
+		if (simState.store.cash <= 0) {
+			simState.setStoreState(simState.goVisitBankState());
 		}
 	}
 
 
 	@Override
-	void exitState() {
+	public void exitState() {
 		// TODO: update information and report. Afterwards, call nextState()
 	}
 
 
 	@Override
-	void nextState() {
-		// this.simState =
+	public void nextState() {
+		
 	}
 
 }
@@ -152,7 +173,7 @@ class OrderSupplies extends SimState {
 
 
 
-class CheckInventory extends SimState {
+class CheckInventory implements State {
 	SimState simState;
 
 
@@ -162,20 +183,20 @@ class CheckInventory extends SimState {
 
 
 	@Override
-	void enterState() {
+	public void enterState() {
 
 	}
 
 
 	@Override
-	void exitState() {
+	public void exitState() {
 		// TODO: update information and report. Afterwards, call nextState()
 	}
 
 
 	@Override
-	void nextState() {
-		// this.simState =
+	public void nextState() {
+		
 	}
 
 }
@@ -183,7 +204,7 @@ class CheckInventory extends SimState {
 
 
 
-class VisitBank extends SimState {
+class VisitBank implements State {
 	SimState simState;
 
 
@@ -193,20 +214,20 @@ class VisitBank extends SimState {
 
 
 	@Override
-	void enterState() {
+	public void enterState() {
 
 	}
 
 
 	@Override
-	void exitState() {
+	public void exitState() {
 		// TODO: update information and report. Afterwards, call nextState()
 	}
 
 
 	@Override
-	void nextState() {
-		// this.simState =
+	public void nextState() {
+
 	}
 
 }
