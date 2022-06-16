@@ -23,7 +23,7 @@ public class Store {
 	ArrayList<Employee> staff;
 	Employee            currentStaff;
 	ArrayList<Pet>      sick;
-	// List<StoreObserver> observers;
+	double              bankWithdrawal;
 	double              cash;
 	int                 day;
 
@@ -41,7 +41,7 @@ public class Store {
 		staff = new ArrayList<Employee>();
 		inventory = new ArrayList<Item>();
 		sick = new ArrayList<Pet>();
-		
+		bankWithdrawal = 0;
 		cash = 0;
 		day = 0;
 		initItemsAndStaff();
@@ -94,6 +94,7 @@ public class Store {
 						// currentStaff.dayoff();
 						currentStaff = employee;
 						currentStaff.incWorkDays();
+						currentStaff.arrival();
 						staff.forEach(restream -> {
 							if (restream != currentStaff) {
 								restream.dayoff();
@@ -105,13 +106,46 @@ public class Store {
 				});
 			}
 		}
+		currentStaff.setInventory(this.inventory);
 		currentStaff.incWorkDays();
+		// Active employee announcement
+		currentStaff.arrival();
+
 	}
 
 
 	public void doInventory() {
 		
+	}
 
+
+	public void GoToBank() {
+		currentStaff.announce(" goes to the bank...");
+		addWithdrawal();
+		addCash(1000);
+		
+	}
+
+
+	private void addWithdrawal() {
+		this.bankWithdrawal += 1000;
+		System.out.println("$1000 was withdrawn from the bank.");
+	}
+
+
+	public double getCash() {
+		return cash;
+	}
+
+
+	public void addCash(double cash) {
+		this.cash += cash;
+		if (cash < 0) {
+			System.out.println("$" + cash + " was removed from the register.");
+		}
+		else {
+			System.out.println("$" + cash + " was added to the register.");			
+		}
 	}
 
 }

@@ -1,5 +1,6 @@
 package main.java.com.staff;
 import main.java.com.inventory.StoreObserver;
+import main.java.com.item.Item;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -9,6 +10,8 @@ import java.util.Arrays;
 public class Employee implements StoreObserver {
 	private          int          workDays;
 	Employee base;
+	ArrayList<Item>     inventory;
+
 	static ArrayList<String> NAME_TEMPLATE = new ArrayList<String>(Arrays.asList("Kevin", "Andrew", "Michelle", "David", "Sarah"));
 
 	
@@ -119,5 +122,15 @@ public class Employee implements StoreObserver {
 	
 	public void dayoff() {
 		workDays = 0;
+	}
+	
+	
+	public void setInventory(ArrayList<Item> inventory) {
+		this.inventory = inventory;
+	}
+	
+	
+	public ArrayList<Item> getInventory() {
+		return inventory;
 	}
 }
