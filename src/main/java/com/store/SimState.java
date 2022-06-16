@@ -120,8 +120,8 @@ class EndDay implements State {
 	public void enterState() {
 		/**
 		 * sets the updated inventory to the store inventory
+		 * calling feedAnimals
 		 */
-		simState.store.currentStaff.setInventory(simState.store.currentStaff.feedAnimals());
 	}
 
 
@@ -190,7 +190,9 @@ class CheckInventory implements State {
 
 	@Override
 	public void enterState() {
-
+		simState.store.currentStaff.feedAnimals();
+		simState.store.currentStaff.setInventory(simState.store.currentStaff.getInventory());
+		simState.store.currentStaff.setSickPets(simState.store.currentStaff.getSickAnimals());
 	}
 
 

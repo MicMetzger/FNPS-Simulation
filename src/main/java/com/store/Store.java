@@ -107,6 +107,7 @@ public class Store {
 			}
 		}
 		currentStaff.setInventory(this.inventory);
+		currentStaff.setSickPets(this.sick);
 		currentStaff.incWorkDays();
 		// Active employee announcement
 		currentStaff.arrival();
@@ -119,6 +120,10 @@ public class Store {
 
 	public void updateInventory(ArrayList<Item> updatedInventory) {
 		this.inventory = updatedInventory;
+	}
+
+	public void updateSickAnimals(ArrayList<Pet> newSick) {
+		this.sick = newSick;
 	}
 
 	public void GoToBank() {

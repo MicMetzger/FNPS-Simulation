@@ -1,8 +1,11 @@
 package main.java.com.staff;
 import main.java.com.inventory.StoreObserver;
 import main.java.com.item.Item;
+import main.java.com.item.pet.Pet;
+
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Random;
 
 
 
@@ -11,6 +14,7 @@ public class Employee implements StoreObserver {
 	private          int          workDays;
 	Employee base;
 	ArrayList<Item>     inventory;
+	ArrayList<Pet> 	sick;
 
 	static ArrayList<String> NAME_TEMPLATE = new ArrayList<String>(Arrays.asList("Kevin", "Andrew", "Michelle", "David", "Sarah"));
 
@@ -76,10 +80,31 @@ public class Employee implements StoreObserver {
 	/**
 	 * @return inventory so that Store inventory will be updated in Store
 	 */
-	public ArrayList<Item> feedAnimals() {
-		// String announcement = "feeds "; //TODO
+	public void feedAnimals() {
+		Random rand = new Random();
+		for(Item item:inventory) {
+			if(item instanceof Pet) {
+				// 5% chance of getting sick
+				boolean willBeSick = rand.nextInt(5) < 100;
+				String announcement = willBeSick ? " Feeds, and " + item.getName() + " got sick..." : " Feeds " + item.getName();
+				announce(announcement);
+				if(willBeSick) {
+					sick.add((Pet)item);
+					inventory.remove(item);
+				}
+			}
+		}
 
-		return inventory;
+		for(Pet pet:sick) {
+			// 25% change of recovering
+			boolean willRecover = rand.nextInt(25) < 100;
+			String announcement = willRecover ? " Feeds, and " + pet.getName() + " recovered from sick." : " Feeds " + pet.getName();
+			announce(announcement);
+			if(willRecover) {
+				inventory.add(pet);
+				sick.remove(pet);
+			}
+		}
 	}
 
 
@@ -133,7 +158,13 @@ public class Employee implements StoreObserver {
 		this.inventory = newInventory;
 	}
 
+	public void setSickPets(ArrayList<Pet> newSickAnimals) {
+		this.sick = newSickAnimals;
+	}
 
+	public ArrayList<Pet> getSickAnimals() {
+		return sick;
+	}
 
 	
 	public ArrayList<Item> getInventory() {
