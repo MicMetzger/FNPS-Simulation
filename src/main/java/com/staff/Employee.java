@@ -163,12 +163,12 @@ public class Employee implements StoreObserver {
 	}
 
 
-	public void setSickPets(ArrayList<Pet> newSickAnimals) {
+	public void setSickPet(ArrayList<Pet> newSickAnimals) {
 		this.sick = newSickAnimals;
 	}
 
 
-	public ArrayList<Pet> getSickAnimals() {
+	public ArrayList<Pet> getSickAnimal() {
 		return sick;
 	}
 
