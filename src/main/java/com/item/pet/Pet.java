@@ -1,6 +1,5 @@
 package main.java.com.item.pet;
 import main.java.com.item.Item;
-import java.util.*;
 
 
 
@@ -11,8 +10,8 @@ public abstract class Pet extends Item {
 	private boolean healthy;
 
 
-	public Pet(String name, Date dayArrived, Date daySold, double purchasePrice, double listPrice, double salePrice, Breed breed, int age, boolean healthy) {
-		super(name, dayArrived, daySold, purchasePrice, listPrice, salePrice);
+	public Pet(String name, int dayArrived, int daySold, double purchasePrice, double listPrice, double salePrice, Breed breed, int age, boolean healthy) {
+		super(name, purchasePrice, listPrice, salePrice, dayArrived, daySold);
 		this.breed = breed;
 		this.age = age;
 		this.healthy = healthy;

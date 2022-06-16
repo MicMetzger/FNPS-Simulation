@@ -78,7 +78,8 @@ class StartDay implements State {
 	@Override
 	public void enterState() {
 		simState.store.day++;
-		simState.store.selectStaff(); // TODO: %%%% Left Off %%%%
+		simState.store.selectStaff(); 
+
 	}
 
 

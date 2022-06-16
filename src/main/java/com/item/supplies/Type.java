@@ -1,4 +1,12 @@
 package main.java.com.item.supplies;
 public enum Type {
-	// TODO: figure out purpose and type cases
+	
+	Solid("Solid"),
+	Soft("Soft");
+
+	public final String name;
+	
+	Type(String solid) {
+		name = solid;
+	}
 }

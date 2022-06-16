@@ -1,6 +1,5 @@
 package main.java.com.item;
 import main.java.com.inventory.StoreObserver;
-import java.util.Date;
 
 
 
@@ -10,8 +9,8 @@ import java.util.Date;
  */
 public abstract class Item implements StoreObserver {
 	private String name;
-	private Date   dayArrived;
-	private Date   daySold;
+	private int   dayArrived;
+	private int   daySold;
 	private double purchasePrice;
 	private double listPrice;
 	private double salePrice;
@@ -27,7 +26,7 @@ public abstract class Item implements StoreObserver {
 	 * @param listPrice     the list price
 	 * @param salePrice     the sale price
 	 */
-	public Item(String name, Date dayArrived, Date daySold, double purchasePrice, double listPrice, double salePrice) {
+	public Item(String name, double purchasePrice, double listPrice, double salePrice, int dayArrived, int daySold) {
 		this.name = name;
 		this.dayArrived = dayArrived;
 		this.daySold = daySold;
@@ -128,7 +127,7 @@ public abstract class Item implements StoreObserver {
 	 *
 	 * @return the day arrived
 	 */
-	public Date getDayArrived() {
+	public int getDayArrived() {
 		return dayArrived;
 	}
 
@@ -138,7 +137,7 @@ public abstract class Item implements StoreObserver {
 	 *
 	 * @param dayArrived the day arrived
 	 */
-	public void setDayArrived(Date dayArrived) {
+	public void setDayArrived(int dayArrived) {
 		this.dayArrived = dayArrived;
 	}
 
@@ -148,7 +147,7 @@ public abstract class Item implements StoreObserver {
 	 *
 	 * @return the day sold
 	 */
-	public Date getDaySold() {
+	public int getDaySold() {
 		return daySold;
 	}
 
@@ -158,7 +157,7 @@ public abstract class Item implements StoreObserver {
 	 *
 	 * @param daySold the day sold
 	 */
-	public void setDaySold(Date daySold) {
+	public void setDaySold(int daySold) {
 		this.daySold = daySold;
 	}
 

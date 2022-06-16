@@ -1,23 +1,32 @@
 package main.java.com.item.supplies;
-import main.java.com.item.pet.Pet;
+import main.java.com.item.pet.Animal;
 
 
 
 
 public class Food extends Supplies {
 	private int  size;
-	private Pet  animal;
+	private Animal  animal;
 	private Type type;
 
 
-	public Food(int size, Pet animal, Type type) {
-		this.size = size;
-		this.animal = animal;
-		this.type = type;
-	}
+	// public Food(int size, Pet animal, Type type) {
+	// 	this.size = size;
+	// 	this.animal = animal;
+	// 	this.type = type;
+	// }
 
 
 	public Food() {}
+
+
+	public Food(int size, Animal animal, Type type) {
+		super(animal.toString() + " Food");
+		this.size = size;
+		this.animal = animal;
+		this.type = type;
+
+	}
 
 
 	public int getSize() {
@@ -30,12 +39,17 @@ public class Food extends Supplies {
 	}
 
 
-	public Pet getAnimal() {
+	public String getAnimalS() {
+		return animal.toString();
+	}
+
+	
+	public Animal getAnimal() {
 		return animal;
 	}
 
 
-	public void setAnimal(Pet animal) {
+	public void setAnimal(Animal animal) {
 		this.animal = animal;
 	}
 

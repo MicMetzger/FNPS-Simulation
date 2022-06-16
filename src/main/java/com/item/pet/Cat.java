@@ -1,8 +1,4 @@
 package main.java.com.item.pet;
-import java.util.*;
-
-
-
 /**
  * The type Cat.
  */
@@ -31,7 +27,7 @@ public class Cat extends Pet {
 	 * @param housebroken   the housebroken
 	 * @param purebred      the purebred
 	 */
-	public Cat(String name, Date dayArrived, Date daySold, double purchasePrice, double listPrice, double salePrice, Breed breed, int age, boolean healthy, String color, boolean housebroken, boolean purebred) {
+	public Cat(String name, int dayArrived, int daySold, double purchasePrice, double listPrice, double salePrice, Breed breed, int age, boolean healthy, String color, boolean housebroken, boolean purebred) {
 		super(name, dayArrived, daySold, purchasePrice, listPrice, salePrice, breed, age, healthy);
 		this.color = color;
 		this.housebroken = housebroken;

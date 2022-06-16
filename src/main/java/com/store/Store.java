@@ -1,14 +1,17 @@
 package main.java.com.store;
 import main.java.com.item.Item;
+import main.java.com.item.pet.Animal;
 import main.java.com.item.pet.Bird;
 import main.java.com.item.pet.Cat;
 import main.java.com.item.pet.Dog;
 import main.java.com.item.supplies.CatLiter;
 import main.java.com.item.supplies.Food;
 import main.java.com.item.supplies.Leash;
+import main.java.com.item.supplies.Type;
 import main.java.com.staff.Clerk;
 import main.java.com.staff.Employee;
 import main.java.com.staff.Trainer;
+import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -26,11 +29,14 @@ public class Store {
 	double              cash;
 	int                 day;
 
+	protected final ArrayList<String> colors              = new ArrayList<String>(Arrays.asList("black", "brown", "white", "gray", "red"));
+	protected final boolean[]         randomSelectionbool = {true, false};
+
 
 	/**
 	 * Instantiates a new Store.
 	 * Main entry point.
-	 * 
+	 * <p>
 	 * Default constructor
 	 */
 	public Store() {
@@ -54,12 +60,15 @@ public class Store {
 		staff.add(new Trainer());
 		staff.add(new Trainer());
 
-		inventory.add(new Dog());
-		inventory.add(new Cat());
-		inventory.add(new Bird());
-		inventory.add(new Food());
-		inventory.add(new CatLiter());
-		inventory.add(new Leash());
+		// (size, color, broken, purebred) / (breed, age, health)
+		inventory.add(new Dog(new Random().nextDouble(50.0), colors.get(new Random().nextInt(colors.size())), randomSelectionbool[new Random().nextInt(1)], randomSelectionbool[new Random().nextInt(1)]));
+		// (color, broken, purebred) / (breed, age, health)
+		inventory.add(new Cat(colors.get(new Random().nextInt(colors.size())), randomSelectionbool[new Random().nextInt(1)], randomSelectionbool[new Random().nextInt(1)]));
+		// (size, mimicry, exotic, papers) / (breed, age, health)
+		inventory.add(new Bird(new Random().nextDouble(8.0), randomSelectionbool[new Random().nextInt(1)], randomSelectionbool[new Random().nextInt(1)], randomSelectionbool[new Random().nextInt(1)]));
+		inventory.add(new Food(new Random().nextInt(100), Animal.values()[new Random().nextInt(Animal.values().length)], Type.values()[new Random().nextInt(Type.values().length)]));
+		inventory.add(new CatLiter(new Random().nextInt(100)));
+		inventory.add(new Leash(Animal.values()[new Random().nextInt(Animal.values().length)]));
 
 		// staff.forEach(hire -> hire.arrival());
 	}
@@ -85,7 +94,7 @@ public class Store {
 					if (employee != currentStaff) {
 						// currentStaff.dayoff();
 						currentStaff = employee;
-
+						currentStaff.incWorkDays();
 						staff.forEach(restream -> {
 							if (restream != currentStaff) {
 								restream.dayoff();
@@ -97,25 +106,9 @@ public class Store {
 				});
 			}
 		}
-	}
-	
-	/*	
-	public void updateObserver() {
-		for (StoreObserver observer : observers) {
-			observer.update();
-		}
+		currentStaff.incWorkDays();
 	}
 
-
-	public void addObserver(StoreObserver observer) {
-		observers.add(observer);
-	}
-
-
-	public void removeObserver(StoreObserver observer) {
-		observers.remove(observer);
-	}
-	*/
 
 }
 

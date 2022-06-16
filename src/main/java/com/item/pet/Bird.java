@@ -1,5 +1,4 @@
 package main.java.com.item.pet;
-import java.util.Date;
 
 
 
@@ -41,7 +40,7 @@ public class Bird extends Pet {
 	 * @param healthy
 	 */
 
-	public Bird(String name, Date dayArrived, Date daySold, double purchasePrice, double listPrice, double salePrice, Breed breed, int age, boolean healthy, double size, boolean mimicry, boolean exotic, boolean papers) {
+	public Bird(String name, int dayArrived, int daySold, double purchasePrice, double listPrice, double salePrice, Breed breed, int age, boolean healthy, double size, boolean mimicry, boolean exotic, boolean papers) {
 		super(name, dayArrived, daySold, purchasePrice, listPrice, salePrice, breed, age, healthy);
 		this.size = size;
 		this.mimicry = mimicry;
