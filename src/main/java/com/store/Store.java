@@ -15,17 +15,21 @@ import java.util.*;
 
 
 public class Store {
-	/**
-	 * The stores Inventory.
-	 */
-	ArrayList<Item>     inventory;
-	ArrayList<Pet>      sick;
+	// The store's Inventory.
+	ArrayList<Item> inventory;
+	ArrayList<Pet>  sick;
+
+	// The store's staff
 	ArrayList<Employee> staff;
 	Employee            currentStaff;
-	double              bankWithdrawal;
-	double              cash;
-	int                 day;
-	DecimalFormat       sizeFormat = new DecimalFormat("#####.00");
+
+	// Money + day management
+	double bankWithdrawal;
+	double cash;
+	int    day;
+
+	// Data helpers
+	DecimalFormat sizeFormat = new DecimalFormat("#####.00");
 	protected final ArrayList<String> colors              = new ArrayList<String>(Arrays.asList("Black", "Brown", "White", "Gray", "Red"));
 	protected final boolean[]         randomSelectionbool = {true, false};
 
@@ -33,7 +37,7 @@ public class Store {
 	/**
 	 * Instantiates a new Store.
 	 * Main entry point.
-	 * <p>
+	 * 
 	 * Default constructor
 	 */
 	public Store() {
@@ -63,17 +67,18 @@ public class Store {
 		// (color, broken, purebred) / (breed, age, health)
 		inventory.add(new Cat(colors.get(new Random().nextInt(colors.size())), randomSelectionbool[new Random().nextInt(1)], randomSelectionbool[new Random().nextInt(1)]));
 		// (size, mimicry, exotic, papers) / (breed, age, health)
-		inventory.add(new Bird(Double.parseDouble(sizeFormat.format(new Random().nextDouble(8))), randomSelectionbool[new Random().nextInt(1)], randomSelectionbool[new Random().nextInt(1)], randomSelectionbool[new Random().nextInt(1)]));
+		inventory.add(new Bird(Double.parseDouble(sizeFormat.format(new Random().nextDouble(8))), randomSelectionbool[new Random().nextInt(1)], randomSelectionbool[new Random().nextInt(1)], randomSelectionbool[new Random().nextInt(1)]));		
+		
 		inventory.add(new Food(new Random().nextInt(100), Animal.values()[new Random().nextInt(Animal.values().length)], Type.values()[new Random().nextInt(Type.values().length)]));
 		inventory.add(new CatLiter(new Random().nextInt(100)));
 		inventory.add(new Leash(Animal.values()[new Random().nextInt(Animal.values().length)]));
 
-		// staff.forEach(hire -> hire.arrival());
 	}
 
 
 	/**
 	 * Select staff to man store for this day.
+	 * 
 	 */
 	void selectStaff() {
 		int num = new Random().nextInt(4);
@@ -117,15 +122,18 @@ public class Store {
 
 	}
 
+
 	public void updateInventory() {
 		this.inventory = currentStaff.getInventory();
 	}
+
 
 	public void updateSickAnimal() {
 		this.sick = currentStaff.getSickAnimal();
 	}
 
-	public void GoToBank() {
+
+	public void goToBank() {
 		currentStaff.GoToBank();
 		addWithdrawal();
 	}

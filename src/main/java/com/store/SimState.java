@@ -315,7 +315,7 @@ class VisitBank implements State {
 
 	@Override
 	public void enterState() {
-		simState.store.GoToBank();
+		simState.store.goToBank();
 		exitState();
 	}
 

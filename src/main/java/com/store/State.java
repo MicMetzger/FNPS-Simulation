@@ -8,7 +8,8 @@ public interface State {
 
 
 	void nextState();
-	
+
+
 	void update(SimState state);
 
 }
