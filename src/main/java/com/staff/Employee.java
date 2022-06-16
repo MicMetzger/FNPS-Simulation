@@ -73,37 +73,41 @@ public class Employee implements StoreObserver {
 	}
 
 
-	private void feedAnimals() {
+	/**
+	 * @return inventory so that Store inventory will be updated in Store
+	 */
+	public ArrayList<Item> feedAnimals() {
 		// String announcement = "feeds "; //TODO
 
+		return inventory;
 	}
 
 
-	private void processInventory() {
+	public void processInventory() {
 		String announcement = "goes through store inventory...";
 
 	}
 
 
-	private void CheckRegister() {
+	public void CheckRegister() {
 		String announcement = "checks the register...";
 
 	}
 
 
-	private void GoToBank() {
+	public void GoToBank() {
 		String announcement = "goes to the bank...";
 
 	}
 
 
-	private void processDeliveries() {
+	public void processDeliveries() {
 		String announcement = "goes through today's deliveries...";
 
 	}
 
 
-	private void PlaceAnOrder() {
+	public void PlaceAnOrder() {
 		// String announcement = "places an order for ";  //TODO
 
 
@@ -125,10 +129,12 @@ public class Employee implements StoreObserver {
 	}
 	
 	
-	public void setInventory(ArrayList<Item> inventory) {
-		this.inventory = inventory;
+	public void setInventory(ArrayList<Item> newInventory) {
+		this.inventory = newInventory;
 	}
-	
+
+
+
 	
 	public ArrayList<Item> getInventory() {
 		return inventory;

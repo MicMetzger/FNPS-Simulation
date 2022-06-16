@@ -110,7 +110,6 @@ public class Store {
 		currentStaff.incWorkDays();
 		// Active employee announcement
 		currentStaff.arrival();
-
 	}
 
 
@@ -118,6 +117,9 @@ public class Store {
 		
 	}
 
+	public void updateInventory(ArrayList<Item> updatedInventory) {
+		this.inventory = updatedInventory;
+	}
 
 	public void GoToBank() {
 		currentStaff.announce(" goes to the bank...");
