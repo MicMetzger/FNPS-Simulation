@@ -24,36 +24,6 @@ public enum Animal {
 		return this.name.equals(name);
 	}
 	
-
-	public void setBreed(Breed breed) {
-		this.breed = breed;
-	}
-	
-	
-	public Breed getBreed() {
-		return breed;
-	}
-
-
-	
-
-
 }
 
 
-enum Breed {
-	;
-	private final String name;
-
-
-	Breed(String name) {this.name = name;}
-
-	public String toString() {
-		return this.name;
-	}
-
-	public boolean equals(String breed) {
-		return this.name.equals(breed);
-	}
-	// equals(br)
-}

@@ -5,9 +5,10 @@ import main.java.com.item.Item;
 
 
 public abstract class Pet extends Item {
-	private Breed   breed;
-	private int     age;
-	private boolean healthy;
+	Breed breed;
+	Animal animalType;
+	int     age;
+	boolean healthy;
 
 
 	public Pet(String name, int dayArrived, int daySold, double purchasePrice, double listPrice, double salePrice, Breed breed, int age, boolean healthy) {
@@ -26,7 +27,7 @@ public abstract class Pet extends Item {
 	}
 
 
-	public Pet(Breed breed) { 
+	public Pet(Breed breed) {
 		super();
 		this.breed = breed;
 	}
@@ -44,24 +45,6 @@ public abstract class Pet extends Item {
 
 
 	public void announce() {
-		
-	}
-
-
-	@Override
-	public void update() {
-		
-	}
-
-
-	@Override
-	public void subscribe() {
-
-	}
-
-
-	@Override
-	public void unsubscribe() {
 
 	}
 

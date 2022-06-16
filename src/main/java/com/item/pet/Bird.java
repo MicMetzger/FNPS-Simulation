@@ -1,8 +1,6 @@
 package main.java.com.item.pet;
 
 
-
-
 public class Bird extends Pet {
 
 	/**
@@ -38,14 +36,15 @@ public class Bird extends Pet {
 	 * @param breed
 	 * @param age
 	 * @param healthy
+	 * 
 	 */
-
 	public Bird(String name, int dayArrived, int daySold, double purchasePrice, double listPrice, double salePrice, Breed breed, int age, boolean healthy, double size, boolean mimicry, boolean exotic, boolean papers) {
 		super(name, dayArrived, daySold, purchasePrice, listPrice, salePrice, breed, age, healthy);
 		this.size = size;
 		this.mimicry = mimicry;
 		this.exotic = exotic;
 		this.papers = papers;
+		super.animalType = Animal.Bird;
 	}
 
 
@@ -67,6 +66,7 @@ public class Bird extends Pet {
 		this.mimicry = mimicry;
 		this.exotic = exotic;
 		this.papers = papers;
+		super.animalType = Animal.Bird;
 	}
 
 
@@ -80,10 +80,12 @@ public class Bird extends Pet {
 	 */
 
 	public Bird(double size, boolean mimicry, boolean exotic, boolean papers) {
+		super();
 		this.size = size;
 		this.mimicry = mimicry;
 		this.exotic = exotic;
 		this.papers = papers;
+		super.animalType = Animal.Bird;
 	}
 
 
@@ -91,13 +93,14 @@ public class Bird extends Pet {
 	 * Instantiates a new bird
 	 */
 	public Bird() {
-
+		super();
+		super.animalType = Animal.Bird;
 	}
 
 
 	@Override
 	public String toString() {
-		return "Dog{" +
+		return "Bird{" +
 				"size=" + size +
 				", mimicry='" + mimicry + '\'' +
 				", exotic=" + exotic +
@@ -178,10 +181,5 @@ public class Bird extends Pet {
 		return papers;
 	}
 
-
-	@Override
-	public void announce(String announcement) {
-		
-	}
 
 }

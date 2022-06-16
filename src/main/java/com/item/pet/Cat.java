@@ -4,11 +4,12 @@ package main.java.com.item.pet;
  */
 public class Cat extends Pet {
 	// The Color
-	public String color;
+	public String  color;
 	// The Housebroken
 	public boolean housebroken;
 	// The Purebred
 	public boolean purebred;
+
 
 	/**
 	 * Constructor
@@ -32,6 +33,7 @@ public class Cat extends Pet {
 		this.color = color;
 		this.housebroken = housebroken;
 		this.purebred = purebred;
+		super.animalType = Animal.Cat;
 	}
 
 
@@ -51,6 +53,7 @@ public class Cat extends Pet {
 		this.color = color;
 		this.housebroken = housebroken;
 		this.purebred = purebred;
+		super.animalType = Animal.Cat;
 	}
 
 
@@ -67,6 +70,8 @@ public class Cat extends Pet {
 		this.color = color;
 		this.housebroken = housebroken;
 		this.purebred = purebred;
+		super.animalType = Animal.Cat;
+
 	}
 
 
@@ -80,13 +85,18 @@ public class Cat extends Pet {
 	 */
 	public Cat(Breed breed, int age, boolean healthy) {
 		super(breed, age, healthy);
+		super.animalType = Animal.Cat;
+
 	}
 
 
 	/**
 	 * Default constructor of a Cat object.
 	 */
-	public Cat() {super();}
+	public Cat() {
+		super();
+		super.animalType = Animal.Cat;
+	}
 
 
 	@Override
@@ -158,10 +168,5 @@ public class Cat extends Pet {
 		this.purebred = purebred;
 	}
 
-
-	@Override
-	public void announce(String announcement) {
-		
-	}
 
 }

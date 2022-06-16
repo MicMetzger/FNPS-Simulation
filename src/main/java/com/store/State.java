@@ -1,5 +1,6 @@
 package main.java.com.store;
 public interface State {
+
 	void enterState();
 
 
@@ -7,5 +8,7 @@ public interface State {
 
 
 	void nextState();
+	
+	void update(SimState state);
 
 }

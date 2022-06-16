@@ -17,7 +17,9 @@ public class Toy extends Supplies {
 	 */
 
 	public Toy(Pet animal) {
+		super();
 		this.animal = animal;
+		super.supplyType = SupplyType.Toy;
 	}
 
 
@@ -25,7 +27,10 @@ public class Toy extends Supplies {
 	 * Default constructor
 	 */
 
-	public Toy() {}
+	public Toy() {
+		super();
+		super.supplyType = SupplyType.Toy;
+	}
 
 
 	/**

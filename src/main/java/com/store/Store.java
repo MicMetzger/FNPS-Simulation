@@ -9,9 +9,7 @@ import main.java.com.staff.Clerk;
 import main.java.com.staff.Employee;
 import main.java.com.staff.Trainer;
 import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Random;
+import java.util.*;
 
 
 
@@ -21,14 +19,14 @@ public class Store {
 	 * The stores Inventory.
 	 */
 	ArrayList<Item>     inventory;
+	ArrayList<Pet>      sick;
 	ArrayList<Employee> staff;
 	Employee            currentStaff;
-	ArrayList<Pet>      sick;
 	double              bankWithdrawal;
 	double              cash;
 	int                 day;
-	DecimalFormat       sizeFormat = new DecimalFormat("#####.##");
-	protected final ArrayList<String> colors              = new ArrayList<String>(Arrays.asList("black", "brown", "white", "gray", "red"));
+	DecimalFormat       sizeFormat = new DecimalFormat("#####.00");
+	protected final ArrayList<String> colors              = new ArrayList<String>(Arrays.asList("Black", "Brown", "White", "Gray", "Red"));
 	protected final boolean[]         randomSelectionbool = {true, false};
 
 
@@ -61,7 +59,7 @@ public class Store {
 		staff.add(new Trainer());
 
 		// (size, color, broken, purebred) / (breed, age, health)
-		inventory.add(new Dog(Double.parseDouble(sizeFormat.format(new Random().nextDouble(50))), colors.get(new Random().nextInt(colors.size())), randomSelectionbool[new Random().nextInt(1)], randomSelectionbool[new Random().nextInt(1)]));
+		inventory.add(new Dog(Double.parseDouble(sizeFormat.format(new Random().nextDouble(50))), Color.values()[new Random().nextInt(Color.values().length)] /*colors.get(new Random().nextInt(colors.size()))*/, randomSelectionbool[new Random().nextInt(1)], randomSelectionbool[new Random().nextInt(1)]));
 		// (color, broken, purebred) / (breed, age, health)
 		inventory.add(new Cat(colors.get(new Random().nextInt(colors.size())), randomSelectionbool[new Random().nextInt(1)], randomSelectionbool[new Random().nextInt(1)]));
 		// (size, mimicry, exotic, papers) / (breed, age, health)
@@ -116,7 +114,7 @@ public class Store {
 
 
 	public void doInventory() {
-		
+
 	}
 
 	public void updateInventory(ArrayList<Item> updatedInventory) {
@@ -129,7 +127,7 @@ public class Store {
 
 	public void GoToBank() {
 		currentStaff.GoToBank();
-		addWithdrawal();		
+		addWithdrawal();
 	}
 
 
@@ -151,7 +149,7 @@ public class Store {
 			System.out.println("$" + cash + " was removed from the register.");
 		}
 		else {
-			System.out.println("$" + cash + " was added to the register.");			
+			System.out.println("$" + cash + " was added to the register.");
 		}
 	}
 

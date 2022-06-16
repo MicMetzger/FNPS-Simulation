@@ -45,10 +45,4 @@ public class CatLiter extends Supplies {
 		this.size = size;
 	}
 
-
-	@Override
-	public void update() {
-
-	}
-
 }

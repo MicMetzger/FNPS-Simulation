@@ -11,21 +11,21 @@ import java.util.Random;
 
 
 public class Employee implements StoreObserver {
-	private          int          workDays;
-	Employee base;
-	ArrayList<Item>     inventory;
-	ArrayList<Pet> 	sick;
+	private int workedDays;
+	Employee        base;
+	ArrayList<Item> inventory;
+	ArrayList<Pet>  sick;
 
 	static ArrayList<String> NAME_TEMPLATE = new ArrayList<String>(Arrays.asList("Kevin", "Andrew", "Michelle", "David", "Sarah"));
 
-	
-	public Employee(int workDays) {
-		this.workDays = workDays;
+
+	public Employee(int workedDays) {
+		this.workedDays = workedDays;
 	}
 
 
 	public Employee() {
-		workDays = 0;
+		workedDays = 0;
 	}
 
 
@@ -49,7 +49,7 @@ public class Employee implements StoreObserver {
 
 	@Override
 	public void update() {
-		
+
 	}
 
 
@@ -78,29 +78,29 @@ public class Employee implements StoreObserver {
 
 
 	/**
-	 * @return inventory so that Store inventory will be updated in Store
+	 *  inventory so that Store inventory will be updated in Store
 	 */
 	public void feedAnimals() {
 		Random rand = new Random();
-		for(Item item:inventory) {
-			if(item instanceof Pet) {
+		for (Item item : inventory) {
+			if (item instanceof Pet) {
 				// 5% chance of getting sick
-				boolean willBeSick = rand.nextInt(5) < 100;
-				String announcement = willBeSick ? " Feeds, and " + item.getName() + " got sick..." : " Feeds " + item.getName();
+				boolean willBeSick   = rand.nextInt(5) < 100;
+				String  announcement = willBeSick ? " Feeds, and " + item.getName() + " got sick..." : " Feeds " + item.getName();
 				announce(announcement);
-				if(willBeSick) {
-					sick.add((Pet)item);
+				if (willBeSick) {
+					sick.add((Pet) item);
 					inventory.remove(item);
 				}
 			}
 		}
 
-		for(Pet pet:sick) {
+		for (Pet pet : sick) {
 			// 25% change of recovering
-			boolean willRecover = rand.nextInt(25) < 100;
-			String announcement = willRecover ? " Feeds, and " + pet.getName() + " recovered from sick." : " Feeds " + pet.getName();
+			boolean willRecover  = rand.nextInt(25) < 100;
+			String  announcement = willRecover ? " Feeds, and " + pet.getName() + " recovered from sick." : " Feeds " + pet.getName();
 			announce(announcement);
-			if(willRecover) {
+			if (willRecover) {
 				inventory.add(pet);
 				sick.remove(pet);
 			}
@@ -140,36 +140,39 @@ public class Employee implements StoreObserver {
 
 	}
 
-	
+
 	public int getWorkDays() {
-		return workDays;
-	}
-	
-	
-	public void incWorkDays() {
-		workDays++;
+		return workedDays;
 	}
 
-	
-	public void dayoff() {
-		workDays = 0;
+
+	public void incWorkDays() {
+		workedDays++;
 	}
-	
-	
+
+
+	public void dayoff() {
+		workedDays = 0;
+	}
+
+
 	public void setInventory(ArrayList<Item> newInventory) {
 		this.inventory = newInventory;
 	}
+
 
 	public void setSickPets(ArrayList<Pet> newSickAnimals) {
 		this.sick = newSickAnimals;
 	}
 
+
 	public ArrayList<Pet> getSickAnimals() {
 		return sick;
 	}
 
-	
+
 	public ArrayList<Item> getInventory() {
 		return inventory;
 	}
+
 }

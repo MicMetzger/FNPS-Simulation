@@ -6,7 +6,7 @@ public enum Type {
 
 	public final String name;
 	
-	Type(String solid) {
-		name = solid;
+	Type(String type) {
+		name = type;
 	}
 }

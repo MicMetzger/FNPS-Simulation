@@ -17,7 +17,9 @@ public class Food extends Supplies {
 	// }
 
 
-	public Food() {}
+	public Food() {
+		super.supplyType = SupplyType.Food;
+	}
 
 
 	public Food(int size, Animal animal, Type type) {
@@ -25,7 +27,7 @@ public class Food extends Supplies {
 		this.size = size;
 		this.animal = animal;
 		this.type = type;
-
+		super.supplyType = SupplyType.Food;
 	}
 
 

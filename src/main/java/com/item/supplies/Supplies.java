@@ -9,6 +9,8 @@ import java.util.Random;
  *
  */
 public class Supplies extends Item {
+	SupplyType supplyType;
+
 
 	public Supplies() {
 		super();
@@ -33,25 +35,35 @@ public class Supplies extends Item {
 	public Supplies(String name, double purchasePrice, double listPrice, double salePrice, int dayArrived, int daySold) {
 		super(name, purchasePrice, listPrice, salePrice, dayArrived, daySold);
 	}
-	
+
+
 	public Supplies(String name, double pPrice) {
 		super(name, pPrice, new Random().nextDouble(25.0), 0.0, 0, 0);
 	}
-	
+
+
 	public Supplies(String name, double pPrice, double lPrice) {
 		super(name, pPrice, lPrice, 0.0, 0, 0);
 	}
+
 
 	public Supplies(String name, double pPrice, double lPrice, double sPrice) {
 		super(name, pPrice, lPrice, sPrice, 0, 0);
 	}
 
+
 	public Supplies(String name, double pPrice, double lPrice, double sPrice, int aDay) {
 		super(name, pPrice, lPrice, sPrice, aDay, 0);
 	}
 
+
 	public Supplies(Item suppliesCopy, double purchasePrice, int soldDay) {
 		super(suppliesCopy.getName(), purchasePrice, suppliesCopy.getListPrice(), suppliesCopy.getSalePrice(), suppliesCopy.getDayArrived(), soldDay);
+	}
+
+
+	public SupplyType getSupplyType() {
+		return supplyType;
 	}
 
 
@@ -60,29 +72,6 @@ public class Supplies extends Item {
 
 	}
 
-
-	@Override
-	public void announce(String announcement) {
-
-	}
-
-
-	@Override
-	public void update() {
-		
-	}
-
-
-	@Override
-	public void subscribe() {
-
-	}
-
-
-	@Override
-	public void unsubscribe() {
-
-	}
 
 }
 

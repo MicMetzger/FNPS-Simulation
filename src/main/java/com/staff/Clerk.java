@@ -8,8 +8,8 @@ public class Clerk extends Employee {
 	private String name = "";
 
 
-	public Clerk(int workDays, String name) {
-		super(workDays);
+	public Clerk(int workedDays, String name) {
+		super(workedDays);
 		this.name = name;
 	}
 

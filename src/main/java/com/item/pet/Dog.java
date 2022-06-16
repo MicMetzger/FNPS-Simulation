@@ -14,7 +14,7 @@ public class Dog extends Pet {
 	/**
 	 * The Color.
 	 */
-	public String  color;
+	public Color  color;
 	/**
 	 * The Housebroken.
 	 */
@@ -42,7 +42,7 @@ public class Dog extends Pet {
 	 * @param housebroken   the housebroken
 	 * @param purebred      the purebred
 	 */
-	public Dog(String name, int dayArrived, int daySold, double purchasePrice, double listPrice, double salePrice, Breed breed, int age, boolean healthy, double size, String color, boolean housebroken, boolean purebred) {
+	public Dog(String name, int dayArrived, int daySold, double purchasePrice, double listPrice, double salePrice, Breed breed, int age, boolean healthy, double size, Color color, boolean housebroken, boolean purebred) {
 		super(name, dayArrived, daySold, purchasePrice, listPrice, salePrice, breed, age, healthy);
 		this.size = size;
 		this.color = color;
@@ -62,7 +62,7 @@ public class Dog extends Pet {
 	 * @param housebroken the housebroken
 	 * @param purebred    the purebred
 	 */
-	public Dog(Breed breed, int age, boolean healthy, double size, String color, boolean housebroken, boolean purebred) {
+	public Dog(Breed breed, int age, boolean healthy, double size, Color color, boolean housebroken, boolean purebred) {
 		super(breed, age, healthy);
 		this.size = size;
 		this.color = color;
@@ -79,7 +79,7 @@ public class Dog extends Pet {
 	 * @param housebroken the housebroken
 	 * @param purebred    the purebred
 	 */
-	public Dog(double size, String color, boolean housebroken, boolean purebred) {
+	public Dog(double size, Color color, boolean housebroken, boolean purebred) {
 		super();
 		this.size = size;
 		this.color = color;
@@ -164,7 +164,7 @@ public class Dog extends Pet {
 	 *
 	 * @return the color
 	 */
-	public String getColor() {
+	public Color getColor() {
 		return color;
 	}
 
@@ -175,7 +175,7 @@ public class Dog extends Pet {
 	 * @param color the color
 	 */
 	public void setColor(String color) {
-		this.color = color;
+		this.color = Color.valueOf(color);
 	}
 
 
@@ -216,12 +216,6 @@ public class Dog extends Pet {
 	 */
 	public void setPurebred(boolean purebred) {
 		this.purebred = purebred;
-	}
-
-
-	@Override
-	public void announce(String announcement) {
-		
 	}
 
 }
