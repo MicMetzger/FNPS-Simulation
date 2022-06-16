@@ -13,12 +13,13 @@ public class Trainer extends Employee {
 		int num = new Random().nextInt(NAME_TEMPLATE.size());
 		this.name = NAME_TEMPLATE.get(num);
 		NAME_TEMPLATE.remove(num);
+		super.base = this;
 	}
 
 
 	@Override
 	public String getName() {
-		return name + ", the Trainer, ";
+		return name + ", the Trainer,";
 	}
 
 

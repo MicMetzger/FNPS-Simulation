@@ -122,12 +122,14 @@ public class Employee implements StoreObserver {
 
 	public void GoToBank() {
 		String announcement = "goes to the bank...";
+		announce(announcement);
 
 	}
 
 
 	public void processDeliveries() {
 		String announcement = "goes through today's deliveries...";
+		announce(announcement);
 
 	}
 
