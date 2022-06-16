@@ -47,6 +47,12 @@ public class SimState {
 		return currentState;
 	}
 
+	public State goCheckInventoryState() {
+		currentState = checkInventory;
+		currentState.enterState();
+		return currentState;
+	}
+
 	public void exitStoreState() {
 		currentState.exitState();
 	}
@@ -178,7 +184,6 @@ class OrderSupplies implements State {
 
 
 
-
 class CheckInventory implements State {
 	SimState simState;
 
@@ -190,6 +195,7 @@ class CheckInventory implements State {
 
 	@Override
 	public void enterState() {
+		simState.setStoreState(simState.goCheckInventoryState());
 		simState.store.currentStaff.feedAnimals();
 		simState.store.updateInventory(simState.store.currentStaff.getInventory());
 		simState.store.updateSickAnimals(simState.store.currentStaff.getSickAnimals());
