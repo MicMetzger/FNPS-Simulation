@@ -73,9 +73,13 @@ public class Employee implements StoreObserver {
 	}
 
 
-	private void feedAnimals() {
+	/**
+	 * @return inventory so that Store inventory will be updated in Store
+	 */
+	public ArrayList<Item> feedAnimals() {
 		// String announcement = "feeds "; //TODO
 
+		return inventory;
 	}
 
 
@@ -127,10 +131,12 @@ public class Employee implements StoreObserver {
 	}
 	
 	
-	public void setInventory(ArrayList<Item> inventory) {
-		this.inventory = inventory;
+	public void setInventory(ArrayList<Item> newInventory) {
+		this.inventory = newInventory;
 	}
-	
+
+
+
 	
 	public ArrayList<Item> getInventory() {
 		return inventory;

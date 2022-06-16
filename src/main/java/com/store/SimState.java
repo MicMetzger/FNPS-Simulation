@@ -83,10 +83,7 @@ class StartDay implements State {
 		if (simState.store.cash < 200.0) {
 			simState.store.GoToBank();
 		}
-		
-
 	}
-
 
 	@Override
 	public void exitState() {
@@ -121,7 +118,10 @@ class EndDay implements State {
 
 	@Override
 	public void enterState() {
-
+		/**
+		 * sets the updated inventory to the store inventory
+		 */
+		simState.store.currentStaff.setInventory(simState.store.currentStaff.feedAnimals());
 	}
 
 

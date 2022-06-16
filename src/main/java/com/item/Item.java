@@ -1,5 +1,5 @@
 package main.java.com.item;
-import main.java.com.inventory.StoreObserver;
+
 
 
 
@@ -7,7 +7,7 @@ import main.java.com.inventory.StoreObserver;
 /**
  *
  */
-public abstract class Item implements StoreObserver {
+public abstract class Item {
 	private String name;
 	private int   dayArrived;
 	private int   daySold;
