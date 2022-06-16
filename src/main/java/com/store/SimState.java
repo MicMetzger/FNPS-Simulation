@@ -191,8 +191,8 @@ class CheckInventory implements State {
 	@Override
 	public void enterState() {
 		simState.store.currentStaff.feedAnimals();
-		simState.store.currentStaff.setInventory(simState.store.currentStaff.getInventory());
-		simState.store.currentStaff.setSickPets(simState.store.currentStaff.getSickAnimals());
+		simState.store.updateInventory(simState.store.currentStaff.getInventory());
+		simState.store.updateSickAnimals(simState.store.currentStaff.getSickAnimals());
 	}
 
 
