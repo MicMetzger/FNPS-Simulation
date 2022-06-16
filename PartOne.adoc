@@ -58,7 +58,7 @@ class Example {
 code example that illustrates the difference. 
 +
 
-The main difference between abstraction and encapsulation is that abstraction is used to only show relevant information to hide implementation details whereas encapsulation is used to hide and protect data by limiting access to some specific data usually using getters and setters.
+The main difference between abstraction and encapsulation is that abstraction is used to only show relevant information to hide implementation details whereas encapsulation is used to hide and protect data by limiting access to some specific data usually using getters and setters. The relationship between abstraction and encapsulation is that encapsulation supports abstraction as it helps hide specific information.
 
 
 +
