@@ -8,8 +8,9 @@ import main.java.com.item.supplies.Type;
 import main.java.com.staff.Clerk;
 import main.java.com.staff.Employee;
 import main.java.com.staff.Trainer;
-import java.util.Arrays;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 
@@ -26,7 +27,7 @@ public class Store {
 	double              bankWithdrawal;
 	double              cash;
 	int                 day;
-
+	DecimalFormat       sizeFormat = new DecimalFormat("#####.##");
 	protected final ArrayList<String> colors              = new ArrayList<String>(Arrays.asList("black", "brown", "white", "gray", "red"));
 	protected final boolean[]         randomSelectionbool = {true, false};
 
@@ -60,11 +61,11 @@ public class Store {
 		staff.add(new Trainer());
 
 		// (size, color, broken, purebred) / (breed, age, health)
-		inventory.add(new Dog(new Random().nextDouble(50.0), colors.get(new Random().nextInt(colors.size())), randomSelectionbool[new Random().nextInt(1)], randomSelectionbool[new Random().nextInt(1)]));
+		inventory.add(new Dog(Double.parseDouble(sizeFormat.format(new Random().nextDouble(50))), colors.get(new Random().nextInt(colors.size())), randomSelectionbool[new Random().nextInt(1)], randomSelectionbool[new Random().nextInt(1)]));
 		// (color, broken, purebred) / (breed, age, health)
 		inventory.add(new Cat(colors.get(new Random().nextInt(colors.size())), randomSelectionbool[new Random().nextInt(1)], randomSelectionbool[new Random().nextInt(1)]));
 		// (size, mimicry, exotic, papers) / (breed, age, health)
-		inventory.add(new Bird(new Random().nextDouble(8.0), randomSelectionbool[new Random().nextInt(1)], randomSelectionbool[new Random().nextInt(1)], randomSelectionbool[new Random().nextInt(1)]));
+		inventory.add(new Bird(Double.parseDouble(sizeFormat.format(new Random().nextDouble(8))), randomSelectionbool[new Random().nextInt(1)], randomSelectionbool[new Random().nextInt(1)], randomSelectionbool[new Random().nextInt(1)]));
 		inventory.add(new Food(new Random().nextInt(100), Animal.values()[new Random().nextInt(Animal.values().length)], Type.values()[new Random().nextInt(Type.values().length)]));
 		inventory.add(new CatLiter(new Random().nextInt(100)));
 		inventory.add(new Leash(Animal.values()[new Random().nextInt(Animal.values().length)]));
@@ -120,16 +121,15 @@ public class Store {
 
 
 	public void GoToBank() {
-		currentStaff.announce(" goes to the bank...");
-		addWithdrawal();
-		addCash(1000);
-		
+		currentStaff.GoToBank();
+		addWithdrawal();		
 	}
 
 
 	private void addWithdrawal() {
-		this.bankWithdrawal += 1000;
-		System.out.println("$1000 was withdrawn from the bank.");
+		this.bankWithdrawal += 1000.00;
+		System.out.println("$1000.00 was withdrawn from the bank.");
+		addCash(1000.00);
 	}
 
 
@@ -139,7 +139,7 @@ public class Store {
 
 
 	public void addCash(double cash) {
-		this.cash += cash;
+		this.cash = Double.parseDouble(sizeFormat.format(this.cash += cash));
 		if (cash < 0) {
 			System.out.println("$" + cash + " was removed from the register.");
 		}

@@ -79,31 +79,33 @@ public class Employee implements StoreObserver {
 	}
 
 
-	private void processInventory() {
+	public void processInventory() {
 		String announcement = "goes through store inventory...";
 
 	}
 
 
-	private void CheckRegister() {
+	public void CheckRegister() {
 		String announcement = "checks the register...";
 
 	}
 
 
-	private void GoToBank() {
+	public void GoToBank() {
 		String announcement = "goes to the bank...";
+		announce(announcement);
 
 	}
 
 
-	private void processDeliveries() {
+	public void processDeliveries() {
 		String announcement = "goes through today's deliveries...";
+		announce(announcement);
 
 	}
 
 
-	private void PlaceAnOrder() {
+	public void PlaceAnOrder() {
 		// String announcement = "places an order for ";  //TODO
 
 
