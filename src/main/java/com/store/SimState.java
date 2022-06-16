@@ -118,7 +118,7 @@ class NewDay implements State {
 
 	@Override
 	public void nextState() {
-		simState.update();
+		// simState.update();
 		simState.setStoreState(simState.goStartDay());
 		exitState();
 	}
@@ -165,7 +165,7 @@ class StartDay implements State {
 
 	@Override
 	public void nextState() {
-		simState.update();
+		// simState.update();
 		simState.setStoreState(simState.goCheckInventory());
 		exitState();
 	}
@@ -277,7 +277,7 @@ class CheckInventory implements State {
 	@Override
 	public void enterState() {
 		simState.store.currentStaff.feedAnimals();
-		simState.store.updateInventory(simState.store.currentStaff.getInventory());
+		// simState.store.updateInventory(simState.store.currentStaff.getInventory());
 		simState.store.updateSickAnimals(simState.store.currentStaff.getSickAnimals());
 	}
 
@@ -321,7 +321,7 @@ class VisitBank implements State {
 
 	@Override
 	public void exitState() {
-		simState.update();
+		// simState.update();
 		simState.setStoreState(SimState.previousState);
 	}
 

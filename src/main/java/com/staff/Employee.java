@@ -21,11 +21,13 @@ public class Employee implements StoreObserver {
 
 	public Employee(int workedDays) {
 		this.workedDays = workedDays;
+		inventory = new ArrayList<>();
 	}
 
 
 	public Employee() {
 		workedDays = 0;
+		inventory = new ArrayList<>();
 	}
 
 
@@ -66,13 +68,13 @@ public class Employee implements StoreObserver {
 
 
 	public void arrival() {
-		String announcement = "enters the store...";
+		String announcement = " enters the store...";
 		announce(announcement);
 	}
 
 
 	private void leave() {
-		String announcement = "leaves the store...";
+		String announcement = " leaves the store...";
 		announce(announcement);
 	}
 
@@ -82,8 +84,8 @@ public class Employee implements StoreObserver {
 	 */
 	public void feedAnimals() {
 		Random rand = new Random();
-		for (Item item : inventory) {
-			if (item instanceof Pet) {
+		inventory.forEach(item -> {;
+			if (item.getClass().getCanonicalName().contains("pet")) {
 				// 5% chance of getting sick
 				boolean willBeSick   = rand.nextInt(5) < 100;
 				String  announcement = willBeSick ? " Feeds, and " + item.getName() + " got sick..." : " Feeds " + item.getName();
@@ -93,7 +95,7 @@ public class Employee implements StoreObserver {
 					inventory.remove(item);
 				}
 			}
-		}
+		});
 
 		for (Pet pet : sick) {
 			// 25% change of recovering
@@ -109,26 +111,26 @@ public class Employee implements StoreObserver {
 
 
 	public void processInventory() {
-		String announcement = "goes through store inventory...";
+		String announcement = " goes through store inventory...";
 
 	}
 
 
 	public void CheckRegister() {
-		String announcement = "checks the register...";
+		String announcement = " checks the register...";
 
 	}
 
 
 	public void GoToBank() {
-		String announcement = "goes to the bank...";
+		String announcement = " goes to the bank...";
 		announce(announcement);
 
 	}
 
 
 	public void processDeliveries() {
-		String announcement = "goes through today's deliveries...";
+		String announcement = " goes through today's deliveries...";
 		announce(announcement);
 
 	}
