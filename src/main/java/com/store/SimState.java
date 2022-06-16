@@ -77,6 +77,9 @@ class StartDay implements State {
 	
 	@Override
 	public void enterState() {
+		// if (simState.store.cash < 200.0) {
+		//	
+		// }
 		simState.store.day++;
 		simState.store.selectStaff(); 
 

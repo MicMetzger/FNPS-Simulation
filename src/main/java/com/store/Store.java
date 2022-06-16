@@ -1,9 +1,6 @@
 package main.java.com.store;
 import main.java.com.item.Item;
-import main.java.com.item.pet.Animal;
-import main.java.com.item.pet.Bird;
-import main.java.com.item.pet.Cat;
-import main.java.com.item.pet.Dog;
+import main.java.com.item.pet.*;
 import main.java.com.item.supplies.CatLiter;
 import main.java.com.item.supplies.Food;
 import main.java.com.item.supplies.Leash;
@@ -25,6 +22,7 @@ public class Store {
 	ArrayList<Item>     inventory;
 	ArrayList<Employee> staff;
 	Employee            currentStaff;
+	ArrayList<Pet>      sick;
 	// List<StoreObserver> observers;
 	double              cash;
 	int                 day;
@@ -42,7 +40,8 @@ public class Store {
 	public Store() {
 		staff = new ArrayList<Employee>();
 		inventory = new ArrayList<Item>();
-		// currentStaff
+		sick = new ArrayList<Pet>();
+		
 		cash = 0;
 		day = 0;
 		initItemsAndStaff();
@@ -109,6 +108,11 @@ public class Store {
 		currentStaff.incWorkDays();
 	}
 
+
+	public void doInventory() {
+		
+
+	}
 
 }
 

@@ -69,7 +69,7 @@ public class Supplies extends Item {
 
 	@Override
 	public void update() {
-
+		
 	}
 
 
