@@ -19,7 +19,6 @@ public class Employee {
 	ArrayList<Pet>  sick;
 
 	double cash;
-	double totalWithdraw;
 
 	ArrayList<DeliveryPackage> mailBox;
 
@@ -30,7 +29,6 @@ public class Employee {
 		this.workedDays = workedDays;
 		inventory       = new ArrayList<>();
 		cash            = 0;
-		totalWithdraw   = 0;
 		mailBox = new ArrayList<>();
 	}
 
@@ -39,7 +37,6 @@ public class Employee {
 		workedDays    = 0;
 		inventory     = new ArrayList<>();
 		cash          = 0;
-		totalWithdraw = 0;
 		mailBox = new ArrayList<>();
 	}
 
@@ -132,23 +129,24 @@ public class Employee {
 		announce(announcement);
 
 		cash += 1000;
-		totalWithdraw += 1000;
 	}
 
 
 	public void processDeliveries() {
 		String announcement = " goes through today's deliveries...";
 		announce(announcement);
+		ArrayList<DeliveryPackage> RECEIVED_PACKAGES = new ArrayList<DeliveryPackage>();
 
 		if(mailBox.size() != 0) {
 			mailBox.forEach(item -> {
 				if (item.getExpectedDeliveryDate() == workedDays) {
-					String announcementDelivery = item.getPackageName() + " has arrived and is added to the inventory.";
-					announce(announcement);
+					String announcementDelivery = " " + item.getPackageName() + " has arrived and is added to the inventory.";
+					announce(announcementDelivery);
 					inventory.add(item.getItem());
-					mailBox.remove(item);
+					RECEIVED_PACKAGES.add(item);
 				}
 			});
+			mailBox.removeAll(RECEIVED_PACKAGES);
 		}
 		else { // mailbox empty
 			String announcementError = " notices that the mailbox is empty!";
@@ -188,8 +186,8 @@ public class Employee {
 			newPackage.setItem(new Leash(name, purchasePrice, purchasePrice*2, salePrice, daySold, expectedDeliveryDate, Animal.values()[new Random().nextInt(Animal.values().length)]));
 		} else if (name == "Toy") {
 			newPackage.setItem(new Toy(name, purchasePrice, purchasePrice*2, salePrice, daySold, expectedDeliveryDate, Animal.values()[new Random().nextInt(Animal.values().length)]));
-		} else if(name == "Cat Litter") {
-			newPackage.setItem(new CatLiter(name, purchasePrice, purchasePrice*2, salePrice, daySold, expectedDeliveryDate, new Random().nextInt(100)));
+		} else if(name == "CatLitter") {
+			newPackage.setItem(new CatLitter(name, purchasePrice, purchasePrice*2, salePrice, daySold, expectedDeliveryDate, new Random().nextInt(100)));
 		}
 
 		return newPackage;
@@ -206,7 +204,7 @@ public class Employee {
 
 		Random            rand            = new Random();
 		ArrayList<String> itemToBeRemoved = new ArrayList<String>();
-		ArrayList<String> ITEM_TO_ORDER   = new ArrayList<String>(Arrays.asList("Dog", "Cat", "Bird", "Food", "Leash", "Toy", "Cat Litter"));
+		ArrayList<String> ITEM_TO_ORDER   = new ArrayList<String>(Arrays.asList("Dog", "Cat", "Bird", "Food", "Leash", "Toy", "CatLitter"));
 		String            announcement    = " checking the inventory...";
 		double 			  totalInventoryValue = 0.0;
 
@@ -219,6 +217,7 @@ public class Employee {
 				itemToBeRemoved.add(itemName);
 			}
 		};
+		if("Cat Litter".contains("Cat Litter"))
 
 		announce(" reporting the total inventory value. Total Value: $" + totalInventoryValue);
 		ITEM_TO_ORDER.removeAll(itemToBeRemoved);
@@ -226,6 +225,7 @@ public class Employee {
 
 		// ITEM_TO_ORDER is now left with items that need to be ordered (0 stock)
 		for (String name : ITEM_TO_ORDER) {
+			System.out.println(name + " needs to be purchased.");
 			int    expectedDeliveryDate = workedDays + rand.nextInt(3);
 			double purchasePrice        = rand.nextInt(100);
 			if (cash >= purchasePrice) {
@@ -234,17 +234,57 @@ public class Employee {
 			}
 			else {
 				// insufficient money
+				System.out.println("Purchase failed: Insufficient money");
 				itemToBeRemoved.add(name);
 			}
 		}
-		ITEM_TO_ORDER.removeAll(itemToBeRemoved);
+		ITEM_TO_ORDER.clear();
+	}
+
+
+	public void cleanStore() {
+		String announcement = " cleans the store...";
+		announce(announcement);
+		ArrayList<Pet> ESCAPING_ANIMALS = new ArrayList<Pet>();
+
+		announce(" cleans the animal cage.");
+		for(Item item:inventory) {
+			if (item.getClass().getCanonicalName().contains("pet")) {
+				if(new SecureRandom().nextInt(100) < 50) {
+					announcement = " accidentally has escape " + item.getName();
+					announce(announcement);
+					if(new SecureRandom().nextInt(100) < 50) { // clerk catches escaping animal
+						announce(" catches " + item.getName() + " and puts it back in the cage");
+					} else { // animal escaped
+						System.out.println("[-] " + item.getName() + " successfully escapes for freedom..........");
+						ESCAPING_ANIMALS.add(((Pet) item));
+					}
+				}
+			}
+		};
+		inventory.removeAll(ESCAPING_ANIMALS);
+		ESCAPING_ANIMALS.clear();
+
+		announce(" cleans the sick animal cage.");
+		for(Pet item:sick) {
+			if(new SecureRandom().nextInt(100) < 5) {
+				announcement = " accidentally has escape " + item.getName();
+				announce(announcement);
+				if(new SecureRandom().nextInt(100) < 50) { // clerk catches escaping animal
+					announce(" catches " + item.getName() + " and puts it back in the cage");
+				} else { // animal escaped
+					System.out.println("[-] " + item.getName() + " successfully escapes for freedom..........");
+					ESCAPING_ANIMALS.add(((Pet) item));
+				}
+			}
+		};
+		sick.removeAll(ESCAPING_ANIMALS);
 	}
 
 
 	public int getWorkDays() {
 		return workedDays;
 	}
-
 
 	public void incWorkDays() {
 		workedDays++;
@@ -296,10 +336,6 @@ public class Employee {
 	}
 
 
-	public double exchangeCash() {
-		double temp = this.cash;
-		this.cash = 0;
-		return temp;
-	}
+
 
 }

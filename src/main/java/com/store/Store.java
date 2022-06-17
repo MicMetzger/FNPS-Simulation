@@ -70,7 +70,7 @@ public class Store {
 		inventory.add(new Bird(Double.parseDouble(sizeFormat.format(new Random().nextDouble(8))), randomSelectionbool[new Random().nextInt(1)], randomSelectionbool[new Random().nextInt(1)], randomSelectionbool[new Random().nextInt(1)]));
 
 		inventory.add(new Food(new Random().nextInt(100), Animal.values()[new Random().nextInt(Animal.values().length)], Type.values()[new Random().nextInt(Type.values().length)]));
-		inventory.add(new CatLiter(new Random().nextInt(100)));
+		inventory.add(new CatLitter(new Random().nextInt(100)));
 		inventory.add(new Toy(Animal.values()[new Random().nextInt(Animal.values().length)]));
 		inventory.add(new Leash(Animal.values()[new Random().nextInt(Animal.values().length)]));
 		// inventory.add()
@@ -123,7 +123,7 @@ public class Store {
 
 	public void openStore() {
 		int count = attractCustomers(new SecureRandom().nextInt(3, 10));
-		System.out.println(currentStaff.getName() + " opens the store. \nCurrent inventory: " + inventory.size() + " item(s)\nCash: " + cash);
+		System.out.println(currentStaff.getName() + " opens the store. \nCurrent inventory: " + inventory.size() + " item(s)\nRegister: " + cash);
 		System.out.println(count + " potential customers enter the store...");
 		boolean buyAtListPrice = new SecureRandom().nextInt(100) < 50;
 
@@ -133,15 +133,17 @@ public class Store {
 			if (selecting) {
 				inventory.remove(customer.obj);
 				System.out.println("[+] The customer has made a selection!");
-				System.out.println("[+] The customer wishes to purchase: " + customer.obj.getName() + " at $" + customer.getPurchasePrice() + (customer.discount ? "(discounted)" : "")) ;
+				System.out.println("[+] The customer purchases " + customer.obj.getName() + " at $" + customer.getPurchasePrice() + (customer.discount ? " after a 10% discount" : "")) ;
 				cash += customer.getPurchasePrice();
 			}
 		});
+		currentStaff.setCash(cash);
 		System.out.println("\nCurrent inventory: " + inventory.size() + " item(s)\nCash: " + cash);
 	}
 
 
 	private int attractCustomers(int count) {
+		customers.clear();
 		for (int i = 0; i < count; i++) {
 			customers.add(new Customer());
 		}
@@ -171,8 +173,9 @@ public class Store {
 
 
 	public void updateCash() {
-		this.cash = currentStaff.exchangeCash();
+		this.cash = currentStaff.getCash();
 	}
+
 
 
 	/**
@@ -192,9 +195,11 @@ public class Store {
 
 
 	private void addWithdrawal() {
-		this.bankWithdrawal += 1000.00;
 		System.out.println("$1000.00 was withdrawn from the bank.");
-		addCash(1000.00);
+		cash += currentStaff.getCash();
+		bankWithdrawal += 1000;
+		System.out.println("Total withdrawal: " + bankWithdrawal);
+		System.out.println("Total cash: "  + cash);
 	}
 
 

@@ -1,4 +1,6 @@
 package main.java.com.store;
+import org.xml.sax.helpers.AttributesImpl;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,7 +9,7 @@ import java.util.List;
 
 public class SimState {
 	// Package level access, static, state control variables
-	static State newDay, startDay, endDay, processDelivery, orderSupplies, checkInventory, visitBank, checkRegister, doInventory, openStore;
+	static State newDay, startDay, endDay, processDelivery, feedAnimals, visitBank, checkRegister, doInventory, openStore, cleanStore, goEndSimulation;
 	static State       currentState;
 	static State       endState;
 	static State       previousState;
@@ -17,28 +19,30 @@ public class SimState {
 
 
 	public SimState(Store sim) {
-		 stateList = new ArrayList<State>();
+		stateList 		= new ArrayList<State>();
 		store           = sim;
 		newDay          = new NewDay(this);
 		startDay        = new StartDay(this);
 		endDay          = new EndDay(this);
-		checkInventory  = new CheckInventory(this);
-		orderSupplies   = new OrderSupplies(this);
+		feedAnimals		= new FeedAnimals(this);
 		visitBank       = new VisitBank(this);
 		checkRegister   = new CheckRegister(this);
 		doInventory     = new DoInventory(this);
 		processDelivery = new ProcessDelivery(this);
+		cleanStore 		= new CleanStore(this);
 		openStore  		= new OpenStore(this);
+		goEndSimulation = new GoEndSimulation(this);
 		// RUNNING = true;
 
 		stateList.add(startDay);
 		stateList.add(endDay);
-		stateList.add(checkInventory);
-		stateList.add(orderSupplies);
+		stateList.add(feedAnimals);
 		stateList.add(visitBank);
 		stateList.add(checkRegister);
 		stateList.add(doInventory);
 		stateList.add(openStore);
+		stateList.add(cleanStore);
+		stateList.add(goEndSimulation);
 		goNewDay();
 	}
 
@@ -46,7 +50,6 @@ public class SimState {
 	public void setStoreState(State state) {
 		previousState = currentState;
 		currentState  = state;
-		// currentState.enterState();
 	}
 
 
@@ -70,22 +73,27 @@ public class SimState {
 
 
 	public State goVisitBankState()  {
-		previousState = currentState;
+
 		return visitBank;
 	}
 
 
-	public State goCheckInventory()  {return checkInventory;}
+	public State goFeedAnimals()  {return feedAnimals;}
 
 
 	public State goDoInventory()     {return doInventory;}
 
 	public State goOpenStore() 		 {return openStore; }
 
+	public State goCleanStore() 	 {return cleanStore;}
+
 	public State goEndDay()          {return endDay;}
 
 
+	public State goEndSimulation()	{ return goEndSimulation;}
+
 	public void goEnterState()       {currentState.enterState();}
+
 
 
 	// public void update() {stateList.forEach(state -> state.update(this));}
@@ -109,6 +117,10 @@ class NewDay implements State {
 	@Override
 	public void enterState() {
 		System.out.println("\n##################################################");
+		if(simState.store.day == 3) {
+			simState.setStoreState(simState.goEndSimulation());
+			exitState();
+		}
 
 		simState.store.day++;
 		simState.store.selectStaff();
@@ -155,7 +167,7 @@ class StartDay implements State {
 
 	@Override
 	public void enterState() {
-		System.out.println("\n##################################################");
+		System.out.println("\n#################################################");
 
 		System.out.println("Total Store Cash: " + simState.store.getCash());
 		if (simState.store.cash < 200.0) {
@@ -181,59 +193,6 @@ class StartDay implements State {
 		// simState.update();
 		simState.setStoreState(simState.goProcessDelivery());
 		simState.goEnterState();
-
-		simState.setStoreState(simState.goCheckInventory());
-		simState.goEnterState();
-		// simState.setStoreState(SimState.previousState);
-		simState.setStoreState(simState.goDoInventory());
-		simState.goDoInventory();
-
-		simState.setStoreState(simState.goOpenStore());
-		simState.goOpenStore();
-
-
-		exitState();
-	}
-
-}
-
-
-/**
- * End day.
- * Completion of daily route.
- * <p>
- * Clean-up and preparation for sequence restart.
- */
-class EndDay implements State {
-	SimState simState;
-
-
-	public EndDay(SimState simState) {
-		this.simState = simState;
-	}
-
-
-	@Override
-	public void enterState() {
-		System.out.println("##################################################");
-		System.out.println("The workday comes to an end...");
-		// TODO: 4
-		nextState();
-	}
-
-
-	@Override
-	public void exitState() {
-		System.out.println("##################################################\n");
-
-		simState.goNewDay();
-	}
-
-
-	@Override
-	public void nextState() {
-
-		// simState.setStoreState(simState.goEndDay());
 		exitState();
 	}
 
@@ -264,8 +223,14 @@ class ProcessDelivery implements State {
 	public void exitState() {
 		System.out.println("##################################################\n");
 
+		simState.store.updateMailBox();
+		simState.store.updateInventory();
+		simState.setStoreState(simState.goFeedAnimals());
+		simState.goFeedAnimals();
 
-		// simState.goEnterState();
+
+		// simState.setStoreState(SimState.previousState);
+
 	}
 
 
@@ -279,37 +244,11 @@ class ProcessDelivery implements State {
 }
 
 
-class OpenStore implements State{
-	SimState simState;
-
-	public OpenStore(SimState simState) {
-		this.simState = simState;
-	}
-
-	@Override
-	public void enterState() {
-		System.out.println("##################################################\n");
-		simState.store.openStore();
-	}
-
-	@Override
-	public void exitState() {
-		System.out.println("##################################################\n");
-	}
-
-	@Override
-	public void nextState() {
-
-	}
-}
-
-
-
-class DoInventory implements State {
+class FeedAnimals implements State {
 	SimState simState;
 
 
-	public DoInventory(SimState simState) {
+	public FeedAnimals(SimState simState) {
 		this.simState = simState;
 	}
 
@@ -317,29 +256,27 @@ class DoInventory implements State {
 	@Override
 	public void enterState() {
 		System.out.println("\n##################################################");
-
-		// if approriate, call orderSupplies
-		simState.store.currentStaff.doInventory();
-
+		simState.store.currentStaff.feedAnimals();
+		nextState();
 	}
 
 
 	@Override
 	public void exitState() {
-		System.out.println("##################################################\n");
+		simState.setStoreState(simState.goCheckRegister());
 		simState.goEnterState();
-
 		// TODO: update information and report. Afterwards, call nextState()
 	}
 
 
 	@Override
 	public void nextState() {
-
+		simState.store.updateInventory();
+		simState.store.updateSickAnimal();
+		exitState();
 	}
 
 }
-
 
 
 
@@ -358,9 +295,11 @@ class CheckRegister implements State {
 		if (!simState.store.checkRegister()) {
 			System.out.println("Register cash is low... ");
 			simState.setStoreState(simState.goVisitBankState());
+			exitState();
 		}
 		else {
 			System.out.println("Cash is sufficient.");
+			nextState();
 		}
 	}
 
@@ -370,7 +309,6 @@ class CheckRegister implements State {
 		System.out.println("##################################################\n");
 
 		// TODO: update information and report. Afterwards, call nextState()
-		simState.store.currentStaff.processInventory();
 		simState.goEnterState();
 	}
 
@@ -379,90 +317,13 @@ class CheckRegister implements State {
 	public void nextState() {
 		totalWithdrawn = simState.store.bankWithdrawal;
 		System.out.println("Total Bank Withdraw: " + totalWithdrawn);
-		System.out.println("Register: " + simState.store.getCash());
+		System.out.println("Cash: " + simState.store.getCash());
 		simState.setStoreState(simState.goDoInventory());
 		exitState();
 
 	}
 
 }
-
-
-
-
-/**
- * Order supplies.
- */
-class OrderSupplies implements State {
-	SimState simState;
-
-
-	public OrderSupplies(SimState simState) {
-		this.simState = simState;
-	}
-
-
-	@Override
-	public void enterState() {
-//		simState.store.currentStaff.placeAnOrder();
-	}
-
-
-	@Override
-	public void exitState() {
-		System.out.println("##################################################\n");
-
-		simState.goEnterState();
-
-		// TODO: update information and report. Afterwards, call nextState()
-	}
-
-
-	@Override
-	public void nextState() {
-		simState.store.updateCash();
-		simState.store.updateMailBox();
-		simState.store.updateInventory();
-	}
-
-}
-
-
-
-
-class CheckInventory implements State {
-	SimState simState;
-
-
-	public CheckInventory(SimState simState) {
-		this.simState = simState;
-	}
-
-
-	@Override
-	public void enterState() {
-		System.out.println("\n##################################################");
-		simState.store.currentStaff.feedAnimals();
-	}
-
-
-	@Override
-	public void exitState() {
-		System.out.println("##################################################\n");
-
-		// TODO: update information and report. Afterwards, call nextState()
-	}
-
-
-	@Override
-	public void nextState() {
-		simState.store.updateInventory();
-		simState.store.updateSickAnimal();
-	}
-
-}
-
-
 
 
 class VisitBank implements State {
@@ -496,3 +357,172 @@ class VisitBank implements State {
 	}
 
 }
+
+
+
+class DoInventory implements State {
+	SimState simState;
+
+
+	public DoInventory(SimState simState) {
+		this.simState = simState;
+	}
+
+
+	@Override
+	public void enterState() {
+		System.out.println("\n##################################################");
+		simState.store.currentStaff.doInventory();
+		nextState();
+	}
+
+
+	@Override
+	public void exitState() {
+		System.out.println("##################################################\n");
+		simState.goEnterState();
+
+		// TODO: update information and report. Afterwards, call nextState()
+	}
+
+
+	@Override
+	public void nextState() {
+		simState.setStoreState(simState.goOpenStore());
+		simState.store.updateCash();
+		simState.store.updateInventory();
+		exitState();
+	}
+
+}
+
+
+class OpenStore implements State{
+	SimState simState;
+
+	public OpenStore(SimState simState) {
+		this.simState = simState;
+	}
+
+	@Override
+	public void enterState() {
+		System.out.println("##################################################\n");
+		simState.store.openStore();
+		nextState();
+	}
+
+	@Override
+	public void exitState() {
+		System.out.println("##################################################\n");
+		simState.goEnterState();
+	}
+
+	@Override
+	public void nextState() {
+		simState.store.updateCash();
+		simState.setStoreState(simState.goCleanStore());
+		exitState();
+	}
+}
+
+class CleanStore implements State {
+	SimState simState;
+
+	public CleanStore(SimState simState) {
+		this.simState = simState;
+	}
+
+	@Override
+	public void enterState() {
+		System.out.println("##################################################\n");
+		simState.store.currentStaff.cleanStore();
+		nextState();
+	}
+
+	@Override
+	public void exitState() {
+		System.out.println("##################################################\n");
+		simState.setStoreState(simState.goEndDay());
+		simState.goEnterState();
+	}
+
+	@Override
+	public void nextState() {
+		simState.store.updateInventory();
+		simState.store.updateSickAnimal();
+		exitState();
+	}
+}
+
+
+/**
+ * End day.
+ * Completion of daily route.
+ * <p>
+ * Clean-up and preparation for sequence restart.
+ */
+class EndDay implements State {
+	SimState simState;
+
+
+	public EndDay(SimState simState) {
+		this.simState = simState;
+	}
+
+
+	@Override
+	public void enterState() {
+		System.out.println("##################################################");
+		System.out.println("The workday comes to an end...");
+		// TODO: 4
+		// empty register and store cash in Store
+		simState.store.updateCash();
+		nextState();
+	}
+
+
+	@Override
+	public void exitState() {
+		System.out.println("##################################################\n");
+
+		simState.goNewDay();
+	}
+
+
+	@Override
+	public void nextState() {
+
+		// simState.setStoreState(simState.goEndDay());
+		exitState();
+	}
+
+}
+
+
+class GoEndSimulation implements State {
+
+	SimState simState;
+
+	GoEndSimulation(SimState simState) {
+		this.simState = simState;
+	}
+
+	@Override
+	public void enterState() {
+		System.out.println(simState.store.cash);
+		System.out.println(simState.store.bankWithdrawal);
+		nextState();
+	}
+
+	@Override
+	public void exitState() {
+		System.exit(0);
+	}
+
+	@Override
+	public void nextState() {
+		exitState();
+	}
+}
+
+

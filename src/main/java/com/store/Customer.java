@@ -29,6 +29,7 @@ public class Customer {
 			int roll = rand.nextInt(0, 10);
 
 			if (roll == 1) {
+				// TODO: add a functionality where the desired item is out of stock
 				if(rand.nextInt(100) < 50) { // 50% chance of buying the item at listPrice
 					obj = item;
 					purchasePrice = obj.getListPrice();
