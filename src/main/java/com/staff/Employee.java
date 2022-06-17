@@ -177,8 +177,8 @@ public class Employee implements StoreObserver {
 
 		// ITEM_TO_ORDER is now left with items that need to be ordered
 		for(String name:ITEM_TO_ORDER) {
-			int expectedDeliveryDate = workedDays + rand.nextInt(3);
-			double purchasePrice = rand.nextInt(100);
+			int    expectedDeliveryDate = workedDays + rand.nextInt(3);
+			double purchasePrice        = rand.nextInt(100);
 			if(cash >= purchasePrice) {
 				mailBox.add(orderItem(name, expectedDeliveryDate, purchasePrice));
 				cash -= purchasePrice;
