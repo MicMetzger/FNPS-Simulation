@@ -92,7 +92,7 @@ public class Employee {
 		for (Pet pet : sick) {
 			// 25% change of recovering
 			boolean willRecover  = rand.nextInt(100) < 25;
-			String  announcement = willRecover ? " Feeds, and " + pet.getName() + " recovered from sick." : " Feeds " + pet.getName();
+			String  announcement = willRecover ? " Feeds a sick animal, and " + pet.getName() + " recovered from sick." : " Feeds a sick animal " + pet.getName();
 			announce(announcement);
 			if (willRecover) {
 				inventory.add(pet);
