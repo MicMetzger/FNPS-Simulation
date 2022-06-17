@@ -1,23 +1,12 @@
 package main.java.com.item.pet;
-enum Breed {
-	;
-	private final String name;
+public enum Breed {
+	Bulldog("Bulldog"),
+	Poodle("Poodle"),
+	Beagle("Beagle"),
+	Shibainu("Shibainu");
+
+	private final String breed;
 
 
-	Breed(String name) {this.name = name;}
-
-
-	public String toString() {
-		return this.name;
-	}
-
-
-	public boolean equals(String breed) {
-		return this.name.equals(breed);
-	}
-
-
-	// public Breed getBreed() {
-	// 	return this;
-	// }
+	Breed(String breed) {this.breed = breed;}
 }

@@ -7,6 +7,10 @@ public class DeliveryPackage {
     private String packageName;
     private int expectedDeliveryDate;
 
+    public DeliveryPackage(String packageName, int expectedDeliveryDate) {
+        this.packageName = packageName;
+        this.expectedDeliveryDate = expectedDeliveryDate;
+    }
     public DeliveryPackage(Item item, String packageName, int expectedDeliveryDate) {
         this.item = item;
         this.packageName = packageName;

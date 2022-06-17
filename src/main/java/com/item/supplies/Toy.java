@@ -1,4 +1,5 @@
 package main.java.com.item.supplies;
+import main.java.com.item.pet.Animal;
 import main.java.com.item.pet.Pet;
 
 
@@ -7,7 +8,7 @@ import main.java.com.item.pet.Pet;
 public class Toy extends Supplies {
 
 	// The animal
-	private Pet animal;
+	private Animal animal;
 
 
 	/**
@@ -16,11 +17,11 @@ public class Toy extends Supplies {
 	 * @param animal the animal
 	 */
 
-	public Toy(Pet animal) {
-		super();
+	public Toy(String name, double purchasePrice, double listPrice, double salePrice, int daySold, int dayArrived, Animal animal) {
+		super(name, purchasePrice, listPrice, salePrice, dayArrived, daySold);
 		this.animal = animal;
-		super.supplyType = SupplyType.Toy;
 	}
+
 
 
 	/**
@@ -30,26 +31,6 @@ public class Toy extends Supplies {
 	public Toy() {
 		super();
 		super.supplyType = SupplyType.Toy;
-	}
-
-
-	/**
-	 * Gets the animal
-	 *
-	 * @return the animal
-	 */
-	public Pet getAnimal() {
-		return animal;
-	}
-
-
-	/**
-	 * Sets the animal
-	 *
-	 * @param animal the animal
-	 */
-	public void setAnimal(Pet animal) {
-		this.animal = animal;
 	}
 
 }

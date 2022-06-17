@@ -1,18 +1,21 @@
 package main.java.com.staff;
-import main.java.com.inventory.StoreObserver;
 import main.java.com.item.Item;
-import main.java.com.item.pet.Pet;
+import main.java.com.item.pet.*;
+import main.java.com.item.supplies.CatLiter;
+import main.java.com.item.supplies.Food;
+import main.java.com.item.supplies.Leash;
+import main.java.com.item.supplies.Toy;
+import main.java.com.item.supplies.Type;
 import main.java.com.store.DeliveryPackage;
-import main.java.com.store.deliveryProcesser.ItemOrderProcessor;
-
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
+import static main.java.com.item.supplies.SupplyType.Toy;
 
 
-
-public class Employee implements StoreObserver {
+public class Employee {
 	private int workedDays;
 	Employee        base;
 	ArrayList<Item> inventory;
@@ -37,39 +40,19 @@ public class Employee implements StoreObserver {
 	}
 
 
-	@Override
 	public String getName() {
 		return base.getName();
 	}
 
 
-	@Override
+
 	public void setName(String name) {
 		base.setName(name);
 	}
 
 
-	@Override
 	public void announce(String announcement) {
 		System.out.println(getName() + announcement);
-	}
-
-
-	@Override
-	public void update() {
-
-	}
-
-
-	@Override
-	public void subscribe() {
-
-	}
-
-
-	@Override
-	public void unsubscribe() {
-
 	}
 
 
@@ -155,10 +138,31 @@ public class Employee implements StoreObserver {
 	 */
 	public DeliveryPackage orderItem(String name, int expectedDeliveryDate, double purchasePrice) {
 		// TODO: implement
-		if(name == "Dog") {
+		DecimalFormat sizeFormat 					= new DecimalFormat("#####.00");
+		final ArrayList<String> colors              = new ArrayList<String>(Arrays.asList("Black", "Brown", "White", "Gray", "Red"));
+		DeliveryPackage newPackage = new DeliveryPackage(name, expectedDeliveryDate);
+		int daySold 	= 0;
+		int salePrice 	= 0;
+		int age			= new Random().nextInt(15);
 
+		// TODO: Make Breeds for each animals in Breed enum
+		if(name == "Dog") {
+			newPackage.setItem(new Dog(name, expectedDeliveryDate, daySold, purchasePrice, purchasePrice*2, salePrice, Breed.values()[new Random().nextInt(Breed.values().length)], age, new Random().nextInt(2) == 1, Double.parseDouble(sizeFormat.format(new Random().nextDouble(50))), Color.values()[new Random().nextInt(Color.values().length)], new Random().nextInt(2) == 1, new Random().nextInt(2) == 1));
+		} else if(name == "Cat") {
+			newPackage.setItem(new Cat(name, expectedDeliveryDate, daySold, purchasePrice, purchasePrice*2, salePrice, Breed.values()[new Random().nextInt(Breed.values().length)], age, new Random().nextInt(2) == 1, colors.get(new Random().nextInt(colors.size())), new Random().nextInt(2) == 1, new Random().nextInt(2) == 1));
+		} else if (name == "Bird") {
+			newPackage.setItem(new Bird(name, expectedDeliveryDate, daySold, purchasePrice, purchasePrice*2, salePrice, Breed.values()[new Random().nextInt(Breed.values().length)], age, new Random().nextInt(2) == 1, Double.parseDouble(sizeFormat.format(new Random().nextDouble(8))), new Random().nextInt(2) == 1, new Random().nextInt(2) == 1, new Random().nextInt(2) == 1));
+		} else if(name == "Food") {
+			newPackage.setItem(new Food(name, purchasePrice, purchasePrice*2, salePrice, daySold, expectedDeliveryDate, new Random().nextInt(100), Animal.values()[new Random().nextInt(Animal.values().length)], Type.values()[new Random().nextInt(Type.values().length)]));
+		} else if(name == "Leash") {
+			newPackage.setItem(new Leash(name, purchasePrice, purchasePrice*2, salePrice, daySold, expectedDeliveryDate, Animal.values()[new Random().nextInt(Animal.values().length)]));
+		} else if (name == "Toy") {
+			newPackage.setItem(new Toy(name, purchasePrice, purchasePrice*2, salePrice, daySold, expectedDeliveryDate, Animal.values()[new Random().nextInt(Animal.values().length)]));
+		} else if(name == "Cat Litter") {
+			newPackage.setItem(new CatLiter(name, purchasePrice, purchasePrice*2, salePrice, daySold, expectedDeliveryDate, new Random().nextInt(100)));
 		}
 
+		return newPackage;
 	}
 
 
@@ -175,7 +179,7 @@ public class Employee implements StoreObserver {
 			}
 		});
 
-		// ITEM_TO_ORDER is now left with items that need to be ordered
+		// ITEM_TO_ORDER is now left with items that need to be ordered (0 stock)
 		for(String name:ITEM_TO_ORDER) {
 			int    expectedDeliveryDate = workedDays + rand.nextInt(3);
 			double purchasePrice        = rand.nextInt(100);

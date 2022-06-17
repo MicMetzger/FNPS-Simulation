@@ -7,7 +7,7 @@ package main.java.com.item.supplies;
 public class CatLiter extends Supplies {
 	// The size of the cat liter.
 	private int    size;
-	private String animal;
+
 
 
 	/**
@@ -25,6 +25,10 @@ public class CatLiter extends Supplies {
 	 */
 	public CatLiter() {}
 
+	public CatLiter(String name, double purchasePrice, double listPrice, double salePrice, int daySold, int dayArrived, int size) {
+		super(name, purchasePrice, listPrice, salePrice, dayArrived, daySold);
+		this.size = size;
+	}
 
 	/**
 	 * Gets the cat liter size.

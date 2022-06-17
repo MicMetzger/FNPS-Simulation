@@ -30,8 +30,10 @@ public class Leash extends Supplies {
 	 * Default constructor
 	 */
 
-	public Leash() {}
-
+	public Leash(String name, double purchasePrice, double listPrice, double salePrice, int dayArrived, int daySold, Animal animal) {
+		super(name, purchasePrice, listPrice, salePrice, dayArrived, daySold);
+		this.animal = animal;
+	}
 
 	/**
 	 * Gets the animal

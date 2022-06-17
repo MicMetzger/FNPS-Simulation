@@ -10,12 +10,12 @@ public class Food extends Supplies {
 	private Type type;
 
 
-	// public Food(int size, Pet animal, Type type) {
-	// 	this.size = size;
-	// 	this.animal = animal;
-	// 	this.type = type;
-	// }
-
+	public Food(String name, double purchasePrice, double listPrice, double salePrice, int dayArrived, int daySold, int size, Animal animal, Type type) {
+		super(name, purchasePrice, listPrice, salePrice, dayArrived, daySold);
+		this.size = size;
+		this.animal = animal;
+		this.type = type;
+	}
 
 	public Food() {
 		super.supplyType = SupplyType.Food;
