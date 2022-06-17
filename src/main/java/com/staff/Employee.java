@@ -3,6 +3,7 @@ import main.java.com.item.Item;
 import main.java.com.item.pet.*;
 import main.java.com.item.supplies.*;
 import main.java.com.store.DeliveryPackage;
+import java.security.SecureRandom;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -27,17 +28,17 @@ public class Employee {
 
 	public Employee(int workedDays) {
 		this.workedDays = workedDays;
-		inventory = new ArrayList<>();
-		cash = 0;
-		totalWithdraw = 0;
+		inventory       = new ArrayList<>();
+		cash            = 0;
+		totalWithdraw   = 0;
 
 	}
 
 
 	public Employee() {
-		workedDays = 0;
-		inventory = new ArrayList<>();
-		cash = 0;
+		workedDays    = 0;
+		inventory     = new ArrayList<>();
+		cash          = 0;
 		totalWithdraw = 0;
 	}
 
@@ -70,17 +71,23 @@ public class Employee {
 
 
 	public void feedAnimals() {
-		Random          rand             = new Random();
-		ArrayList<Item> itemsToBeRemoved = new ArrayList<Item>();
+		ArrayList<Item> itemsToBeRemoved = new ArrayList<>();
 		inventory.forEach(item -> {
 			if (item.getClass().getCanonicalName().contains("pet")) {
 				// 5% chance of getting sick
-				boolean willBeSick   = rand.nextInt(100) < 50;
-				String  announcement = willBeSick ? " Feeds, and " + item.getName() + " got sick..." : " Feeds " + item.getName();
-				announce(announcement);
-				if (willBeSick) {
-					sick.add((Pet) item);
-					itemsToBeRemoved.add(item); // preventing error
+				/* = ((Pet) item).setHealthy(rand.nextInt(0,100) < 5);*/
+				switch (((Pet) item).setHealthy(new SecureRandom().nextInt(100) > 5)) {
+					case 0 -> {
+						announce(" visits a " /*+ ((Pet) item).getBreed().name + " "*/ + ((Pet) item).getClass().getSimpleName() + ", and the pet got sick...");
+						sick.add(((Pet) item));
+						itemsToBeRemoved.add(item); // preventing error
+						break;
+					}
+					case 1 -> {
+						announce(" visits a " /*+ ((Pet) item).getBreed().name + " "*/ + ((Pet) item).getClass().getSimpleName());
+						announce(" feeds the " /*+ ((Pet) item).getBreed().name + " "*/ + ((Pet) item).getClass().getSimpleName());
+						break;
+					}
 				}
 			}
 		});
@@ -89,12 +96,17 @@ public class Employee {
 
 		for (Pet pet : sick) {
 			// 25% change of recovering
-			boolean willRecover  = rand.nextInt(100) < 25;
-			String  announcement = willRecover ? " Feeds a sick animal, and " + pet.getName() + " recovered from sick." : " Feeds a sick animal " + pet.getName();
-			announce(announcement);
-			if (willRecover) {
-				inventory.add(pet);
-				itemsToBeRemoved.add(pet);
+			switch (pet.setHealthy(new SecureRandom().nextInt(100) < 25)) {
+				case 0 -> {
+					announce(" feeds a sick " /*+ ((Pet) item).getBreed().name + " "*/ + pet.getClass().getSimpleName() + " and the pet remains ill...");
+					break;
+				}
+				case 1 -> {
+					announce(" feeds a sick " /*+ ((Pet) item).getBreed().name + " "*/ + pet.getClass().getSimpleName() + " and the pet recovered from its sickness...");
+					inventory.add(pet);
+					itemsToBeRemoved.add(pet); // preventing error
+					break;
+				}
 			}
 		}
 		sick.removeAll(itemsToBeRemoved);
@@ -138,7 +150,7 @@ public class Employee {
 			});
 		}
 		else {
-			String announcementError = " MailBox is empty!";
+			String announcementError = " notices that the mailbox is empty!";
 			announce(announcementError);
 		}
 

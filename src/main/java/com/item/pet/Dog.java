@@ -123,8 +123,9 @@ public class Dog extends Pet {
 
 
 	@Override
-	public void setHealthy(boolean healthy) {
+	public int setHealthy(boolean healthy) {
 		super.setHealthy(healthy);
+		return 0;
 	}
 
 

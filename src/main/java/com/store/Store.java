@@ -9,6 +9,7 @@ import main.java.com.staff.Clerk;
 import main.java.com.staff.Employee;
 import main.java.com.staff.Trainer;
 
+import java.security.SecureRandom;
 import java.text.DecimalFormat;
 import java.util.*;
 
@@ -17,25 +18,21 @@ import java.util.*;
 
 public class Store {
 	// The store's Inventory.
-	ArrayList<Item> inventory;
-	ArrayList<Pet>  sick;
-
+	ArrayList<Item>            inventory;
+	ArrayList<Pet>             sick;
+	ArrayList<Customer>        customers;
 	ArrayList<DeliveryPackage> mailBox;
-
-
 	// The store's staff
-	ArrayList<Employee> staff;
-	Employee            currentStaff;
-
+	ArrayList<Employee>        staff;
+	Employee              currentStaff;
 	// Money + day management
-	double bankWithdrawal;
-	double cash;
-	int    day;
-
+	double                bankWithdrawal;
+	double                cash;
+	int                   day;
 	// Data helpers
-	DecimalFormat sizeFormat = new DecimalFormat("#####.00");
 	protected final ArrayList<String> colors              = new ArrayList<String>(Arrays.asList("Black", "Brown", "White", "Gray", "Red"));
-	protected final boolean[]         randomSelectionbool = {true, false};
+	protected final boolean[]         randomSelectionbool = { true, false };
+	DecimalFormat sizeFormat = new DecimalFormat("#####.00");
 
 
 	/**
@@ -45,12 +42,13 @@ public class Store {
 	 * Default constructor
 	 */
 	public Store() {
-		staff = new ArrayList<Employee>();
-		inventory = new ArrayList<Item>();
-		sick = new ArrayList<Pet>();
+		staff          = new ArrayList<Employee>();
+		customers       = new ArrayList<Customer>();
+		inventory      = new ArrayList<Item>();
+		sick           = new ArrayList<Pet>();
 		bankWithdrawal = 0;
-		cash = 0;
-		day = 0;
+		cash           = 0;
+		day            = 0;
 		initItemsAndStaff();
 		new SimState(this);
 	}
@@ -119,8 +117,34 @@ public class Store {
 		currentStaff.setMailBox(this.mailBox);
 		currentStaff.setCash(this.cash);
 		currentStaff.incWorkDays();
-		// Active employee announcement
+
 		currentStaff.arrival();
+	}
+
+
+	public void openStore() {
+		int count = attractCustomers(new SecureRandom().nextInt(3, 10));
+		System.out.println(count + " potential customers enter the store...");
+		
+		customers.forEach(customer -> {
+			boolean selecting = customer.inspectInventory(inventory);
+			
+			if (selecting) {
+				System.out.println("The customer has made a selection!");
+				System.out.println("The customer wishes to purchase:\n\n\t\t" + customer.obj.toString());
+				
+
+			}
+		});
+	}
+
+
+	private int attractCustomers(int count) {
+		for (int i = 0; i < count; i++) {
+			customers.add(new Customer());
+		}
+		
+		return count;
 	}
 
 
@@ -191,7 +215,7 @@ public class Store {
 	public double getCashOnHand() {
 		return currentStaff.checkCashOnHand();
 	}
-	
+
 
 	public boolean checkRegister() {
 		return this.getCash() > 200;

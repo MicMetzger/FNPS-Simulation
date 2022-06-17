@@ -5,8 +5,8 @@ public enum Breed {
 	Beagle("Beagle"),
 	Shibainu("Shibainu");
 
-	private final String breed;
+	public final String name;
 
 
-	Breed(String breed) {this.breed = breed;}
+	Breed(String breed) {this.name = breed;}
 }

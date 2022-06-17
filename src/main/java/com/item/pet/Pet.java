@@ -5,24 +5,24 @@ import main.java.com.item.Item;
 
 
 public abstract class Pet extends Item {
-	Breed breed;
-	Animal animalType;
+	Breed   breed;
+	Animal  animalType;
 	int     age;
 	boolean healthy;
 
 
 	public Pet(String name, int dayArrived, int daySold, double purchasePrice, double listPrice, double salePrice, Breed breed, int age, boolean healthy) {
 		super(name, purchasePrice, listPrice, salePrice, dayArrived, daySold);
-		this.breed = breed;
-		this.age = age;
+		this.breed   = breed;
+		this.age     = age;
 		this.healthy = healthy;
 	}
 
 
 	public Pet(Breed breed, int age, boolean healthy) {
 		super();
-		this.breed = breed;
-		this.age = age;
+		this.breed   = breed;
+		this.age     = age;
 		this.healthy = healthy;
 	}
 
@@ -96,8 +96,9 @@ public abstract class Pet extends Item {
 	}
 
 
-	public void setHealthy(boolean healthy) {
+	public int setHealthy(boolean healthy) {
 		this.healthy = healthy;
+		return (this.healthy) ? 1: 0;
 	}
 
 
