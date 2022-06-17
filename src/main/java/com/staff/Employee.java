@@ -73,7 +73,7 @@ public class Employee {
 		inventory.forEach(item -> {
 			if (item.getClass().getCanonicalName().contains("pet")) {
 				// 5% chance of getting sick
-				boolean willBeSick   = rand.nextInt(5) < 100;
+				boolean willBeSick   = rand.nextInt(100) < 5;
 				String  announcement = willBeSick ? " Feeds, and " + item.getName() + " got sick..." : " Feeds " + item.getName();
 				announce(announcement);
 				if (willBeSick) {
@@ -85,7 +85,7 @@ public class Employee {
 
 		for (Pet pet : sick) {
 			// 25% change of recovering
-			boolean willRecover  = rand.nextInt(25) < 100;
+			boolean willRecover  = rand.nextInt(100) < 25;
 			String  announcement = willRecover ? " Feeds, and " + pet.getName() + " recovered from sick." : " Feeds " + pet.getName();
 			announce(announcement);
 			if (willRecover) {
