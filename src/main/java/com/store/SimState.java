@@ -3,6 +3,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+
+
 public class SimState {
 	// Package level access, static, state control variables
 	static State newDay, startDay, endDay, processDelivery, orderSupplies, checkInventory, visitBank, checkRegister, doInventory;
@@ -43,7 +45,7 @@ public class SimState {
 	public void setStoreState(State state) {
 		previousState = currentState;
 		currentState = state;
-		currentState.enterState();
+		// currentState.enterState();
 	}
 
 
@@ -53,42 +55,37 @@ public class SimState {
 	}
 
 
-	public State goStartDay() {
-		return startDay;
-	}
 
+	public State goStartDay() {return startDay;	}
+
+
+	public State goProcessDelivery() {return processDelivery;}
 	
-	public State goProcessDelivery() { return processDelivery; }
+	public State goCheckRegister() {return checkRegister; }
 
 
-	public State goVisitBankState() {
-		return visitBank;
-	}
+	public State goVisitBankState() {return visitBank;}
 
 
-	public State goCheckInventory() {
-		return checkInventory;
-	}
-
-	public State goDoInventory() {
-		return doInventory;
-	}
+	public State goCheckInventory() {return checkInventory;}
 
 
-	// public void exitStoreState() {
-	// 	currentState.exitState();
-	// }
+	public State goDoInventory() {return doInventory;}
+	
+	
+	public State goOpenStore() {return openStore; }
+	
+	
+	public State goClaenStore() { return cleanStore; }
 
 
-	// public void nextStoreState() {
-	// 	currentState.nextState();
-	//
-	// }
+	public State goEndDay() {return endDay;	}
 
 
-	public void update() {
-		stateList.forEach(state -> state.update(this));
-	}
+	public void goEnterState() {currentState.enterState();}
+
+
+	// public void update() {stateList.forEach(state -> state.update(this));}
 
 }
 
@@ -106,6 +103,7 @@ class NewDay implements State {
 
 	@Override
 	public void enterState() {
+
 		simState.store.day++;
 		simState.store.selectStaff();
 		System.out.println("Day: " + simState.store.day + "\n");
@@ -117,7 +115,7 @@ class NewDay implements State {
 	public void exitState() {
 		// simState.startTheDay();
 		//TODO : temporary 
-		// simState.enterState();
+		simState.goEnterState();
 	}
 
 
@@ -126,11 +124,6 @@ class NewDay implements State {
 		// simState.update();
 		simState.setStoreState(simState.goStartDay());
 		exitState();
-	}
-
-
-	public void update(SimState state) {
-		this.simState = state;
 	}
 
 }
@@ -164,6 +157,8 @@ class StartDay implements State {
 
 	@Override
 	public void exitState() {
+		simState.goEnterState();
+
 		// TODO: update information and report. Afterwards, call nextState()
 	}
 
@@ -176,41 +171,45 @@ class StartDay implements State {
 		exitState();
 	}
 
-
-	public void update(SimState state) {
-		this.simState = state;
-	}
-
 }
+
+
 
 
 class ProcessDelivery implements State {
 
 	SimState simState;
+
+
 	public ProcessDelivery(SimState simState) {
 		this.simState = simState;
 	}
+
 
 	@Override
 	public void enterState() {
 		simState.store.currentStaff.processDeliveries();
 	}
 
+
 	@Override
 	public void exitState() {
+		simState.goEnterState();
+
 
 	}
+
 
 	@Override
 	public void nextState() {
 
 	}
 
-	@Override
-	public void update(SimState state) {
 
-	}
+	
+
 }
+
 
 
 
@@ -231,27 +230,27 @@ class EndDay implements State {
 
 	@Override
 	public void enterState() {
-	
+		// TODO: 4
+		nextState();
 	}
 
 
 	@Override
 	public void exitState() {
-		// TODO: update information and report. Afterwards, call nextState()
+		simState.goNewDay();
 	}
 
 
 	@Override
 	public void nextState() {
-		// this.simState =
-	}
-
-
-	public void update(SimState state) {
-		this.simState = state;
+		System.out.println("The workday ends...");
+		// simState.setStoreState(simState.goEndDay());
+		exitState();
 	}
 
 }
+
+
 
 
 class DoInventory implements State {
@@ -265,12 +264,17 @@ class DoInventory implements State {
 
 	@Override
 	public void enterState() {
-		simState.store.currentStaff.placeAnOrder();
+		// if approriate, call orderSupplies
+		if (simState.store.currentStaff.doInventory()) {
+			simState.setStoreState(simState.goOrderSupplies());
+		}
 	}
 
 
 	@Override
 	public void exitState() {
+		simState.goEnterState();
+
 		// TODO: update information and report. Afterwards, call nextState()
 	}
 
@@ -280,15 +284,14 @@ class DoInventory implements State {
 
 	}
 
-
-	public void update(SimState state) {
-		this.simState = state;
-	}
 }
+
+
 
 
 class CheckRegister implements State {
 	SimState simState;
+	double   totalWithdrawn = 0;
 
 
 	public CheckRegister(SimState simState) {
@@ -298,26 +301,36 @@ class CheckRegister implements State {
 
 	@Override
 	public void enterState() {
-		simState.store.currentStaff.checkRegister();
+		if (!simState.store.checkRegister()) {
+			System.out.println("Register cash is low... ");
+			simState.setStoreState(simState.goVisitBankState());
+		} else {
+			System.out.println("Cash is sufficient.");
+		}
 	}
 
 
 	@Override
 	public void exitState() {
 		// TODO: update information and report. Afterwards, call nextState()
+		simState.store.currentStaff.processInventory();
+		simState.goEnterState();
 	}
 
 
 	@Override
 	public void nextState() {
+		totalWithdrawn = simState.store.bankWithdrawal;
+		System.out.println("Total Bank Withdraw: " + totalWithdrawn);
+		System.out.println("Register: " + simState.store.getCash());
+		simState.setStoreState(simState.goDoInventory());
+		exitState();
 
 	}
 
-
-	public void update(SimState state) {
-		this.simState = state;
-	}
 }
+
+
 
 
 /**
@@ -328,23 +341,24 @@ class OrderSupplies implements State {
 
 
 	public OrderSupplies(SimState simState) {
-		super();
 		this.simState = simState;
 	}
 
 
 	@Override
 	public void enterState() {
-		// TODO: Get price cap
-		if (simState.store.cash <= 0) {
+		simState.setStoreState(simState.goOrderSupplies());
+		simState.goEnterState();
+		simState.setStoreState(SimState.previousState);
 
-		}
+		simState.store.currentStaff.placeAnOrder();
 	}
-
 
 
 	@Override
 	public void exitState() {
+		simState.goEnterState();
+
 		// TODO: update information and report. Afterwards, call nextState()
 	}
 
@@ -354,11 +368,6 @@ class OrderSupplies implements State {
 		simState.store.updateCash();
 		simState.store.updateMailBox();
 		simState.store.updateInventory();
-	}
-
-
-	public void update(SimState state) {
-		this.simState = state;
 	}
 
 }
@@ -393,11 +402,6 @@ class CheckInventory implements State {
 		simState.store.updateSickAnimal();
 	}
 
-
-	public void update(SimState state) {
-		this.simState = state;
-	}
-
 }
 
 
@@ -429,11 +433,6 @@ class VisitBank implements State {
 	@Override
 	public void nextState() {
 
-	}
-
-
-	public void update(SimState state) {
-		this.simState = state;
 	}
 
 }

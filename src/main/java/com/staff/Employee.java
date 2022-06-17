@@ -1,20 +1,14 @@
 package main.java.com.staff;
 import main.java.com.item.Item;
 import main.java.com.item.pet.*;
-import main.java.com.item.supplies.CatLiter;
-import main.java.com.item.supplies.Food;
-import main.java.com.item.supplies.Leash;
-import main.java.com.item.supplies.Toy;
-import main.java.com.item.supplies.Type;
+import main.java.com.item.supplies.*;
 import main.java.com.store.DeliveryPackage;
-
-import java.lang.reflect.Array;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
-import static main.java.com.item.supplies.SupplyType.Toy;
+
 
 
 public class Employee {
@@ -24,7 +18,7 @@ public class Employee {
 	ArrayList<Pet>  sick;
 
 	double cash;
-	double totalWithdraw = 0;
+	double totalWithdraw;
 
 	ArrayList<DeliveryPackage> mailBox;
 
@@ -34,19 +28,23 @@ public class Employee {
 	public Employee(int workedDays) {
 		this.workedDays = workedDays;
 		inventory = new ArrayList<>();
+		cash = 0;
+		totalWithdraw = 0;
+
 	}
 
 
 	public Employee() {
 		workedDays = 0;
 		inventory = new ArrayList<>();
+		cash = 0;
+		totalWithdraw = 0;
 	}
 
 
 	public String getName() {
 		return base.getName();
 	}
-
 
 
 	public void setName(String name) {
@@ -71,9 +69,8 @@ public class Employee {
 	}
 
 
-
 	public void feedAnimals() {
-		Random rand = new Random();
+		Random          rand             = new Random();
 		ArrayList<Item> itemsToBeRemoved = new ArrayList<Item>();
 		inventory.forEach(item -> {
 			if (item.getClass().getCanonicalName().contains("pet")) {
@@ -104,8 +101,10 @@ public class Employee {
 	}
 
 
+
 	public void processInventory() {
 		String announcement = " goes through store inventory...";
+		announce(announcement);
 	}
 
 
@@ -119,11 +118,8 @@ public class Employee {
 		String announcement = " goes to the bank...";
 		announce(announcement);
 
-		if(cash <= 200) {
-			cash += 1000;
-			totalWithdraw += 1000;
-		}
-
+		cash += 1000;
+		totalWithdraw += 1000;
 	}
 
 
@@ -133,15 +129,16 @@ public class Employee {
 
 		if(mailBox != null) {
 			mailBox.forEach(item -> {
-				if(item.getExpectedDeliveryDate() == workedDays) {
+				if (item.getExpectedDeliveryDate() == workedDays) {
 					String announcementDelivery = item.getPackageName() + " is added to the inventory.";
 					announce(announcement);
 					inventory.add(item.getItem());
 					mailBox.remove(item);
 				}
 			});
-		} else {
-			String announcementError = " Mail Box is empty!";
+		}
+		else {
+			String announcementError = " MailBox is empty!";
 			announce(announcementError);
 		}
 
@@ -182,20 +179,24 @@ public class Employee {
 		return newPackage;
 	}
 
-	public void checkRegister() {
-		// TODO: implement
+
+	public double checkCashOnHand() {
+		return this.cash;
 	}
 
 
 	public void placeAnOrder() {
-		// String announcement = "places an order for ";  //TODO
-		Random rand = new Random();
+		// String announcement = "places an order for ";  //TODO\
+
+		Random            rand            = new Random();
 		ArrayList<String> itemToBeRemoved = new ArrayList<String>();
-		ArrayList<String> ITEM_TO_ORDER = new ArrayList<String>(Arrays.asList("Dog", "Cat", "Bird", "Food", "Leash", "Toy", "Cat Litter"));
+		ArrayList<String> ITEM_TO_ORDER   = new ArrayList<String>(Arrays.asList("Dog", "Cat", "Bird", "Food", "Leash", "Toy", "Cat Litter"));
+		String            announcement    = "Restocking items...";
+		announce(announcement);
 		inventory.forEach(item -> {
 			// TODO: test if these methods work to get the class name of the instance
 			String itemName = item.getClass().getSimpleName();
-			if(ITEM_TO_ORDER.contains(itemName)) {
+			if (ITEM_TO_ORDER.contains(itemName)) {
 				itemToBeRemoved.add(itemName);
 			}
 		});
@@ -204,20 +205,20 @@ public class Employee {
 		itemToBeRemoved.clear();
 
 		// ITEM_TO_ORDER is now left with items that need to be ordered (0 stock)
-		for(String name:ITEM_TO_ORDER) {
+		for (String name : ITEM_TO_ORDER) {
 			int    expectedDeliveryDate = workedDays + rand.nextInt(3);
 			double purchasePrice        = rand.nextInt(100);
-			if(cash >= purchasePrice) {
+			if (cash >= purchasePrice) {
 				mailBox.add(orderItem(name, expectedDeliveryDate, purchasePrice));
 				cash -= purchasePrice;
-			} else {
+			}
+			else {
 				// insufficient money
 				itemToBeRemoved.add(name);
 			}
 		}
 		ITEM_TO_ORDER.removeAll(itemToBeRemoved);
 	}
-
 
 
 	public int getWorkDays() {
@@ -244,20 +245,24 @@ public class Employee {
 		this.sick = newSickAnimals;
 	}
 
+
 	public ArrayList<DeliveryPackage> getMailBox() {
 		return this.mailBox;
 	}
+
 
 	public void setMailBox(ArrayList<DeliveryPackage> newMailbox) {
 		this.mailBox = newMailbox;
 	}
 
+
 	public void setCash(double newCash) {
 		this.cash = newCash;
 	}
 
+
 	public double getCash() {
-	 	return cash;
+		return cash;
 	}
 
 
@@ -268,6 +273,13 @@ public class Employee {
 
 	public ArrayList<Item> getInventory() {
 		return inventory;
+	}
+
+
+	public double exchangeCash() {
+		double temp = this.cash;
+		this.cash = 0;
+		return temp;
 	}
 
 }

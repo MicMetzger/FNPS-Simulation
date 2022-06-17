@@ -14,13 +14,13 @@ import java.util.*;
 
 
 
+
 public class Store {
 	// The store's Inventory.
 	ArrayList<Item> inventory;
 	ArrayList<Pet>  sick;
 
 	ArrayList<DeliveryPackage> mailBox;
-
 
 
 	// The store's staff
@@ -41,7 +41,7 @@ public class Store {
 	/**
 	 * Instantiates a new Store.
 	 * Main entry point.
-	 * 
+	 * <p>
 	 * Default constructor
 	 */
 	public Store() {
@@ -71,18 +71,18 @@ public class Store {
 		// (color, broken, purebred) / (breed, age, health)
 		inventory.add(new Cat(colors.get(new Random().nextInt(colors.size())), randomSelectionbool[new Random().nextInt(1)], randomSelectionbool[new Random().nextInt(1)]));
 		// (size, mimicry, exotic, papers) / (breed, age, health)
-		inventory.add(new Bird(Double.parseDouble(sizeFormat.format(new Random().nextDouble(8))), randomSelectionbool[new Random().nextInt(1)], randomSelectionbool[new Random().nextInt(1)], randomSelectionbool[new Random().nextInt(1)]));		
-		
+		inventory.add(new Bird(Double.parseDouble(sizeFormat.format(new Random().nextDouble(8))), randomSelectionbool[new Random().nextInt(1)], randomSelectionbool[new Random().nextInt(1)], randomSelectionbool[new Random().nextInt(1)]));
+
 		inventory.add(new Food(new Random().nextInt(100), Animal.values()[new Random().nextInt(Animal.values().length)], Type.values()[new Random().nextInt(Type.values().length)]));
 		inventory.add(new CatLiter(new Random().nextInt(100)));
 		inventory.add(new Leash(Animal.values()[new Random().nextInt(Animal.values().length)]));
+		// inventory.add()
 
 	}
 
 
 	/**
 	 * Select staff to man store for this day.
-	 * 
 	 */
 	void selectStaff() {
 		int num = new Random().nextInt(4);
@@ -138,16 +138,20 @@ public class Store {
 		this.sick = currentStaff.getSickAnimal();
 	}
 
+
 	public void updateMailBox() {
 		this.mailBox = currentStaff.getMailBox();
 	}
 
+
 	public void updateCash() {
-		this.cash = currentStaff.getCash();
+		this.cash = currentStaff.exchangeCash();
 	}
+
 
 	/**
 	 * the mailbox
+	 *
 	 * @return mailBox
 	 */
 	public ArrayList<DeliveryPackage> getMailbox() {
@@ -175,12 +179,22 @@ public class Store {
 
 	public void addCash(double cash) {
 		this.cash = Double.parseDouble(sizeFormat.format(this.cash += cash));
-		if (cash < 0) {
+		if (cash < 200) {
 			System.out.println("$" + cash + " was removed from the register.");
 		}
 		else {
 			System.out.println("$" + cash + " was added to the register.");
 		}
+	}
+
+
+	public double getCashOnHand() {
+		return currentStaff.checkCashOnHand();
+	}
+	
+
+	public boolean checkRegister() {
+		return this.getCash() > 200;
 	}
 
 }
