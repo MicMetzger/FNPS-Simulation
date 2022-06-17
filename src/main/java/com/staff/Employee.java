@@ -217,7 +217,6 @@ public class Employee {
 				itemToBeRemoved.add(itemName);
 			}
 		};
-		if("Cat Litter".contains("Cat Litter"))
 
 		announce(" reporting the total inventory value. Total Value: $" + totalInventoryValue);
 		ITEM_TO_ORDER.removeAll(itemToBeRemoved);
