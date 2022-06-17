@@ -48,6 +48,7 @@ public abstract class Item {
 	 * @return the name
 	 */
 	public String getName() {
+		if(name == null) return "[-] ERROR: NAME NOT SET.";
 		return name;
 	}
 
