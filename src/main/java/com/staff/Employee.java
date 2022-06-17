@@ -3,8 +3,8 @@ import main.java.com.inventory.StoreObserver;
 import main.java.com.item.Item;
 import main.java.com.item.pet.Pet;
 import main.java.com.store.DeliveryPackage;
+import main.java.com.store.deliveryProcesser.ItemOrderProcessor;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
@@ -144,16 +144,19 @@ public class Employee implements StoreObserver {
 		});
 	}
 
+	public DeliveryPackage orderItem(String name, int expectedDeliveryDate, double purchasePrice) {
+		// TODO: implement
+		if(name == "Dog") {
+
+		}
+
+	}
+
 
 	public void PlaceAnOrder() {
 		// String announcement = "places an order for ";  //TODO
-		// for missing item, order 3 of those
-		// determine the price, name, etc
-		// check if there is enough money: if not don't order them
 		Random rand = new Random();
-		ItemOrderer itemOrderer = new ItemOrderer();
 
-		// check if there is any item whose stock is 0 in the inventory -> for each item
 		ArrayList<String> ITEM_TO_ORDER = new ArrayList<String>(Arrays.asList("Dog", "Cat", "Bird", "Food", "Leash", "Toy", "Cat Litter"));
 		inventory.forEach(item -> {
 			// TODO: test if these methods work to get the class name of the instance
@@ -166,13 +169,16 @@ public class Employee implements StoreObserver {
 		// ITEM_TO_ORDER is now left with items that need to be ordered
 		for(String name:ITEM_TO_ORDER) {
 			int expectedDeliveryDate = workedDays + rand.nextInt(3);
-			int purchasePrice = rand.nextInt(100);
-			// TODO: check that there's enough cash to buy, and order it, add it to mailBox
-			// TODO: implement itemOrderer
-			mailBox.add(itemOrderer.orderItem(name, expectedDeliveryDate, purchasePrice));
+			double purchasePrice = rand.nextInt(100);
+			if(cash >= purchasePrice) {
+				mailBox.add(orderItem(name, expectedDeliveryDate, purchasePrice));
+				cash -= purchasePrice;
+			} else {
+				// insufficient money
+				ITEM_TO_ORDER.remove(name);
+			}
+
 		}
-
-
 	}
 
 
