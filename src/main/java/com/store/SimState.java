@@ -1,4 +1,5 @@
 package main.java.com.store;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -16,7 +17,7 @@ public class SimState {
 
 
 	public SimState(Store sim) {
-		// stateList = new ArrayList<State>();
+		 stateList = new ArrayList<State>();
 		store           = sim;
 		newDay          = new NewDay(this);
 		startDay        = new StartDay(this);
@@ -29,7 +30,7 @@ public class SimState {
 		processDelivery = new ProcessDelivery(this);
 		// RUNNING = true;
 
-	/*	stateList.add(startDay);
+		stateList.add(startDay);
 		stateList.add(endDay);
 		stateList.add(checkInventory);
 		stateList.add(orderSupplies);
@@ -76,12 +77,6 @@ public class SimState {
 
 
 	public State goDoInventory()     {return doInventory;}
-
-
-	public State goOpenStore()       {return openStore;}
-
-
-	public State goClaenStore()      {return cleanStore;}
 
 
 	public State goEndDay()          {return endDay;}
@@ -294,9 +289,8 @@ class DoInventory implements State {
 		System.out.println("\n##################################################");
 
 		// if approriate, call orderSupplies
-		if (simState.store.currentStaff.doInventory()) {
-			simState.setStoreState(simState.goOrderSupplies());
-		}
+		simState.store.currentStaff.doInventory();
+
 	}
 
 
@@ -380,11 +374,7 @@ class OrderSupplies implements State {
 
 	@Override
 	public void enterState() {
-		// simState.setStoreState(simState.goOrderSupplies());
-		// simState.goEnterState();
-		// simState.setStoreState(SimState.previousState);
-		simState.store.currentStaff.placeAnOrder();
-
+//		simState.store.currentStaff.placeAnOrder();
 	}
 
 

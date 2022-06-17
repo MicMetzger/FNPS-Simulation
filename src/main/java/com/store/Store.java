@@ -46,6 +46,7 @@ public class Store {
 		customers       = new ArrayList<Customer>();
 		inventory      = new ArrayList<Item>();
 		sick           = new ArrayList<Pet>();
+		mailBox		   = new ArrayList<DeliveryPackage>();
 		bankWithdrawal = 0;
 		cash           = 0;
 		day            = 0;

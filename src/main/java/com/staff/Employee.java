@@ -31,7 +31,7 @@ public class Employee {
 		inventory       = new ArrayList<>();
 		cash            = 0;
 		totalWithdraw   = 0;
-
+		mailBox = new ArrayList<>();
 	}
 
 
@@ -40,6 +40,7 @@ public class Employee {
 		inventory     = new ArrayList<>();
 		cash          = 0;
 		totalWithdraw = 0;
+		mailBox = new ArrayList<>();
 	}
 
 
@@ -139,17 +140,17 @@ public class Employee {
 		String announcement = " goes through today's deliveries...";
 		announce(announcement);
 
-		if(mailBox != null) {
+		if(mailBox.size() != 0) {
 			mailBox.forEach(item -> {
 				if (item.getExpectedDeliveryDate() == workedDays) {
-					String announcementDelivery = item.getPackageName() + " is added to the inventory.";
+					String announcementDelivery = item.getPackageName() + " has arrived and is added to the inventory.";
 					announce(announcement);
 					inventory.add(item.getItem());
 					mailBox.remove(item);
 				}
 			});
 		}
-		else {
+		else { // mailbox empty
 			String announcementError = " notices that the mailbox is empty!";
 			announce(announcementError);
 		}
@@ -170,6 +171,9 @@ public class Employee {
 		int daySold 	= 0;
 		int salePrice 	= 0;
 		int age			= new Random().nextInt(15);
+
+		String announcement = " purchasing " + name + " for $" + purchasePrice;
+		announce(announcement);
 
 		// TODO: Make Breeds for each animals in Breed enum
 		if(name == "Dog") {
@@ -197,22 +201,26 @@ public class Employee {
 	}
 
 
-	public void placeAnOrder() {
+	public void doInventory() {
 		// String announcement = "places an order for ";  //TODO\
 
 		Random            rand            = new Random();
 		ArrayList<String> itemToBeRemoved = new ArrayList<String>();
 		ArrayList<String> ITEM_TO_ORDER   = new ArrayList<String>(Arrays.asList("Dog", "Cat", "Bird", "Food", "Leash", "Toy", "Cat Litter"));
-		String            announcement    = "Restocking items...";
+		String            announcement    = " checking the inventory...";
+		double 			  totalInventoryValue = 0.0;
+
 		announce(announcement);
-		inventory.forEach(item -> {
-			// TODO: test if these methods work to get the class name of the instance
+		for(Item item:inventory) {
+			// Initially (Day one), the value should be all zero as all purchase prices should be zero.
+			totalInventoryValue += item.getPurchasePrice();
 			String itemName = item.getClass().getSimpleName();
 			if (ITEM_TO_ORDER.contains(itemName)) {
 				itemToBeRemoved.add(itemName);
 			}
-		});
+		};
 
+		announce(" reporting the total inventory value. Total Value: $" + totalInventoryValue);
 		ITEM_TO_ORDER.removeAll(itemToBeRemoved);
 		itemToBeRemoved.clear();
 
