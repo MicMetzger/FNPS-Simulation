@@ -1,4 +1,6 @@
 package main.java.com.store;
+import main.java.com.item.Item;
+import main.java.com.item.pet.Pet;
 import org.xml.sax.helpers.AttributesImpl;
 
 import java.util.ArrayList;
@@ -117,7 +119,7 @@ class NewDay implements State {
 	@Override
 	public void enterState() {
 		System.out.println("\n##################################################");
-		if(simState.store.day == 3) {
+		if(simState.store.day == 30) {
 			simState.setStoreState(simState.goEndSimulation());
 			exitState();
 		}
@@ -273,6 +275,7 @@ class FeedAnimals implements State {
 	public void nextState() {
 		simState.store.updateInventory();
 		simState.store.updateSickAnimal();
+		simState.store.updateCash();
 		exitState();
 	}
 
@@ -292,6 +295,7 @@ class CheckRegister implements State {
 
 	@Override
 	public void enterState() {
+		System.out.println("##################################################\n");
 		if (!simState.store.checkRegister()) {
 			System.out.println("Register cash is low... ");
 			simState.setStoreState(simState.goVisitBankState());
@@ -509,8 +513,21 @@ class GoEndSimulation implements State {
 
 	@Override
 	public void enterState() {
-		System.out.println(simState.store.cash);
-		System.out.println(simState.store.bankWithdrawal);
+		System.out.println("---------–------------STATS-----------------------\n");
+		System.out.println("Total Cash: $" + simState.store.cash);
+		System.out.println("Total withdrawal: $"+ simState.store.bankWithdrawal);
+		System.out.println("\n---------–------------SALES-----------------------");
+		for(Item item:simState.store.getSoldItems()) {
+			System.out.println(item.getName() + " $" + item.getSalePrice() + ", Sold on: DAY " + item.getDaySold());
+		}
+		System.out.println("\n--------–--------Remaining Items------------------");
+		for(Item item:simState.store.getInventory()) {
+			System.out.println(item.getName() + ", Value: $" + item.getListPrice());
+		}
+		System.out.println("\n----–--------Remaining Sick Animals---------------");
+		for(Item item:simState.store.getSick()) {
+			System.out.println(((Pet) item).getBreed() + ", Value: $" + item.getListPrice());
+		}
 		nextState();
 	}
 

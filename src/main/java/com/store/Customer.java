@@ -33,11 +33,13 @@ public class Customer {
 				if(rand.nextInt(100) < 50) { // 50% chance of buying the item at listPrice
 					obj = item;
 					purchasePrice = obj.getListPrice();
+					obj.setSalePrice(purchasePrice);
 				} else {
 					if(rand.nextInt(100) < 75) {
 						discount = true;
 						obj = item;
 						purchasePrice = round(obj.getListPrice() - (obj.getListPrice() /100) * 10); // 10% off discount
+						obj.setSalePrice(purchasePrice);
 					}
 				}
 			}
