@@ -7,6 +7,8 @@ import main.java.com.item.supplies.Leash;
 import main.java.com.item.supplies.Toy;
 import main.java.com.item.supplies.Type;
 import main.java.com.store.DeliveryPackage;
+
+import java.lang.reflect.Array;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -68,20 +70,24 @@ public class Employee {
 	}
 
 
+
 	public void feedAnimals() {
 		Random rand = new Random();
+		ArrayList<Item> itemsToBeRemoved = new ArrayList<Item>();
 		inventory.forEach(item -> {
 			if (item.getClass().getCanonicalName().contains("pet")) {
 				// 5% chance of getting sick
-				boolean willBeSick   = rand.nextInt(100) < 5;
+				boolean willBeSick   = rand.nextInt(100) < 50;
 				String  announcement = willBeSick ? " Feeds, and " + item.getName() + " got sick..." : " Feeds " + item.getName();
 				announce(announcement);
 				if (willBeSick) {
 					sick.add((Pet) item);
-					inventory.remove(item);
+					itemsToBeRemoved.add(item); // preventing error
 				}
 			}
 		});
+		inventory.removeAll(itemsToBeRemoved);
+		itemsToBeRemoved.clear();
 
 		for (Pet pet : sick) {
 			// 25% change of recovering
@@ -90,15 +96,15 @@ public class Employee {
 			announce(announcement);
 			if (willRecover) {
 				inventory.add(pet);
-				sick.remove(pet);
+				itemsToBeRemoved.add(pet);
 			}
 		}
+		sick.removeAll(itemsToBeRemoved);
 	}
 
 
 	public void processInventory() {
 		String announcement = " goes through store inventory...";
-
 	}
 
 
