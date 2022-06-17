@@ -1,6 +1,10 @@
 package main.java.com.item.pet;
 
 
+import java.security.SecureRandom;
+
+import static java.lang.Math.round;
+
 public class Bird extends Pet {
 
 	/**
@@ -81,6 +85,8 @@ public class Bird extends Pet {
 
 	public Bird(double size, boolean mimicry, boolean exotic, boolean papers) {
 		super();
+		super.setDayArrived(0);
+		super.setName("Bird");
 		this.size = size;
 		this.mimicry = mimicry;
 		this.exotic = exotic;

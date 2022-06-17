@@ -1,10 +1,7 @@
 package main.java.com.store;
 import main.java.com.item.Item;
 import main.java.com.item.pet.*;
-import main.java.com.item.supplies.CatLiter;
-import main.java.com.item.supplies.Food;
-import main.java.com.item.supplies.Leash;
-import main.java.com.item.supplies.Type;
+import main.java.com.item.supplies.*;
 import main.java.com.staff.Clerk;
 import main.java.com.staff.Employee;
 import main.java.com.staff.Trainer;
@@ -74,6 +71,7 @@ public class Store {
 
 		inventory.add(new Food(new Random().nextInt(100), Animal.values()[new Random().nextInt(Animal.values().length)], Type.values()[new Random().nextInt(Type.values().length)]));
 		inventory.add(new CatLiter(new Random().nextInt(100)));
+		inventory.add(new Toy(Animal.values()[new Random().nextInt(Animal.values().length)]));
 		inventory.add(new Leash(Animal.values()[new Random().nextInt(Animal.values().length)]));
 		// inventory.add()
 
@@ -125,18 +123,21 @@ public class Store {
 
 	public void openStore() {
 		int count = attractCustomers(new SecureRandom().nextInt(3, 10));
+		System.out.println(currentStaff.getName() + " opens the store. \nCurrent inventory: " + inventory.size() + " item(s)\nCash: " + cash);
 		System.out.println(count + " potential customers enter the store...");
-		
+		boolean buyAtListPrice = new SecureRandom().nextInt(100) < 50;
+
 		customers.forEach(customer -> {
 			boolean selecting = customer.inspectInventory(inventory);
-			
-			if (selecting) {
-				System.out.println("The customer has made a selection!");
-				System.out.println("The customer wishes to purchase:\n\n\t\t" + customer.obj.toString());
-				
 
+			if (selecting) {
+				inventory.remove(customer.obj);
+				System.out.println("[+] The customer has made a selection!");
+				System.out.println("[+] The customer wishes to purchase: " + customer.obj.getName() + " at $" + customer.getPurchasePrice() + (customer.discount ? "(discounted)" : "")) ;
+				cash += customer.getPurchasePrice();
 			}
 		});
+		System.out.println("\nCurrent inventory: " + inventory.size() + " item(s)\nCash: " + cash);
 	}
 
 

@@ -1,7 +1,9 @@
 package main.java.com.item.supplies;
 import main.java.com.item.pet.Animal;
 
+import java.security.SecureRandom;
 
+import static java.lang.Math.round;
 
 
 public class Leash extends Supplies {
@@ -17,6 +19,9 @@ public class Leash extends Supplies {
 	 */
 
 	public Leash(Animal animal) {
+		super();
+		super.setDayArrived(0);
+		super.setName("Leash");
 		this.animal = animal;
 	}
 

@@ -1,7 +1,9 @@
 package main.java.com.item.pet;
 
 
+import java.security.SecureRandom;
 
+import static java.lang.Math.round;
 
 /**
  * The type Dog.
@@ -81,6 +83,8 @@ public class Dog extends Pet {
 	 */
 	public Dog(double size, Color color, boolean housebroken, boolean purebred) {
 		super();
+		super.setDayArrived(0);
+		super.setName("Dog");
 		this.size = size;
 		this.color = color;
 		this.housebroken = housebroken;

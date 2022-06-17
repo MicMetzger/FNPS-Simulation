@@ -1,8 +1,9 @@
 package main.java.com.item;
 
 
+import java.security.SecureRandom;
 
-
+import static java.lang.Math.round;
 
 /**
  *
@@ -39,7 +40,11 @@ public abstract class Item {
 	/**
 	 * Default constructor of Item object.
 	 */
-	public Item() {}
+	public Item() {
+		double newPurchasePrice = round(new SecureRandom().nextDouble(100));
+		setPurchasePrice(newPurchasePrice);
+		setListPrice(round(newPurchasePrice*(double)2));
+	}
 
 
 	/**

@@ -1,6 +1,10 @@
 package main.java.com.item.supplies;
 
 
+import java.security.SecureRandom;
+
+import static java.lang.Math.round;
+
 /**
  * The type Cat liter.
  */
@@ -16,6 +20,8 @@ public class CatLiter extends Supplies {
 	 * @param size the size
 	 */
 	public CatLiter(int size) {
+		super.setDayArrived(0);
+		super.setName("Cat Litter");
 		this.size = size;
 	}
 
@@ -27,6 +33,9 @@ public class CatLiter extends Supplies {
 
 	public CatLiter(String name, double purchasePrice, double listPrice, double salePrice, int daySold, int dayArrived, int size) {
 		super(name, purchasePrice, listPrice, salePrice, dayArrived, daySold);
+		double newPurchasePrice = round(new SecureRandom().nextDouble(100));
+		super.setPurchasePrice(newPurchasePrice);
+		super.setListPrice(round(newPurchasePrice*(double)2));
 		this.size = size;
 	}
 

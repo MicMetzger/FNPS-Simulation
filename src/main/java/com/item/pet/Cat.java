@@ -1,4 +1,9 @@
 package main.java.com.item.pet;
+
+import java.security.SecureRandom;
+
+import static java.lang.Math.round;
+
 /**
  * The type Cat.
  */
@@ -67,6 +72,8 @@ public class Cat extends Pet {
 	 */
 	public Cat(String color, boolean housebroken, boolean purebred) {
 		super();
+		super.setDayArrived(0);
+		super.setName("Cat");
 		this.color = color;
 		this.housebroken = housebroken;
 		this.purebred = purebred;

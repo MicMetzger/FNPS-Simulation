@@ -7,7 +7,7 @@ import java.util.List;
 
 public class SimState {
 	// Package level access, static, state control variables
-	static State newDay, startDay, endDay, processDelivery, orderSupplies, checkInventory, visitBank, checkRegister, doInventory;
+	static State newDay, startDay, endDay, processDelivery, orderSupplies, checkInventory, visitBank, checkRegister, doInventory, openStore;
 	static State       currentState;
 	static State       endState;
 	static State       previousState;
@@ -28,6 +28,7 @@ public class SimState {
 		checkRegister   = new CheckRegister(this);
 		doInventory     = new DoInventory(this);
 		processDelivery = new ProcessDelivery(this);
+		openStore  		= new OpenStore(this);
 		// RUNNING = true;
 
 		stateList.add(startDay);
@@ -37,6 +38,7 @@ public class SimState {
 		stateList.add(visitBank);
 		stateList.add(checkRegister);
 		stateList.add(doInventory);
+		stateList.add(openStore);
 		goNewDay();
 	}
 
@@ -78,6 +80,7 @@ public class SimState {
 
 	public State goDoInventory()     {return doInventory;}
 
+	public State goOpenStore() 		 {return openStore; }
 
 	public State goEndDay()          {return endDay;}
 
@@ -178,57 +181,21 @@ class StartDay implements State {
 		// simState.update();
 		simState.setStoreState(simState.goProcessDelivery());
 		simState.goEnterState();
+
 		simState.setStoreState(simState.goCheckInventory());
 		simState.goEnterState();
 		// simState.setStoreState(SimState.previousState);
-		
 		simState.setStoreState(simState.goDoInventory());
+		simState.goDoInventory();
+
+		simState.setStoreState(simState.goOpenStore());
+		simState.goOpenStore();
+
+
 		exitState();
 	}
 
 }
-
-
-
-
-class ProcessDelivery implements State {
-
-	SimState simState;
-
-
-	public ProcessDelivery(SimState simState) {
-		this.simState = simState;
-	}
-
-
-	@Override
-	public void enterState() {
-		System.out.println("\n##################################################");
-		simState.store.currentStaff.processDeliveries();
-		simState.setStoreState(SimState.previousState);
-		nextState();
-	}
-
-
-	@Override
-	public void exitState() {
-		System.out.println("##################################################\n");
-
-
-		// simState.goEnterState();
-	}
-
-
-	@Override
-	public void nextState() {
-		System.out.println("The employee returns to finish his other activities.");
-		exitState();
-	}
-
-
-}
-
-
 
 
 /**
@@ -272,6 +239,69 @@ class EndDay implements State {
 
 }
 
+
+
+class ProcessDelivery implements State {
+
+	SimState simState;
+
+
+	public ProcessDelivery(SimState simState) {
+		this.simState = simState;
+	}
+
+
+	@Override
+	public void enterState() {
+		System.out.println("\n##################################################");
+		simState.store.currentStaff.processDeliveries();
+		simState.setStoreState(SimState.previousState);
+		nextState();
+	}
+
+
+	@Override
+	public void exitState() {
+		System.out.println("##################################################\n");
+
+
+		// simState.goEnterState();
+	}
+
+
+	@Override
+	public void nextState() {
+		System.out.println("The employee returns to finish his other activities.");
+		exitState();
+	}
+
+
+}
+
+
+class OpenStore implements State{
+	SimState simState;
+
+	public OpenStore(SimState simState) {
+		this.simState = simState;
+	}
+
+	@Override
+	public void enterState() {
+		System.out.println("##################################################\n");
+		simState.store.openStore();
+	}
+
+	@Override
+	public void exitState() {
+		System.out.println("##################################################\n");
+	}
+
+	@Override
+	public void nextState() {
+
+	}
+}
 
 
 

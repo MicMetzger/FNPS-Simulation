@@ -2,7 +2,9 @@ package main.java.com.item.supplies;
 import main.java.com.item.pet.Animal;
 import main.java.com.item.pet.Pet;
 
+import java.security.SecureRandom;
 
+import static java.lang.Math.round;
 
 
 public class Toy extends Supplies {
@@ -22,6 +24,14 @@ public class Toy extends Supplies {
 		this.animal = animal;
 	}
 
+	public Toy(Animal animal) {
+		double newPurchasePrice = round(new SecureRandom().nextDouble(100));
+		super.setPurchasePrice(newPurchasePrice);
+		super.setListPrice(round(newPurchasePrice*(double)2));
+		super.setDayArrived(0);
+		super.setName("Toy");
+		this.animal = animal;
+	}
 
 
 	/**
