@@ -24,6 +24,7 @@ public class Employee {
 	ArrayList<Pet>  sick;
 
 	double cash;
+	double totalWithdraw = 0;
 
 	ArrayList<DeliveryPackage> mailBox;
 
@@ -114,9 +115,14 @@ public class Employee {
 	}
 
 
-	public void GoToBank() {
+	public void goToBank() {
 		String announcement = " goes to the bank...";
 		announce(announcement);
+
+		if(cash <= 200) {
+			cash += 1000;
+			totalWithdraw += 1000;
+		}
 
 	}
 
@@ -125,14 +131,20 @@ public class Employee {
 		String announcement = " goes through today's deliveries...";
 		announce(announcement);
 
-		mailBox.forEach(item -> {
-			if(item.getExpectedDeliveryDate() == workedDays) {
-				String announcementDelivery = item.getPackageName() + " is added to the inventory.";
-				announce(announcement);
-				inventory.add(item.getItem());
-				mailBox.remove(item);
-			}
-		});
+		if(mailBox != null) {
+			mailBox.forEach(item -> {
+				if(item.getExpectedDeliveryDate() == workedDays) {
+					String announcementDelivery = item.getPackageName() + " is added to the inventory.";
+					announce(announcement);
+					inventory.add(item.getItem());
+					mailBox.remove(item);
+				}
+			});
+		} else {
+			String announcementError = " Mail Box is empty!";
+			announce(announcementError);
+		}
+
 	}
 
 
@@ -143,7 +155,6 @@ public class Employee {
 	 * @return Delivery Package
 	 */
 	public DeliveryPackage orderItem(String name, int expectedDeliveryDate, double purchasePrice) {
-		// TODO: implement
 		DecimalFormat sizeFormat 					= new DecimalFormat("#####.00");
 		final ArrayList<String> colors              = new ArrayList<String>(Arrays.asList("Black", "Brown", "White", "Gray", "Red"));
 		DeliveryPackage newPackage = new DeliveryPackage(name, expectedDeliveryDate);
@@ -171,19 +182,26 @@ public class Employee {
 		return newPackage;
 	}
 
+	public void checkRegister() {
+		// TODO: implement
+	}
 
-	public void PlaceAnOrder() {
+
+	public void placeAnOrder() {
 		// String announcement = "places an order for ";  //TODO
 		Random rand = new Random();
-
+		ArrayList<String> itemToBeRemoved = new ArrayList<String>();
 		ArrayList<String> ITEM_TO_ORDER = new ArrayList<String>(Arrays.asList("Dog", "Cat", "Bird", "Food", "Leash", "Toy", "Cat Litter"));
 		inventory.forEach(item -> {
 			// TODO: test if these methods work to get the class name of the instance
 			String itemName = item.getClass().getSimpleName();
 			if(ITEM_TO_ORDER.contains(itemName)) {
-				ITEM_TO_ORDER.remove(itemName);
+				itemToBeRemoved.add(itemName);
 			}
 		});
+
+		ITEM_TO_ORDER.removeAll(itemToBeRemoved);
+		itemToBeRemoved.clear();
 
 		// ITEM_TO_ORDER is now left with items that need to be ordered (0 stock)
 		for(String name:ITEM_TO_ORDER) {
@@ -194,10 +212,12 @@ public class Employee {
 				cash -= purchasePrice;
 			} else {
 				// insufficient money
-				ITEM_TO_ORDER.remove(name);
+				itemToBeRemoved.add(name);
 			}
 		}
+		ITEM_TO_ORDER.removeAll(itemToBeRemoved);
 	}
+
 
 
 	public int getWorkDays() {

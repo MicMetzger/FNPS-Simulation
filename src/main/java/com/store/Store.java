@@ -156,7 +156,7 @@ public class Store {
 
 
 	public void goToBank() {
-		currentStaff.GoToBank();
+		currentStaff.goToBank();
 		addWithdrawal();
 	}
 
