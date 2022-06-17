@@ -138,12 +138,21 @@ public class Employee implements StoreObserver {
 
 		mailBox.forEach(item -> {
 			if(item.getExpectedDeliveryDate() == workedDays) {
+				String announcementDelivery = item.getPackageName() + " is added to the inventory.";
+				announce(announcement);
 				inventory.add(item.getItem());
 				mailBox.remove(item);
 			}
 		});
 	}
 
+
+	/**
+	 * @param name
+	 * @param expectedDeliveryDate
+	 * @param purchasePrice
+	 * @return Delivery Package
+	 */
 	public DeliveryPackage orderItem(String name, int expectedDeliveryDate, double purchasePrice) {
 		// TODO: implement
 		if(name == "Dog") {
@@ -177,7 +186,6 @@ public class Employee implements StoreObserver {
 				// insufficient money
 				ITEM_TO_ORDER.remove(name);
 			}
-
 		}
 	}
 
