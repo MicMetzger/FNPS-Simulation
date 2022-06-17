@@ -1,10 +1,6 @@
 package main.java.com.store;
-
-
 import java.util.ArrayList;
 import java.util.List;
-
-
 
 
 public class SimState {
@@ -252,7 +248,9 @@ class OrderSupplies implements State {
 
 	@Override
 	public void nextState() {
-
+		simState.store.updateCash();
+		simState.store.updateMailBox();
+		simState.store.updateInventory();
 	}
 
 

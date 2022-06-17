@@ -2,7 +2,9 @@ package main.java.com.staff;
 import main.java.com.inventory.StoreObserver;
 import main.java.com.item.Item;
 import main.java.com.item.pet.Pet;
+import main.java.com.store.DeliveryPackage;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
@@ -15,6 +17,10 @@ public class Employee implements StoreObserver {
 	Employee        base;
 	ArrayList<Item> inventory;
 	ArrayList<Pet>  sick;
+
+	double cash;
+
+	ArrayList<DeliveryPackage> mailBox;
 
 	static ArrayList<String> NAME_TEMPLATE = new ArrayList<String>(Arrays.asList("Kevin", "Andrew", "Michelle", "David", "Sarah"));
 
@@ -79,12 +85,9 @@ public class Employee implements StoreObserver {
 	}
 
 
-	/**
-	 *  inventory so that Store inventory will be updated in Store
-	 */
 	public void feedAnimals() {
 		Random rand = new Random();
-		inventory.forEach(item -> {;
+		inventory.forEach(item -> {
 			if (item.getClass().getCanonicalName().contains("pet")) {
 				// 5% chance of getting sick
 				boolean willBeSick   = rand.nextInt(5) < 100;
@@ -133,11 +136,41 @@ public class Employee implements StoreObserver {
 		String announcement = " goes through today's deliveries...";
 		announce(announcement);
 
+		mailBox.forEach(item -> {
+			if(item.getExpectedDeliveryDate() == workedDays) {
+				inventory.add(item.getItem());
+				mailBox.remove(item);
+			}
+		});
 	}
 
 
 	public void PlaceAnOrder() {
 		// String announcement = "places an order for ";  //TODO
+		// for missing item, order 3 of those
+		// determine the price, name, etc
+		// check if there is enough money: if not don't order them
+		Random rand = new Random();
+		ItemOrderer itemOrderer = new ItemOrderer();
+
+		// check if there is any item whose stock is 0 in the inventory -> for each item
+		ArrayList<String> ITEM_TO_ORDER = new ArrayList<String>(Arrays.asList("Dog", "Cat", "Bird", "Food", "Leash", "Toy", "Cat Litter"));
+		inventory.forEach(item -> {
+			// TODO: test if these methods work to get the class name of the instance
+			String itemName = item.getClass().getSimpleName();
+			if(ITEM_TO_ORDER.contains(itemName)) {
+				ITEM_TO_ORDER.remove(itemName);
+			}
+		});
+
+		// ITEM_TO_ORDER is now left with items that need to be ordered
+		for(String name:ITEM_TO_ORDER) {
+			int expectedDeliveryDate = workedDays + rand.nextInt(3);
+			int purchasePrice = rand.nextInt(100);
+			// TODO: check that there's enough cash to buy, and order it, add it to mailBox
+			// TODO: implement itemOrderer
+			mailBox.add(itemOrderer.orderItem(name, expectedDeliveryDate, purchasePrice));
+		}
 
 
 	}
@@ -165,6 +198,22 @@ public class Employee implements StoreObserver {
 
 	public void setSickPet(ArrayList<Pet> newSickAnimals) {
 		this.sick = newSickAnimals;
+	}
+
+	public ArrayList<DeliveryPackage> getMailBox() {
+		return this.mailBox;
+	}
+
+	public void setMailBox(ArrayList<DeliveryPackage> newMailbox) {
+		this.mailBox = newMailbox;
+	}
+
+	public void setCash(double newCash) {
+		this.cash = newCash;
+	}
+
+	public double getCash() {
+	 	return cash;
 	}
 
 

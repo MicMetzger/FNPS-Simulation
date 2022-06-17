@@ -13,11 +13,14 @@ import java.util.*;
 
 
 
-
 public class Store {
 	// The store's Inventory.
 	ArrayList<Item> inventory;
 	ArrayList<Pet>  sick;
+
+	ArrayList<DeliveryPackage> mailBox;
+
+
 
 	// The store's staff
 	ArrayList<Employee> staff;
@@ -112,6 +115,8 @@ public class Store {
 		}
 		currentStaff.setInventory(this.inventory);
 		currentStaff.setSickPet(this.sick);
+		currentStaff.setMailBox(this.mailBox);
+		currentStaff.setCash(this.cash);
 		currentStaff.incWorkDays();
 		// Active employee announcement
 		currentStaff.arrival();
@@ -130,6 +135,22 @@ public class Store {
 
 	public void updateSickAnimal() {
 		this.sick = currentStaff.getSickAnimal();
+	}
+
+	public void updateMailBox() {
+		this.mailBox = currentStaff.getMailBox();
+	}
+
+	public void updateCash() {
+		this.cash = currentStaff.getCash();
+	}
+
+	/**
+	 * the mailbox
+	 * @return mailBox
+	 */
+	public ArrayList<DeliveryPackage> getMailbox() {
+		return this.mailBox;
 	}
 
 
