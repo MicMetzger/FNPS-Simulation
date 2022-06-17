@@ -7,6 +7,7 @@ import main.java.com.staff.Employee;
 import main.java.com.staff.Trainer;
 
 import java.security.SecureRandom;
+import java.sql.Array;
 import java.text.DecimalFormat;
 import java.util.*;
 
@@ -21,6 +22,8 @@ public class Store {
 	ArrayList<DeliveryPackage> mailBox;
 	// The store's staff
 	ArrayList<Employee>        staff;
+
+	ArrayList<Item> 			soldItems;
 	Employee              currentStaff;
 	// Money + day management
 	double                bankWithdrawal;
@@ -44,6 +47,7 @@ public class Store {
 		inventory      = new ArrayList<Item>();
 		sick           = new ArrayList<Pet>();
 		mailBox		   = new ArrayList<DeliveryPackage>();
+		soldItems	   = new ArrayList<Item>();
 		bankWithdrawal = 0;
 		cash           = 0;
 		day            = 0;
@@ -135,6 +139,8 @@ public class Store {
 				System.out.println("[+] The customer has made a selection!");
 				System.out.println("[+] The customer purchases " + customer.obj.getName() + " at $" + customer.getPurchasePrice() + (customer.discount ? " after a 10% discount" : "")) ;
 				cash += customer.getPurchasePrice();
+				customer.obj.setDaySold(day);
+				soldItems.add(customer.obj);
 			}
 		});
 		currentStaff.setCash(cash);
@@ -228,6 +234,18 @@ public class Store {
 		return this.getCash() > 200;
 	}
 
+
+	public ArrayList<Item> getInventory() {
+		return inventory;
+	}
+
+	public ArrayList<Pet> getSick() {
+		return sick;
+	}
+
+	public ArrayList<Item> getSoldItems() {
+		return this.soldItems;
+	}
 }
 
 

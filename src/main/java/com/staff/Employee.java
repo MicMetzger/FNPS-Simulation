@@ -74,8 +74,10 @@ public class Employee {
 			if (item.getClass().getCanonicalName().contains("pet")) {
 				// 5% chance of getting sick
 				/* = ((Pet) item).setHealthy(rand.nextInt(0,100) < 5);*/
-				switch (((Pet) item).setHealthy(new SecureRandom().nextInt(100) > 5)) {
+				int getsSick = new SecureRandom().nextInt(2);
+				switch (getsSick) {
 					case 0 -> {
+						((Pet) item).setHealthy(false);
 						announce(" visits a " /*+ ((Pet) item).getBreed().name + " "*/ + ((Pet) item).getClass().getSimpleName() + ", and the pet got sick...");
 						sick.add(((Pet) item));
 						itemsToBeRemoved.add(item); // preventing error
@@ -272,7 +274,7 @@ public class Employee {
 				if(new SecureRandom().nextInt(100) < 50) { // clerk catches escaping animal
 					announce(" catches " + item.getName() + " and puts it back in the cage");
 				} else { // animal escaped
-					System.out.println("[-] " + item.getName() + " successfully escapes for freedom..........");
+					System.out.println("[-] " + item.getName() + " desperately escapes for freedom..........");
 					ESCAPING_ANIMALS.add(((Pet) item));
 				}
 			}
