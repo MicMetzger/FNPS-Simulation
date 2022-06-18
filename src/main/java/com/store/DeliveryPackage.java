@@ -2,6 +2,10 @@ package main.java.com.store;
 import main.java.com.item.Item;
 
 
+/**
+ * Encapsulates attributes using setters and getters
+ */
+
 public class DeliveryPackage {
     private Item item;
     private String packageName;

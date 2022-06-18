@@ -6,7 +6,7 @@ import java.util.Random;
 
 
 /**
- *
+ * class
  */
 public class Supplies extends Item {
 	SupplyType supplyType;
@@ -31,6 +31,11 @@ public class Supplies extends Item {
 	 * @param purchasePrice the purchase price
 	 * @param listPrice     the list price
 	 * @param salePrice     the sale price
+	 */
+
+
+	/**
+	 * Polymorphism
 	 */
 	public Supplies(String name, double purchasePrice, double listPrice, double salePrice, int dayArrived, int daySold) {
 		super(name, purchasePrice, listPrice, salePrice, dayArrived, daySold);

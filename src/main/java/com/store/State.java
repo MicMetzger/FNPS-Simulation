@@ -1,6 +1,10 @@
 package main.java.com.store;
-public interface State {
 
+
+/**
+ * Interface
+ */
+public interface State {
 	void enterState();
 
 

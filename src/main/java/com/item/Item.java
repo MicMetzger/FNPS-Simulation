@@ -6,7 +6,7 @@ import java.security.SecureRandom;
 import static java.lang.Math.round;
 
 /**
- *
+ * Abstraction
  */
 public abstract class Item {
 	private String name;

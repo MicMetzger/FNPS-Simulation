@@ -99,6 +99,7 @@ public class SimState {
 
 
 /**
+ * Inheritance -> implements
  * Starts new day
  */
 
