@@ -80,6 +80,7 @@ public class SimState {
 	}
 
 
+	// State change methods
 	public State goFeedAnimals()  {return feedAnimals;}
 
 
@@ -91,30 +92,22 @@ public class SimState {
 
 	public State goEndDay()          {return endDay;}
 
-
 	public State goEndSimulation()	{ return goEndSimulation;}
 
 	public void goEnterState()       {currentState.enterState();}
-
-
-
-	// public void update() {stateList.forEach(state -> state.update(this));}
-
 }
 
 
-
-
-
+/**
+ * Starts new day
+ */
 
 class NewDay implements State {
 	SimState simState;
 
-
 	NewDay(SimState simState) {
 		this.simState = simState;
 	}
-
 
 	@Override
 	public void enterState() {
@@ -130,13 +123,9 @@ class NewDay implements State {
 		nextState();
 	}
 
-
 	@Override
 	public void exitState() {
 		System.out.println("##################################################\n");
-
-		// simState.startTheDay();
-		//TODO : temporary 
 		simState.goEnterState();
 	}
 
@@ -201,6 +190,9 @@ class StartDay implements State {
 }
 
 
+/**
+ * Check mailbox for packages and stock
+ */
 
 class ProcessDelivery implements State {
 
@@ -210,7 +202,6 @@ class ProcessDelivery implements State {
 	public ProcessDelivery(SimState simState) {
 		this.simState = simState;
 	}
-
 
 	@Override
 	public void enterState() {
@@ -225,6 +216,7 @@ class ProcessDelivery implements State {
 	public void exitState() {
 		System.out.println("##################################################\n");
 
+		// Updating inventory
 		simState.store.updateMailBox();
 		simState.store.updateInventory();
 		simState.setStoreState(simState.goFeedAnimals());
@@ -241,11 +233,12 @@ class ProcessDelivery implements State {
 		System.out.println("The employee returns to finish his other activities.");
 		exitState();
 	}
-
-
 }
 
 
+/**
+ * Feed all the animals
+ */
 class FeedAnimals implements State {
 	SimState simState;
 
@@ -273,6 +266,7 @@ class FeedAnimals implements State {
 
 	@Override
 	public void nextState() {
+		// update inventory as well as sick animal cage
 		simState.store.updateInventory();
 		simState.store.updateSickAnimal();
 		simState.store.updateCash();
@@ -281,8 +275,9 @@ class FeedAnimals implements State {
 
 }
 
-
-
+/**
+ * check register and if needed go to bank to withdraw
+ */
 class CheckRegister implements State {
 	SimState simState;
 	double   totalWithdrawn = 0;
@@ -296,7 +291,8 @@ class CheckRegister implements State {
 	@Override
 	public void enterState() {
 		System.out.println("##################################################\n");
-		if (!simState.store.checkRegister()) {
+
+		if (!simState.store.checkRegister()) { // @returns false if cash is < 200
 			System.out.println("Register cash is low... ");
 			simState.setStoreState(simState.goVisitBankState());
 			exitState();
@@ -324,12 +320,13 @@ class CheckRegister implements State {
 		System.out.println("Cash: " + simState.store.getCash());
 		simState.setStoreState(simState.goDoInventory());
 		exitState();
-
 	}
-
 }
 
 
+/**
+ * withdraw money from bank
+ */
 class VisitBank implements State {
 	SimState simState;
 
@@ -349,8 +346,7 @@ class VisitBank implements State {
 	@Override
 	public void exitState() {
 		System.out.println("##################################################\n");
-
-		// simState.update();
+		// simply go back to previous state
 		simState.setStoreState(SimState.previousState);
 	}
 
@@ -363,10 +359,12 @@ class VisitBank implements State {
 }
 
 
+/**
+ * check the inventory and purchase items as needed
+ */
 
 class DoInventory implements State {
 	SimState simState;
-
 
 	public DoInventory(SimState simState) {
 		this.simState = simState;
@@ -390,6 +388,9 @@ class DoInventory implements State {
 	}
 
 
+	/**
+	 *  Update cash and inventory
+	 */
 	@Override
 	public void nextState() {
 		simState.setStoreState(simState.goOpenStore());
@@ -400,6 +401,10 @@ class DoInventory implements State {
 
 }
 
+
+/**
+ * Open store and let customers in
+ */
 
 class OpenStore implements State{
 	SimState simState;
@@ -423,12 +428,17 @@ class OpenStore implements State{
 
 	@Override
 	public void nextState() {
+		// Update cash
 		simState.store.updateCash();
 		simState.setStoreState(simState.goCleanStore());
 		exitState();
 	}
 }
 
+
+/**
+ * clean store
+ */
 class CleanStore implements State {
 	SimState simState;
 
@@ -503,6 +513,10 @@ class EndDay implements State {
 }
 
 
+/**
+ * Print out stats and end the program.
+ * gets called at DAY 30
+ */
 class GoEndSimulation implements State {
 
 	SimState simState;

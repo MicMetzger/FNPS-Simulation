@@ -11,12 +11,6 @@ public class DeliveryPackage {
         this.packageName = packageName;
         this.expectedDeliveryDate = expectedDeliveryDate;
     }
-    public DeliveryPackage(Item item, String packageName, int expectedDeliveryDate) {
-        this.item = item;
-        this.packageName = packageName;
-        this.expectedDeliveryDate = expectedDeliveryDate;
-    }
-
     public Item getItem() {
         return item;
     }
@@ -29,17 +23,8 @@ public class DeliveryPackage {
         return expectedDeliveryDate;
     }
 
-
-
     public void setItem(Item item) {
         this.item = item;
     }
 
-    public void setPackageName(String packageName) {
-        this.packageName = packageName;
-    }
-
-    public void setExpectedDeliveryDate(int expectedDeliveryDate) {
-        this.expectedDeliveryDate = expectedDeliveryDate;
-    }
 }

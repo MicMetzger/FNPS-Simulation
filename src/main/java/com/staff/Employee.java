@@ -67,13 +67,14 @@ public class Employee {
 		announce(announcement);
 	}
 
-
+	/**
+	 * feed animals & sick animals
+	 */
 	public void feedAnimals() {
 		ArrayList<Item> itemsToBeRemoved = new ArrayList<>();
 		inventory.forEach(item -> {
 			if (item.getClass().getCanonicalName().contains("pet")) {
 				// 5% chance of getting sick
-				/* = ((Pet) item).setHealthy(rand.nextInt(0,100) < 5);*/
 				int getsSick = new SecureRandom().nextInt(2);
 				switch (getsSick) {
 					case 0 -> {
@@ -91,9 +92,11 @@ public class Employee {
 				}
 			}
 		});
+		// remove sick animals from inventory
 		inventory.removeAll(itemsToBeRemoved);
 		itemsToBeRemoved.clear();
 
+		// feed sick animals
 		for (Pet pet : sick) {
 			// 25% change of recovering
 			switch (pet.setHealthy(new SecureRandom().nextInt(100) < 25)) {
@@ -113,27 +116,19 @@ public class Employee {
 	}
 
 
-
-	public void processInventory() {
-		String announcement = " goes through store inventory...";
-		announce(announcement);
-	}
-
-
-	public void CheckRegister() {
-		String announcement = " checks the register...";
-
-	}
-
-
+	/**
+	 * withdraw money from bank -> cash
+	 */
 	public void goToBank() {
 		String announcement = " goes to the bank...";
 		announce(announcement);
-
 		cash += 1000;
 	}
 
 
+	/**
+	 * Check mailbox and update mailbox, put items into inventory as needed
+	 */
 	public void processDeliveries() {
 		String announcement = " goes through today's deliveries...";
 		announce(announcement);
@@ -160,9 +155,15 @@ public class Employee {
 
 	/**
 	 * @param name
+	 * name of item
+	 *
 	 * @param expectedDeliveryDate
+	 * expected delivery date of the package
+	 *
 	 * @param purchasePrice
-	 * @return Delivery Package
+	 * purchase price of the item
+	 *
+	 * @return new Delivery Package
 	 */
 	public DeliveryPackage orderItem(String name, int expectedDeliveryDate, double purchasePrice) {
 		DecimalFormat sizeFormat 					= new DecimalFormat("#####.00");
@@ -201,9 +202,10 @@ public class Employee {
 	}
 
 
+	/**
+	 * check if there is any item that is out of stock -> purchase item: orderItem()
+	 */
 	public void doInventory() {
-		// String announcement = "places an order for ";  //TODO\
-
 		Random            rand            = new Random();
 		ArrayList<String> itemToBeRemoved = new ArrayList<String>();
 		ArrayList<String> ITEM_TO_ORDER   = new ArrayList<String>(Arrays.asList("Dog", "Cat", "Bird", "Food", "Leash", "Toy", "CatLitter"));
@@ -224,7 +226,7 @@ public class Employee {
 		ITEM_TO_ORDER.removeAll(itemToBeRemoved);
 		itemToBeRemoved.clear();
 
-		// ITEM_TO_ORDER is now left with items that need to be ordered (0 stock)
+		// ITEM_TO_ORDER is now left with items that need to be ordered
 		for (String name : ITEM_TO_ORDER) {
 			System.out.println(name + " needs to be purchased.");
 			int    expectedDeliveryDate = workedDays + rand.nextInt(3);
@@ -243,6 +245,11 @@ public class Employee {
 	}
 
 
+	/**
+	 * Clean store
+	 * Some animals escape
+	 * Process inventory and sick animal cage individually
+	 */
 	public void cleanStore() {
 		String announcement = " cleans the store...";
 		announce(announcement);
@@ -278,10 +285,16 @@ public class Employee {
 					ESCAPING_ANIMALS.add(((Pet) item));
 				}
 			}
-		};
+		}
 		sick.removeAll(ESCAPING_ANIMALS);
 	}
 
+
+
+	/**
+	 * Setters and getters of attributes
+	 * mainly called from simState
+	 */
 
 	public int getWorkDays() {
 		return workedDays;
@@ -335,8 +348,4 @@ public class Employee {
 	public ArrayList<Item> getInventory() {
 		return inventory;
 	}
-
-
-
-
 }

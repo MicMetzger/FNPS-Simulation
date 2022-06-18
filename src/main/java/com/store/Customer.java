@@ -21,7 +21,14 @@ public class Customer {
 		purchasePrice = 0;
 		discount = false;
 	}
-	
+
+
+	/**
+	 *
+	 * @param inventory
+	 * the current inventory
+	 * @return true if customer decides to buy any item
+	 */
 	public boolean inspectInventory(ArrayList<Item> inventory) {
 		System.out.println("The customer inspects the store's offerings...");
 		inventory.forEach(item -> {
@@ -49,9 +56,5 @@ public class Customer {
 
 	public double getPurchasePrice() {
 		return purchasePrice;
-	}
-
-	public boolean hasBoughtAtDisountPrice () {
-		return discount;
 	}
 }

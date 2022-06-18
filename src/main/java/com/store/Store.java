@@ -43,7 +43,7 @@ public class Store {
 	 */
 	public Store() {
 		staff          = new ArrayList<Employee>();
-		customers       = new ArrayList<Customer>();
+		customers      = new ArrayList<Customer>();
 		inventory      = new ArrayList<Item>();
 		sick           = new ArrayList<Pet>();
 		mailBox		   = new ArrayList<DeliveryPackage>();
@@ -58,7 +58,7 @@ public class Store {
 
 	/**
 	 * Initiate starting objects.
-	 * TODO: Not finished. Need to setup randomization of  subclasses.
+	 * Adds items to the inventory
 	 */
 	public void initItemsAndStaff() {
 		staff.add(new Clerk());
@@ -143,7 +143,7 @@ public class Store {
 				soldItems.add(customer.obj);
 			}
 		});
-		currentStaff.setCash(cash);
+		currentStaff.setCash(cash); // 2 way binding
 		System.out.println("\nCurrent inventory: " + inventory.size() + " item(s)\nCash: " + cash);
 	}
 
@@ -155,11 +155,6 @@ public class Store {
 		}
 		
 		return count;
-	}
-
-
-	public void doInventory() {
-
 	}
 
 
@@ -183,23 +178,14 @@ public class Store {
 	}
 
 
-
-	/**
-	 * the mailbox
-	 *
-	 * @return mailBox
-	 */
-	public ArrayList<DeliveryPackage> getMailbox() {
-		return this.mailBox;
-	}
-
-
 	public void goToBank() {
 		currentStaff.goToBank();
 		addWithdrawal();
 	}
 
-
+	/**
+	 * withdraw cash -> cash += withdrawal
+	 */
 	private void addWithdrawal() {
 		System.out.println("$1000.00 was withdrawn from the bank.");
 		cash += currentStaff.getCash();
@@ -212,23 +198,6 @@ public class Store {
 	public double getCash() {
 		return cash;
 	}
-
-
-	public void addCash(double cash) {
-		this.cash = Double.parseDouble(sizeFormat.format(this.cash += cash));
-		if (cash < 200) {
-			System.out.println("$" + cash + " was removed from the register.");
-		}
-		else {
-			System.out.println("$" + cash + " was added to the register.");
-		}
-	}
-
-
-	public double getCashOnHand() {
-		return currentStaff.checkCashOnHand();
-	}
-
 
 	public boolean checkRegister() {
 		return this.getCash() > 200;
