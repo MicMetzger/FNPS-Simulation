@@ -1,0 +1,2787 @@
+/Users/sam/Library/Java/JavaVirtualMachines/openjdk-18.0.1.1/Contents/Home/bin/java -javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=52709:/Applications/IntelliJ IDEA.app/Contents/bin -Dfile.encoding=UTF-8 -classpath /Users/sam/Desktop/OOPAD/FNPS-Simulation/bin main.java.com.store.Main
+
+##################################################
+David, the Clerk, enters the store...
+Day: 1
+
+##################################################
+
+
+#################################################
+Total Store Cash: 0.0
+David, the Clerk, goes to the bank...
+$1000.00 was withdrawn from the bank.
+Total withdrawal: 1000.0
+Total cash: 1000.0
+##################################################
+
+
+##################################################
+David, the Clerk, goes through today's deliveries...
+David, the Clerk, notices that the mailbox is empty!
+The employee returns to finish his other activities.
+##################################################
+
+##################################################
+
+
+##################################################
+David, the Clerk, visits a Dog
+David, the Clerk, feeds the Dog
+David, the Clerk, visits a Cat, and the pet got sick...
+David, the Clerk, visits a Bird, and the pet got sick...
+David, the Clerk, feeds a sick Cat and the pet recovered from its sickness...
+David, the Clerk, feeds a sick Bird and the pet remains ill...
+##################################################
+
+Cash is sufficient.
+Total Bank Withdraw: 1000.0
+Cash: 1000.0
+##################################################
+
+
+##################################################
+David, the Clerk, checking the inventory...
+David, the Clerk, reporting the total inventory value. Total Value: $268.0
+Bird needs to be purchased.
+David, the Clerk, purchasing Bird for $43.0
+##################################################
+
+##################################################
+
+David, the Clerk, opens the store. 
+Current inventory: 6 item(s)
+Register: 957.0
+4 potential customers enter the store...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Leash at $194.0
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Cat at $59.0 after a 10% discount
+
+Current inventory: 4 item(s)
+Cash: 1210.0
+##################################################
+
+##################################################
+
+David, the Clerk, cleans the store...
+David, the Clerk, cleans the animal cage.
+David, the Clerk, cleans the sick animal cage.
+##################################################
+
+##################################################
+The workday comes to an end...
+##################################################
+
+
+##################################################
+Sarah, the Trainer, enters the store...
+Day: 2
+
+##################################################
+
+
+#################################################
+Total Store Cash: 1210.0
+
+##################################################
+Sarah, the Trainer, goes through today's deliveries...
+The employee returns to finish his other activities.
+##################################################
+
+##################################################
+
+
+##################################################
+Sarah, the Trainer, visits a Dog, and the pet got sick...
+Sarah, the Trainer, feeds a sick Bird and the pet remains ill...
+Sarah, the Trainer, feeds a sick Dog and the pet remains ill...
+##################################################
+
+Cash is sufficient.
+Total Bank Withdraw: 1000.0
+Cash: 1210.0
+##################################################
+
+
+##################################################
+Sarah, the Trainer, checking the inventory...
+Sarah, the Trainer, reporting the total inventory value. Total Value: $125.0
+Dog needs to be purchased.
+Sarah, the Trainer, purchasing Dog for $0.0
+Cat needs to be purchased.
+Sarah, the Trainer, purchasing Cat for $31.0
+Bird needs to be purchased.
+Sarah, the Trainer, purchasing Bird for $51.0
+Leash needs to be purchased.
+Sarah, the Trainer, purchasing Leash for $52.0
+##################################################
+
+##################################################
+
+Sarah, the Trainer, opens the store. 
+Current inventory: 3 item(s)
+Register: 1076.0
+4 potential customers enter the store...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+
+Current inventory: 3 item(s)
+Cash: 1076.0
+##################################################
+
+##################################################
+
+Sarah, the Trainer, cleans the store...
+Sarah, the Trainer, cleans the animal cage.
+Sarah, the Trainer, cleans the sick animal cage.
+##################################################
+
+##################################################
+The workday comes to an end...
+##################################################
+
+
+##################################################
+David, the Clerk, enters the store...
+Day: 3
+
+##################################################
+
+
+#################################################
+Total Store Cash: 1076.0
+
+##################################################
+David, the Clerk, goes through today's deliveries...
+David, the Clerk, Bird has arrived and is added to the inventory.
+The employee returns to finish his other activities.
+##################################################
+
+##################################################
+
+
+##################################################
+David, the Clerk, visits a Bird, and the pet got sick...
+David, the Clerk, feeds a sick Bird and the pet remains ill...
+David, the Clerk, feeds a sick Dog and the pet remains ill...
+David, the Clerk, feeds a sick Bird and the pet remains ill...
+##################################################
+
+Cash is sufficient.
+Total Bank Withdraw: 1000.0
+Cash: 1076.0
+##################################################
+
+
+##################################################
+David, the Clerk, checking the inventory...
+David, the Clerk, reporting the total inventory value. Total Value: $125.0
+Dog needs to be purchased.
+David, the Clerk, purchasing Dog for $2.0
+Cat needs to be purchased.
+David, the Clerk, purchasing Cat for $87.0
+Bird needs to be purchased.
+David, the Clerk, purchasing Bird for $51.0
+Leash needs to be purchased.
+David, the Clerk, purchasing Leash for $39.0
+##################################################
+
+##################################################
+
+David, the Clerk, opens the store. 
+Current inventory: 3 item(s)
+Register: 897.0
+6 potential customers enter the store...
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Cat Food at $18.0 after a 10% discount
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Toy at $170.0
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+
+Current inventory: 1 item(s)
+Cash: 1085.0
+##################################################
+
+##################################################
+
+David, the Clerk, cleans the store...
+David, the Clerk, cleans the animal cage.
+David, the Clerk, cleans the sick animal cage.
+##################################################
+
+##################################################
+The workday comes to an end...
+##################################################
+
+
+##################################################
+David, the Clerk, enters the store...
+Day: 4
+
+##################################################
+
+
+#################################################
+Total Store Cash: 1085.0
+
+##################################################
+David, the Clerk, goes through today's deliveries...
+David, the Clerk, Bird has arrived and is added to the inventory.
+David, the Clerk, Bird has arrived and is added to the inventory.
+The employee returns to finish his other activities.
+##################################################
+
+##################################################
+
+
+##################################################
+David, the Clerk, visits a Bird
+David, the Clerk, feeds the Bird
+David, the Clerk, visits a Bird
+David, the Clerk, feeds the Bird
+David, the Clerk, feeds a sick Bird and the pet remains ill...
+David, the Clerk, feeds a sick Dog and the pet remains ill...
+David, the Clerk, feeds a sick Bird and the pet remains ill...
+##################################################
+
+Cash is sufficient.
+Total Bank Withdraw: 1000.0
+Cash: 1085.0
+##################################################
+
+
+##################################################
+David, the Clerk, checking the inventory...
+David, the Clerk, reporting the total inventory value. Total Value: $124.0
+Dog needs to be purchased.
+David, the Clerk, purchasing Dog for $13.0
+Cat needs to be purchased.
+David, the Clerk, purchasing Cat for $82.0
+Food needs to be purchased.
+David, the Clerk, purchasing Food for $69.0
+Leash needs to be purchased.
+David, the Clerk, purchasing Leash for $17.0
+Toy needs to be purchased.
+David, the Clerk, purchasing Toy for $63.0
+##################################################
+
+##################################################
+
+David, the Clerk, opens the store. 
+Current inventory: 3 item(s)
+Register: 841.0
+4 potential customers enter the store...
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Bird at $77.0 after a 10% discount
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+
+Current inventory: 2 item(s)
+Cash: 918.0
+##################################################
+
+##################################################
+
+David, the Clerk, cleans the store...
+David, the Clerk, cleans the animal cage.
+David, the Clerk, cleans the sick animal cage.
+##################################################
+
+##################################################
+The workday comes to an end...
+##################################################
+
+
+##################################################
+Kevin, the Clerk, enters the store...
+Day: 5
+
+##################################################
+
+
+#################################################
+Total Store Cash: 918.0
+
+##################################################
+Kevin, the Clerk, goes through today's deliveries...
+Kevin, the Clerk, Cat has arrived and is added to the inventory.
+Kevin, the Clerk, Leash has arrived and is added to the inventory.
+The employee returns to finish his other activities.
+##################################################
+
+##################################################
+
+
+##################################################
+Kevin, the Clerk, visits a Bird
+Kevin, the Clerk, feeds the Bird
+Kevin, the Clerk, visits a Cat
+Kevin, the Clerk, feeds the Cat
+Kevin, the Clerk, feeds a sick Bird and the pet remains ill...
+Kevin, the Clerk, feeds a sick Dog and the pet remains ill...
+Kevin, the Clerk, feeds a sick Bird and the pet recovered from its sickness...
+##################################################
+
+Cash is sufficient.
+Total Bank Withdraw: 1000.0
+Cash: 918.0
+##################################################
+
+
+##################################################
+Kevin, the Clerk, checking the inventory...
+Kevin, the Clerk, reporting the total inventory value. Total Value: $258.0
+Dog needs to be purchased.
+Kevin, the Clerk, purchasing Dog for $84.0
+Food needs to be purchased.
+Kevin, the Clerk, purchasing Food for $9.0
+Toy needs to be purchased.
+Kevin, the Clerk, purchasing Toy for $30.0
+##################################################
+
+##################################################
+
+Kevin, the Clerk, opens the store. 
+Current inventory: 5 item(s)
+Register: 795.0
+9 potential customers enter the store...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Leash at $70.0 after a 10% discount
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Bird at $92.0 after a 10% discount
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Cat at $157.0 after a 10% discount
+
+Current inventory: 2 item(s)
+Cash: 1114.0
+##################################################
+
+##################################################
+
+Kevin, the Clerk, cleans the store...
+Kevin, the Clerk, cleans the animal cage.
+Kevin, the Clerk, accidentally has escape Bird
+Kevin, the Clerk, catches Bird and puts it back in the cage
+Kevin, the Clerk, cleans the sick animal cage.
+##################################################
+
+##################################################
+The workday comes to an end...
+##################################################
+
+
+##################################################
+Andrew, the Trainer, enters the store...
+Day: 6
+
+##################################################
+
+
+#################################################
+Total Store Cash: 1114.0
+
+##################################################
+Andrew, the Trainer, goes through today's deliveries...
+The employee returns to finish his other activities.
+##################################################
+
+##################################################
+
+
+##################################################
+Andrew, the Trainer, visits a Bird, and the pet got sick...
+Andrew, the Trainer, feeds a sick Bird and the pet remains ill...
+Andrew, the Trainer, feeds a sick Dog and the pet remains ill...
+Andrew, the Trainer, feeds a sick Bird and the pet remains ill...
+##################################################
+
+Cash is sufficient.
+Total Bank Withdraw: 1000.0
+Cash: 1114.0
+##################################################
+
+
+##################################################
+Andrew, the Trainer, checking the inventory...
+Andrew, the Trainer, reporting the total inventory value. Total Value: $30.0
+Dog needs to be purchased.
+Andrew, the Trainer, purchasing Dog for $26.0
+Cat needs to be purchased.
+Andrew, the Trainer, purchasing Cat for $74.0
+Bird needs to be purchased.
+Andrew, the Trainer, purchasing Bird for $84.0
+Food needs to be purchased.
+Andrew, the Trainer, purchasing Food for $94.0
+Leash needs to be purchased.
+Andrew, the Trainer, purchasing Leash for $29.0
+Toy needs to be purchased.
+Andrew, the Trainer, purchasing Toy for $96.0
+##################################################
+
+##################################################
+
+Andrew, the Trainer, opens the store. 
+Current inventory: 1 item(s)
+Register: 711.0
+7 potential customers enter the store...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Cat Litter at $60.0
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+
+Current inventory: 0 item(s)
+Cash: 771.0
+##################################################
+
+##################################################
+
+Andrew, the Trainer, cleans the store...
+Andrew, the Trainer, cleans the animal cage.
+Andrew, the Trainer, cleans the sick animal cage.
+##################################################
+
+##################################################
+The workday comes to an end...
+##################################################
+
+
+##################################################
+Sarah, the Trainer, enters the store...
+Day: 7
+
+##################################################
+
+
+#################################################
+Total Store Cash: 771.0
+
+##################################################
+Sarah, the Trainer, goes through today's deliveries...
+Sarah, the Trainer, Dog has arrived and is added to the inventory.
+The employee returns to finish his other activities.
+##################################################
+
+##################################################
+
+
+##################################################
+Sarah, the Trainer, visits a Dog
+Sarah, the Trainer, feeds the Dog
+Sarah, the Trainer, feeds a sick Bird and the pet recovered from its sickness...
+Sarah, the Trainer, feeds a sick Dog and the pet remains ill...
+Sarah, the Trainer, feeds a sick Bird and the pet remains ill...
+##################################################
+
+Cash is sufficient.
+Total Bank Withdraw: 1000.0
+Cash: 771.0
+##################################################
+
+
+##################################################
+Sarah, the Trainer, checking the inventory...
+Sarah, the Trainer, reporting the total inventory value. Total Value: $28.0
+Cat needs to be purchased.
+Sarah, the Trainer, purchasing Cat for $22.0
+Food needs to be purchased.
+Sarah, the Trainer, purchasing Food for $64.0
+Leash needs to be purchased.
+Sarah, the Trainer, purchasing Leash for $14.0
+Toy needs to be purchased.
+Sarah, the Trainer, purchasing Toy for $43.0
+CatLitter needs to be purchased.
+Sarah, the Trainer, purchasing CatLitter for $19.0
+##################################################
+
+##################################################
+
+Sarah, the Trainer, opens the store. 
+Current inventory: 2 item(s)
+Register: 609.0
+6 potential customers enter the store...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+
+Current inventory: 2 item(s)
+Cash: 609.0
+##################################################
+
+##################################################
+
+Sarah, the Trainer, cleans the store...
+Sarah, the Trainer, cleans the animal cage.
+Sarah, the Trainer, accidentally has escape Bird
+[-] Bird successfully escapes for freedom..........
+Sarah, the Trainer, cleans the sick animal cage.
+##################################################
+
+##################################################
+The workday comes to an end...
+##################################################
+
+
+##################################################
+Kevin, the Clerk, enters the store...
+Day: 8
+
+##################################################
+
+
+#################################################
+Total Store Cash: 609.0
+
+##################################################
+Kevin, the Clerk, goes through today's deliveries...
+The employee returns to finish his other activities.
+##################################################
+
+##################################################
+
+
+##################################################
+Kevin, the Clerk, visits a Dog, and the pet got sick...
+Kevin, the Clerk, feeds a sick Dog and the pet remains ill...
+Kevin, the Clerk, feeds a sick Bird and the pet remains ill...
+Kevin, the Clerk, feeds a sick Dog and the pet remains ill...
+##################################################
+
+Cash is sufficient.
+Total Bank Withdraw: 1000.0
+Cash: 609.0
+##################################################
+
+
+##################################################
+Kevin, the Clerk, checking the inventory...
+Kevin, the Clerk, reporting the total inventory value. Total Value: $0.0
+Dog needs to be purchased.
+Kevin, the Clerk, purchasing Dog for $45.0
+Cat needs to be purchased.
+Kevin, the Clerk, purchasing Cat for $94.0
+Bird needs to be purchased.
+Kevin, the Clerk, purchasing Bird for $6.0
+Food needs to be purchased.
+Kevin, the Clerk, purchasing Food for $70.0
+Leash needs to be purchased.
+Kevin, the Clerk, purchasing Leash for $75.0
+Toy needs to be purchased.
+Kevin, the Clerk, purchasing Toy for $82.0
+CatLitter needs to be purchased.
+Kevin, the Clerk, purchasing CatLitter for $75.0
+##################################################
+
+##################################################
+
+Kevin, the Clerk, opens the store. 
+Current inventory: 0 item(s)
+Register: 162.0
+9 potential customers enter the store...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+
+Current inventory: 0 item(s)
+Cash: 162.0
+##################################################
+
+##################################################
+
+Kevin, the Clerk, cleans the store...
+Kevin, the Clerk, cleans the animal cage.
+Kevin, the Clerk, cleans the sick animal cage.
+##################################################
+
+##################################################
+The workday comes to an end...
+##################################################
+
+
+##################################################
+Sarah, the Trainer, enters the store...
+Day: 9
+
+##################################################
+
+
+#################################################
+Total Store Cash: 162.0
+Sarah, the Trainer, goes to the bank...
+$1000.00 was withdrawn from the bank.
+Total withdrawal: 2000.0
+Total cash: 1324.0
+##################################################
+
+
+##################################################
+Sarah, the Trainer, goes through today's deliveries...
+Sarah, the Trainer, Toy has arrived and is added to the inventory.
+Sarah, the Trainer, CatLitter has arrived and is added to the inventory.
+The employee returns to finish his other activities.
+##################################################
+
+##################################################
+
+
+##################################################
+Sarah, the Trainer, feeds a sick Dog and the pet remains ill...
+Sarah, the Trainer, feeds a sick Bird and the pet remains ill...
+Sarah, the Trainer, feeds a sick Dog and the pet remains ill...
+##################################################
+
+Cash is sufficient.
+Total Bank Withdraw: 2000.0
+Cash: 1162.0
+##################################################
+
+
+##################################################
+Sarah, the Trainer, checking the inventory...
+Sarah, the Trainer, reporting the total inventory value. Total Value: $132.0
+Dog needs to be purchased.
+Sarah, the Trainer, purchasing Dog for $31.0
+Cat needs to be purchased.
+Sarah, the Trainer, purchasing Cat for $68.0
+Bird needs to be purchased.
+Sarah, the Trainer, purchasing Bird for $18.0
+Food needs to be purchased.
+Sarah, the Trainer, purchasing Food for $46.0
+Leash needs to be purchased.
+Sarah, the Trainer, purchasing Leash for $45.0
+##################################################
+
+##################################################
+
+Sarah, the Trainer, opens the store. 
+Current inventory: 2 item(s)
+Register: 954.0
+6 potential customers enter the store...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Toy at $148.0 after a 10% discount
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+
+Current inventory: 1 item(s)
+Cash: 1102.0
+##################################################
+
+##################################################
+
+Sarah, the Trainer, cleans the store...
+Sarah, the Trainer, cleans the animal cage.
+Sarah, the Trainer, cleans the sick animal cage.
+##################################################
+
+##################################################
+The workday comes to an end...
+##################################################
+
+
+##################################################
+David, the Clerk, enters the store...
+Day: 10
+
+##################################################
+
+
+#################################################
+Total Store Cash: 1102.0
+
+##################################################
+David, the Clerk, goes through today's deliveries...
+David, the Clerk, Bird has arrived and is added to the inventory.
+David, the Clerk, Food has arrived and is added to the inventory.
+The employee returns to finish his other activities.
+##################################################
+
+##################################################
+
+
+##################################################
+David, the Clerk, visits a Bird
+David, the Clerk, feeds the Bird
+David, the Clerk, feeds a sick Dog and the pet remains ill...
+David, the Clerk, feeds a sick Bird and the pet remains ill...
+David, the Clerk, feeds a sick Dog and the pet remains ill...
+##################################################
+
+Cash is sufficient.
+Total Bank Withdraw: 2000.0
+Cash: 1102.0
+##################################################
+
+
+##################################################
+David, the Clerk, checking the inventory...
+David, the Clerk, reporting the total inventory value. Total Value: $114.0
+Dog needs to be purchased.
+David, the Clerk, purchasing Dog for $87.0
+Cat needs to be purchased.
+David, the Clerk, purchasing Cat for $7.0
+Leash needs to be purchased.
+David, the Clerk, purchasing Leash for $87.0
+Toy needs to be purchased.
+David, the Clerk, purchasing Toy for $85.0
+##################################################
+
+##################################################
+
+David, the Clerk, opens the store. 
+Current inventory: 3 item(s)
+Register: 836.0
+4 potential customers enter the store...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Food at $92.0
+
+Current inventory: 2 item(s)
+Cash: 928.0
+##################################################
+
+##################################################
+
+David, the Clerk, cleans the store...
+David, the Clerk, cleans the animal cage.
+David, the Clerk, cleans the sick animal cage.
+##################################################
+
+##################################################
+The workday comes to an end...
+##################################################
+
+
+##################################################
+Sarah, the Trainer, enters the store...
+Day: 11
+
+##################################################
+
+
+#################################################
+Total Store Cash: 928.0
+
+##################################################
+Sarah, the Trainer, goes through today's deliveries...
+The employee returns to finish his other activities.
+##################################################
+
+##################################################
+
+
+##################################################
+Sarah, the Trainer, visits a Bird, and the pet got sick...
+Sarah, the Trainer, feeds a sick Dog and the pet remains ill...
+Sarah, the Trainer, feeds a sick Bird and the pet remains ill...
+Sarah, the Trainer, feeds a sick Dog and the pet remains ill...
+Sarah, the Trainer, feeds a sick Bird and the pet remains ill...
+##################################################
+
+Cash is sufficient.
+Total Bank Withdraw: 2000.0
+Cash: 928.0
+##################################################
+
+
+##################################################
+Sarah, the Trainer, checking the inventory...
+Sarah, the Trainer, reporting the total inventory value. Total Value: $50.0
+Dog needs to be purchased.
+Sarah, the Trainer, purchasing Dog for $9.0
+Cat needs to be purchased.
+Sarah, the Trainer, purchasing Cat for $96.0
+Bird needs to be purchased.
+Sarah, the Trainer, purchasing Bird for $16.0
+Food needs to be purchased.
+Sarah, the Trainer, purchasing Food for $80.0
+Leash needs to be purchased.
+Sarah, the Trainer, purchasing Leash for $84.0
+Toy needs to be purchased.
+Sarah, the Trainer, purchasing Toy for $88.0
+##################################################
+
+##################################################
+
+Sarah, the Trainer, opens the store. 
+Current inventory: 1 item(s)
+Register: 555.0
+9 potential customers enter the store...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+
+Current inventory: 1 item(s)
+Cash: 555.0
+##################################################
+
+##################################################
+
+Sarah, the Trainer, cleans the store...
+Sarah, the Trainer, cleans the animal cage.
+Sarah, the Trainer, cleans the sick animal cage.
+##################################################
+
+##################################################
+The workday comes to an end...
+##################################################
+
+
+##################################################
+Andrew, the Trainer, enters the store...
+Day: 12
+
+##################################################
+
+
+#################################################
+Total Store Cash: 555.0
+
+##################################################
+Andrew, the Trainer, goes through today's deliveries...
+Andrew, the Trainer, Toy has arrived and is added to the inventory.
+The employee returns to finish his other activities.
+##################################################
+
+##################################################
+
+
+##################################################
+Andrew, the Trainer, feeds a sick Dog and the pet remains ill...
+Andrew, the Trainer, feeds a sick Bird and the pet remains ill...
+Andrew, the Trainer, feeds a sick Dog and the pet remains ill...
+Andrew, the Trainer, feeds a sick Bird and the pet recovered from its sickness...
+##################################################
+
+Cash is sufficient.
+Total Bank Withdraw: 2000.0
+Cash: 555.0
+##################################################
+
+
+##################################################
+Andrew, the Trainer, checking the inventory...
+Andrew, the Trainer, reporting the total inventory value. Total Value: $156.0
+Dog needs to be purchased.
+Andrew, the Trainer, purchasing Dog for $10.0
+Cat needs to be purchased.
+Andrew, the Trainer, purchasing Cat for $32.0
+Food needs to be purchased.
+Andrew, the Trainer, purchasing Food for $71.0
+Leash needs to be purchased.
+Andrew, the Trainer, purchasing Leash for $24.0
+##################################################
+
+##################################################
+
+Andrew, the Trainer, opens the store. 
+Current inventory: 3 item(s)
+Register: 418.0
+3 potential customers enter the store...
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Bird at $32.0 after a 10% discount
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Toy at $176.0
+
+Current inventory: 1 item(s)
+Cash: 626.0
+##################################################
+
+##################################################
+
+Andrew, the Trainer, cleans the store...
+Andrew, the Trainer, cleans the animal cage.
+Andrew, the Trainer, cleans the sick animal cage.
+Andrew, the Trainer, accidentally has escape Dog
+Andrew, the Trainer, catches Dog and puts it back in the cage
+##################################################
+
+##################################################
+The workday comes to an end...
+##################################################
+
+
+##################################################
+Kevin, the Clerk, enters the store...
+Day: 13
+
+##################################################
+
+
+#################################################
+Total Store Cash: 626.0
+
+##################################################
+Kevin, the Clerk, goes through today's deliveries...
+Kevin, the Clerk, Dog has arrived and is added to the inventory.
+Kevin, the Clerk, Leash has arrived and is added to the inventory.
+The employee returns to finish his other activities.
+##################################################
+
+##################################################
+
+
+##################################################
+Kevin, the Clerk, visits a Dog
+Kevin, the Clerk, feeds the Dog
+Kevin, the Clerk, feeds a sick Dog and the pet remains ill...
+Kevin, the Clerk, feeds a sick Bird and the pet recovered from its sickness...
+Kevin, the Clerk, feeds a sick Dog and the pet remains ill...
+##################################################
+
+Cash is sufficient.
+Total Bank Withdraw: 2000.0
+Cash: 626.0
+##################################################
+
+
+##################################################
+Kevin, the Clerk, checking the inventory...
+Kevin, the Clerk, reporting the total inventory value. Total Value: $135.0
+Cat needs to be purchased.
+Kevin, the Clerk, purchasing Cat for $81.0
+Food needs to be purchased.
+Kevin, the Clerk, purchasing Food for $79.0
+Toy needs to be purchased.
+Kevin, the Clerk, purchasing Toy for $37.0
+##################################################
+
+##################################################
+
+Kevin, the Clerk, opens the store. 
+Current inventory: 4 item(s)
+Register: 429.0
+6 potential customers enter the store...
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Dog at $18.0 after a 10% discount
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases CatLitter at $100.0
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+
+Current inventory: 2 item(s)
+Cash: 547.0
+##################################################
+
+##################################################
+
+Kevin, the Clerk, cleans the store...
+Kevin, the Clerk, cleans the animal cage.
+Kevin, the Clerk, accidentally has escape Bird
+Kevin, the Clerk, catches Bird and puts it back in the cage
+Kevin, the Clerk, cleans the sick animal cage.
+##################################################
+
+##################################################
+The workday comes to an end...
+##################################################
+
+
+##################################################
+Andrew, the Trainer, enters the store...
+Day: 14
+
+##################################################
+
+
+#################################################
+Total Store Cash: 547.0
+
+##################################################
+Andrew, the Trainer, goes through today's deliveries...
+Andrew, the Trainer, Cat has arrived and is added to the inventory.
+Andrew, the Trainer, Food has arrived and is added to the inventory.
+The employee returns to finish his other activities.
+##################################################
+
+##################################################
+
+
+##################################################
+Andrew, the Trainer, visits a Bird, and the pet got sick...
+Andrew, the Trainer, visits a Cat
+Andrew, the Trainer, feeds the Cat
+Andrew, the Trainer, feeds a sick Dog and the pet remains ill...
+Andrew, the Trainer, feeds a sick Dog and the pet remains ill...
+Andrew, the Trainer, feeds a sick Bird and the pet remains ill...
+##################################################
+
+Cash is sufficient.
+Total Bank Withdraw: 2000.0
+Cash: 547.0
+##################################################
+
+
+##################################################
+Andrew, the Trainer, checking the inventory...
+Andrew, the Trainer, reporting the total inventory value. Total Value: $184.0
+Dog needs to be purchased.
+Andrew, the Trainer, purchasing Dog for $80.0
+Bird needs to be purchased.
+Andrew, the Trainer, purchasing Bird for $94.0
+Toy needs to be purchased.
+Andrew, the Trainer, purchasing Toy for $19.0
+CatLitter needs to be purchased.
+Andrew, the Trainer, purchasing CatLitter for $79.0
+##################################################
+
+##################################################
+
+Andrew, the Trainer, opens the store. 
+Current inventory: 3 item(s)
+Register: 275.0
+7 potential customers enter the store...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+
+Current inventory: 3 item(s)
+Cash: 275.0
+##################################################
+
+##################################################
+
+Andrew, the Trainer, cleans the store...
+Andrew, the Trainer, cleans the animal cage.
+Andrew, the Trainer, accidentally has escape Cat
+[-] Cat successfully escapes for freedom..........
+Andrew, the Trainer, cleans the sick animal cage.
+##################################################
+
+##################################################
+The workday comes to an end...
+##################################################
+
+
+##################################################
+Sarah, the Trainer, enters the store...
+Day: 15
+
+##################################################
+
+
+#################################################
+Total Store Cash: 275.0
+
+##################################################
+Sarah, the Trainer, goes through today's deliveries...
+The employee returns to finish his other activities.
+##################################################
+
+##################################################
+
+
+##################################################
+Sarah, the Trainer, feeds a sick Dog and the pet remains ill...
+Sarah, the Trainer, feeds a sick Dog and the pet remains ill...
+Sarah, the Trainer, feeds a sick Bird and the pet recovered from its sickness...
+##################################################
+
+Cash is sufficient.
+Total Bank Withdraw: 2000.0
+Cash: 275.0
+##################################################
+
+
+##################################################
+Sarah, the Trainer, checking the inventory...
+Sarah, the Trainer, reporting the total inventory value. Total Value: $154.0
+Dog needs to be purchased.
+Sarah, the Trainer, purchasing Dog for $72.0
+Cat needs to be purchased.
+Sarah, the Trainer, purchasing Cat for $58.0
+Toy needs to be purchased.
+Sarah, the Trainer, purchasing Toy for $98.0
+CatLitter needs to be purchased.
+Purchase failed: Insufficient money
+##################################################
+
+##################################################
+
+Sarah, the Trainer, opens the store. 
+Current inventory: 3 item(s)
+Register: 47.0
+6 potential customers enter the store...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Bird at $102.0 after a 10% discount
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Food at $142.0 after a 10% discount
+The customer inspects the store's offerings...
+
+Current inventory: 1 item(s)
+Cash: 291.0
+##################################################
+
+##################################################
+
+Sarah, the Trainer, cleans the store...
+Sarah, the Trainer, cleans the animal cage.
+Sarah, the Trainer, cleans the sick animal cage.
+##################################################
+
+##################################################
+The workday comes to an end...
+##################################################
+
+
+##################################################
+Kevin, the Clerk, enters the store...
+Day: 16
+
+##################################################
+
+
+#################################################
+Total Store Cash: 291.0
+
+##################################################
+Kevin, the Clerk, goes through today's deliveries...
+Kevin, the Clerk, Cat has arrived and is added to the inventory.
+The employee returns to finish his other activities.
+##################################################
+
+##################################################
+
+
+##################################################
+Kevin, the Clerk, visits a Cat
+Kevin, the Clerk, feeds the Cat
+Kevin, the Clerk, feeds a sick Dog and the pet remains ill...
+Kevin, the Clerk, feeds a sick Dog and the pet remains ill...
+##################################################
+
+Cash is sufficient.
+Total Bank Withdraw: 2000.0
+Cash: 291.0
+##################################################
+
+
+##################################################
+Kevin, the Clerk, checking the inventory...
+Kevin, the Clerk, reporting the total inventory value. Total Value: $82.0
+Dog needs to be purchased.
+Kevin, the Clerk, purchasing Dog for $64.0
+Bird needs to be purchased.
+Kevin, the Clerk, purchasing Bird for $67.0
+Food needs to be purchased.
+Kevin, the Clerk, purchasing Food for $17.0
+Toy needs to be purchased.
+Kevin, the Clerk, purchasing Toy for $42.0
+CatLitter needs to be purchased.
+Kevin, the Clerk, purchasing CatLitter for $27.0
+##################################################
+
+##################################################
+
+Kevin, the Clerk, opens the store. 
+Current inventory: 2 item(s)
+Register: 74.0
+6 potential customers enter the store...
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Leash at $48.0
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+
+Current inventory: 1 item(s)
+Cash: 122.0
+##################################################
+
+##################################################
+
+Kevin, the Clerk, cleans the store...
+Kevin, the Clerk, cleans the animal cage.
+Kevin, the Clerk, cleans the sick animal cage.
+##################################################
+
+##################################################
+The workday comes to an end...
+##################################################
+
+
+##################################################
+Kevin, the Clerk, enters the store...
+Day: 17
+
+##################################################
+
+
+#################################################
+Total Store Cash: 122.0
+Kevin, the Clerk, goes to the bank...
+$1000.00 was withdrawn from the bank.
+Total withdrawal: 3000.0
+Total cash: 1244.0
+##################################################
+
+
+##################################################
+Kevin, the Clerk, goes through today's deliveries...
+Kevin, the Clerk, Cat has arrived and is added to the inventory.
+Kevin, the Clerk, Dog has arrived and is added to the inventory.
+Kevin, the Clerk, Food has arrived and is added to the inventory.
+Kevin, the Clerk, Bird has arrived and is added to the inventory.
+Kevin, the Clerk, Leash has arrived and is added to the inventory.
+Kevin, the Clerk, Toy has arrived and is added to the inventory.
+Kevin, the Clerk, Dog has arrived and is added to the inventory.
+Kevin, the Clerk, Leash has arrived and is added to the inventory.
+Kevin, the Clerk, Leash has arrived and is added to the inventory.
+Kevin, the Clerk, Dog has arrived and is added to the inventory.
+Kevin, the Clerk, Leash has arrived and is added to the inventory.
+Kevin, the Clerk, Dog has arrived and is added to the inventory.
+Kevin, the Clerk, Cat has arrived and is added to the inventory.
+Kevin, the Clerk, Bird has arrived and is added to the inventory.
+Kevin, the Clerk, Leash has arrived and is added to the inventory.
+Kevin, the Clerk, Dog has arrived and is added to the inventory.
+Kevin, the Clerk, CatLitter has arrived and is added to the inventory.
+Kevin, the Clerk, Toy has arrived and is added to the inventory.
+Kevin, the Clerk, Dog has arrived and is added to the inventory.
+Kevin, the Clerk, Food has arrived and is added to the inventory.
+Kevin, the Clerk, CatLitter has arrived and is added to the inventory.
+The employee returns to finish his other activities.
+##################################################
+
+##################################################
+
+
+##################################################
+Kevin, the Clerk, visits a Cat
+Kevin, the Clerk, feeds the Cat
+Kevin, the Clerk, visits a Cat, and the pet got sick...
+Kevin, the Clerk, visits a Dog, and the pet got sick...
+Kevin, the Clerk, visits a Bird, and the pet got sick...
+Kevin, the Clerk, visits a Dog, and the pet got sick...
+Kevin, the Clerk, visits a Dog, and the pet got sick...
+Kevin, the Clerk, visits a Dog
+Kevin, the Clerk, feeds the Dog
+Kevin, the Clerk, visits a Cat
+Kevin, the Clerk, feeds the Cat
+Kevin, the Clerk, visits a Bird, and the pet got sick...
+Kevin, the Clerk, visits a Dog, and the pet got sick...
+Kevin, the Clerk, visits a Dog, and the pet got sick...
+Kevin, the Clerk, feeds a sick Dog and the pet remains ill...
+Kevin, the Clerk, feeds a sick Dog and the pet remains ill...
+Kevin, the Clerk, feeds a sick Cat and the pet remains ill...
+Kevin, the Clerk, feeds a sick Dog and the pet remains ill...
+Kevin, the Clerk, feeds a sick Bird and the pet remains ill...
+Kevin, the Clerk, feeds a sick Dog and the pet remains ill...
+Kevin, the Clerk, feeds a sick Dog and the pet remains ill...
+Kevin, the Clerk, feeds a sick Bird and the pet remains ill...
+Kevin, the Clerk, feeds a sick Dog and the pet remains ill...
+Kevin, the Clerk, feeds a sick Dog and the pet remains ill...
+##################################################
+
+Cash is sufficient.
+Total Bank Withdraw: 3000.0
+Cash: 1122.0
+##################################################
+
+
+##################################################
+Kevin, the Clerk, checking the inventory...
+Kevin, the Clerk, reporting the total inventory value. Total Value: $713.0
+Bird needs to be purchased.
+Kevin, the Clerk, purchasing Bird for $69.0
+##################################################
+
+##################################################
+
+Kevin, the Clerk, opens the store. 
+Current inventory: 14 item(s)
+Register: 1053.0
+8 potential customers enter the store...
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Food at $34.0
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Cat at $173.0 after a 10% discount
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Leash at $168.0
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Leash at $174.0
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Dog at $16.0 after a 10% discount
+
+Current inventory: 9 item(s)
+Cash: 1618.0
+##################################################
+
+##################################################
+
+Kevin, the Clerk, cleans the store...
+Kevin, the Clerk, cleans the animal cage.
+Kevin, the Clerk, cleans the sick animal cage.
+Kevin, the Clerk, accidentally has escape Dog
+[-] Dog desperately escapes for freedom..........
+##################################################
+
+##################################################
+The workday comes to an end...
+##################################################
+
+
+##################################################
+David, the Clerk, enters the store...
+Day: 18
+
+##################################################
+
+
+#################################################
+Total Store Cash: 1618.0
+
+##################################################
+David, the Clerk, goes through today's deliveries...
+David, the Clerk, Bird has arrived and is added to the inventory.
+The employee returns to finish his other activities.
+##################################################
+
+##################################################
+
+
+##################################################
+David, the Clerk, visits a Cat
+David, the Clerk, feeds the Cat
+David, the Clerk, visits a Bird
+David, the Clerk, feeds the Bird
+David, the Clerk, feeds a sick Dog and the pet remains ill...
+David, the Clerk, feeds a sick Dog and the pet remains ill...
+David, the Clerk, feeds a sick Cat and the pet remains ill...
+David, the Clerk, feeds a sick Dog and the pet remains ill...
+David, the Clerk, feeds a sick Bird and the pet remains ill...
+David, the Clerk, feeds a sick Dog and the pet remains ill...
+David, the Clerk, feeds a sick Bird and the pet remains ill...
+David, the Clerk, feeds a sick Dog and the pet remains ill...
+David, the Clerk, feeds a sick Dog and the pet remains ill...
+##################################################
+
+Cash is sufficient.
+Total Bank Withdraw: 3000.0
+Cash: 1618.0
+##################################################
+
+
+##################################################
+David, the Clerk, checking the inventory...
+David, the Clerk, reporting the total inventory value. Total Value: $487.0
+Dog needs to be purchased.
+David, the Clerk, purchasing Dog for $47.0
+##################################################
+
+##################################################
+
+David, the Clerk, opens the store. 
+Current inventory: 10 item(s)
+Register: 1571.0
+4 potential customers enter the store...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Toy at $86.0 after a 10% discount
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+
+Current inventory: 9 item(s)
+Cash: 1657.0
+##################################################
+
+##################################################
+
+David, the Clerk, cleans the store...
+David, the Clerk, cleans the animal cage.
+David, the Clerk, accidentally has escape Cat
+[-] Cat successfully escapes for freedom..........
+David, the Clerk, accidentally has escape Bird
+David, the Clerk, catches Bird and puts it back in the cage
+David, the Clerk, cleans the sick animal cage.
+##################################################
+
+##################################################
+The workday comes to an end...
+##################################################
+
+
+##################################################
+David, the Clerk, enters the store...
+Day: 19
+
+##################################################
+
+
+#################################################
+Total Store Cash: 1657.0
+
+##################################################
+David, the Clerk, goes through today's deliveries...
+The employee returns to finish his other activities.
+##################################################
+
+##################################################
+
+
+##################################################
+David, the Clerk, visits a Bird, and the pet got sick...
+David, the Clerk, feeds a sick Dog and the pet remains ill...
+David, the Clerk, feeds a sick Dog and the pet remains ill...
+David, the Clerk, feeds a sick Cat and the pet recovered from its sickness...
+David, the Clerk, feeds a sick Dog and the pet remains ill...
+David, the Clerk, feeds a sick Bird and the pet remains ill...
+David, the Clerk, feeds a sick Dog and the pet remains ill...
+David, the Clerk, feeds a sick Bird and the pet remains ill...
+David, the Clerk, feeds a sick Dog and the pet remains ill...
+David, the Clerk, feeds a sick Dog and the pet remains ill...
+David, the Clerk, feeds a sick Bird and the pet recovered from its sickness...
+##################################################
+
+Cash is sufficient.
+Total Bank Withdraw: 3000.0
+Cash: 1657.0
+##################################################
+
+
+##################################################
+David, the Clerk, checking the inventory...
+David, the Clerk, reporting the total inventory value. Total Value: $468.0
+Dog needs to be purchased.
+David, the Clerk, purchasing Dog for $20.0
+##################################################
+
+##################################################
+
+David, the Clerk, opens the store. 
+Current inventory: 9 item(s)
+Register: 1637.0
+5 potential customers enter the store...
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Leash at $150.0
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Cat at $148.0 after a 10% discount
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Bird at $134.0 after a 10% discount
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Food at $16.0 after a 10% discount
+
+Current inventory: 5 item(s)
+Cash: 2085.0
+##################################################
+
+##################################################
+
+David, the Clerk, cleans the store...
+David, the Clerk, cleans the animal cage.
+David, the Clerk, cleans the sick animal cage.
+##################################################
+
+##################################################
+The workday comes to an end...
+##################################################
+
+
+##################################################
+Kevin, the Clerk, enters the store...
+Day: 20
+
+##################################################
+
+
+#################################################
+Total Store Cash: 2085.0
+
+##################################################
+Kevin, the Clerk, goes through today's deliveries...
+The employee returns to finish his other activities.
+##################################################
+
+##################################################
+
+
+##################################################
+Kevin, the Clerk, feeds a sick Dog and the pet remains ill...
+Kevin, the Clerk, feeds a sick Dog and the pet remains ill...
+Kevin, the Clerk, feeds a sick Dog and the pet remains ill...
+Kevin, the Clerk, feeds a sick Bird and the pet recovered from its sickness...
+Kevin, the Clerk, feeds a sick Dog and the pet remains ill...
+Kevin, the Clerk, feeds a sick Bird and the pet recovered from its sickness...
+Kevin, the Clerk, feeds a sick Dog and the pet remains ill...
+Kevin, the Clerk, feeds a sick Dog and the pet remains ill...
+##################################################
+
+Cash is sufficient.
+Total Bank Withdraw: 3000.0
+Cash: 2085.0
+##################################################
+
+
+##################################################
+Kevin, the Clerk, checking the inventory...
+Kevin, the Clerk, reporting the total inventory value. Total Value: $335.0
+Dog needs to be purchased.
+Kevin, the Clerk, purchasing Dog for $95.0
+Cat needs to be purchased.
+Kevin, the Clerk, purchasing Cat for $44.0
+Food needs to be purchased.
+Kevin, the Clerk, purchasing Food for $19.0
+##################################################
+
+##################################################
+
+Kevin, the Clerk, opens the store. 
+Current inventory: 7 item(s)
+Register: 1927.0
+9 potential customers enter the store...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Bird at $168.0 after a 10% discount
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Leash at $81.0 after a 10% discount
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases CatLitter at $68.0 after a 10% discount
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Leash at $28.0
+
+Current inventory: 3 item(s)
+Cash: 2272.0
+##################################################
+
+##################################################
+
+Kevin, the Clerk, cleans the store...
+Kevin, the Clerk, cleans the animal cage.
+Kevin, the Clerk, cleans the sick animal cage.
+##################################################
+
+##################################################
+The workday comes to an end...
+##################################################
+
+
+##################################################
+Andrew, the Trainer, enters the store...
+Day: 21
+
+##################################################
+
+
+#################################################
+Total Store Cash: 2272.0
+
+##################################################
+Andrew, the Trainer, goes through today's deliveries...
+The employee returns to finish his other activities.
+##################################################
+
+##################################################
+
+
+##################################################
+Andrew, the Trainer, visits a Bird, and the pet got sick...
+Andrew, the Trainer, feeds a sick Dog and the pet remains ill...
+Andrew, the Trainer, feeds a sick Dog and the pet remains ill...
+Andrew, the Trainer, feeds a sick Dog and the pet remains ill...
+Andrew, the Trainer, feeds a sick Dog and the pet remains ill...
+Andrew, the Trainer, feeds a sick Dog and the pet remains ill...
+Andrew, the Trainer, feeds a sick Dog and the pet remains ill...
+Andrew, the Trainer, feeds a sick Bird and the pet recovered from its sickness...
+##################################################
+
+Cash is sufficient.
+Total Bank Withdraw: 3000.0
+Cash: 2272.0
+##################################################
+
+
+##################################################
+Andrew, the Trainer, checking the inventory...
+Andrew, the Trainer, reporting the total inventory value. Total Value: $154.0
+Dog needs to be purchased.
+Andrew, the Trainer, purchasing Dog for $97.0
+Cat needs to be purchased.
+Andrew, the Trainer, purchasing Cat for $65.0
+Food needs to be purchased.
+Andrew, the Trainer, purchasing Food for $71.0
+Leash needs to be purchased.
+Andrew, the Trainer, purchasing Leash for $1.0
+##################################################
+
+##################################################
+
+Andrew, the Trainer, opens the store. 
+Current inventory: 3 item(s)
+Register: 2038.0
+6 potential customers enter the store...
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases CatLitter at $80.0
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+
+Current inventory: 2 item(s)
+Cash: 2118.0
+##################################################
+
+##################################################
+
+Andrew, the Trainer, cleans the store...
+Andrew, the Trainer, cleans the animal cage.
+Andrew, the Trainer, cleans the sick animal cage.
+##################################################
+
+##################################################
+The workday comes to an end...
+##################################################
+
+
+##################################################
+Andrew, the Trainer, enters the store...
+Day: 22
+
+##################################################
+
+
+#################################################
+Total Store Cash: 2118.0
+
+##################################################
+Andrew, the Trainer, goes through today's deliveries...
+Andrew, the Trainer, Dog has arrived and is added to the inventory.
+Andrew, the Trainer, Food has arrived and is added to the inventory.
+Andrew, the Trainer, Leash has arrived and is added to the inventory.
+The employee returns to finish his other activities.
+##################################################
+
+##################################################
+
+
+##################################################
+Andrew, the Trainer, visits a Bird, and the pet got sick...
+Andrew, the Trainer, visits a Dog
+Andrew, the Trainer, feeds the Dog
+Andrew, the Trainer, feeds a sick Dog and the pet remains ill...
+Andrew, the Trainer, feeds a sick Dog and the pet remains ill...
+Andrew, the Trainer, feeds a sick Dog and the pet remains ill...
+Andrew, the Trainer, feeds a sick Dog and the pet remains ill...
+Andrew, the Trainer, feeds a sick Dog and the pet remains ill...
+Andrew, the Trainer, feeds a sick Dog and the pet remains ill...
+Andrew, the Trainer, feeds a sick Bird and the pet remains ill...
+##################################################
+
+Cash is sufficient.
+Total Bank Withdraw: 3000.0
+Cash: 2118.0
+##################################################
+
+
+##################################################
+Andrew, the Trainer, checking the inventory...
+Andrew, the Trainer, reporting the total inventory value. Total Value: $265.0
+Cat needs to be purchased.
+Andrew, the Trainer, purchasing Cat for $50.0
+Bird needs to be purchased.
+Andrew, the Trainer, purchasing Bird for $34.0
+CatLitter needs to be purchased.
+Andrew, the Trainer, purchasing CatLitter for $70.0
+##################################################
+
+##################################################
+
+Andrew, the Trainer, opens the store. 
+Current inventory: 4 item(s)
+Register: 1964.0
+8 potential customers enter the store...
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Food at $142.0
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Leash at $2.0 after a 10% discount
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+
+Current inventory: 2 item(s)
+Cash: 2108.0
+##################################################
+
+##################################################
+
+Andrew, the Trainer, cleans the store...
+Andrew, the Trainer, cleans the animal cage.
+Andrew, the Trainer, accidentally has escape Dog
+Andrew, the Trainer, catches Dog and puts it back in the cage
+Andrew, the Trainer, cleans the sick animal cage.
+##################################################
+
+##################################################
+The workday comes to an end...
+##################################################
+
+
+##################################################
+Sarah, the Trainer, enters the store...
+Day: 23
+
+##################################################
+
+
+#################################################
+Total Store Cash: 2108.0
+
+##################################################
+Sarah, the Trainer, goes through today's deliveries...
+The employee returns to finish his other activities.
+##################################################
+
+##################################################
+
+
+##################################################
+Sarah, the Trainer, visits a Dog
+Sarah, the Trainer, feeds the Dog
+Sarah, the Trainer, feeds a sick Dog and the pet remains ill...
+Sarah, the Trainer, feeds a sick Dog and the pet remains ill...
+Sarah, the Trainer, feeds a sick Dog and the pet remains ill...
+Sarah, the Trainer, feeds a sick Dog and the pet remains ill...
+Sarah, the Trainer, feeds a sick Dog and the pet remains ill...
+Sarah, the Trainer, feeds a sick Dog and the pet remains ill...
+Sarah, the Trainer, feeds a sick Bird and the pet remains ill...
+##################################################
+
+Cash is sufficient.
+Total Bank Withdraw: 3000.0
+Cash: 2108.0
+##################################################
+
+
+##################################################
+Sarah, the Trainer, checking the inventory...
+Sarah, the Trainer, reporting the total inventory value. Total Value: $193.0
+Cat needs to be purchased.
+Sarah, the Trainer, purchasing Cat for $94.0
+Bird needs to be purchased.
+Sarah, the Trainer, purchasing Bird for $17.0
+Food needs to be purchased.
+Sarah, the Trainer, purchasing Food for $1.0
+Leash needs to be purchased.
+Sarah, the Trainer, purchasing Leash for $53.0
+CatLitter needs to be purchased.
+Sarah, the Trainer, purchasing CatLitter for $65.0
+##################################################
+
+##################################################
+
+Sarah, the Trainer, opens the store. 
+Current inventory: 2 item(s)
+Register: 1878.0
+3 potential customers enter the store...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Toy at $176.0 after a 10% discount
+The customer inspects the store's offerings...
+
+Current inventory: 1 item(s)
+Cash: 2054.0
+##################################################
+
+##################################################
+
+Sarah, the Trainer, cleans the store...
+Sarah, the Trainer, cleans the animal cage.
+Sarah, the Trainer, cleans the sick animal cage.
+##################################################
+
+##################################################
+The workday comes to an end...
+##################################################
+
+
+##################################################
+Kevin, the Clerk, enters the store...
+Day: 24
+
+##################################################
+
+
+#################################################
+Total Store Cash: 2054.0
+
+##################################################
+Kevin, the Clerk, goes through today's deliveries...
+Kevin, the Clerk, Bird has arrived and is added to the inventory.
+Kevin, the Clerk, CatLitter has arrived and is added to the inventory.
+The employee returns to finish his other activities.
+##################################################
+
+##################################################
+
+
+##################################################
+Kevin, the Clerk, visits a Dog, and the pet got sick...
+Kevin, the Clerk, visits a Bird
+Kevin, the Clerk, feeds the Bird
+Kevin, the Clerk, feeds a sick Dog and the pet remains ill...
+Kevin, the Clerk, feeds a sick Dog and the pet remains ill...
+Kevin, the Clerk, feeds a sick Dog and the pet remains ill...
+Kevin, the Clerk, feeds a sick Dog and the pet remains ill...
+Kevin, the Clerk, feeds a sick Dog and the pet remains ill...
+Kevin, the Clerk, feeds a sick Dog and the pet remains ill...
+Kevin, the Clerk, feeds a sick Bird and the pet remains ill...
+Kevin, the Clerk, feeds a sick Dog and the pet remains ill...
+##################################################
+
+Cash is sufficient.
+Total Bank Withdraw: 3000.0
+Cash: 2054.0
+##################################################
+
+
+##################################################
+Kevin, the Clerk, checking the inventory...
+Kevin, the Clerk, reporting the total inventory value. Total Value: $104.0
+Dog needs to be purchased.
+Kevin, the Clerk, purchasing Dog for $56.0
+Cat needs to be purchased.
+Kevin, the Clerk, purchasing Cat for $19.0
+Food needs to be purchased.
+Kevin, the Clerk, purchasing Food for $21.0
+Leash needs to be purchased.
+Kevin, the Clerk, purchasing Leash for $26.0
+Toy needs to be purchased.
+Kevin, the Clerk, purchasing Toy for $56.0
+##################################################
+
+##################################################
+
+Kevin, the Clerk, opens the store. 
+Current inventory: 2 item(s)
+Register: 1876.0
+9 potential customers enter the store...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases CatLitter at $174.0
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Bird at $34.0
+
+Current inventory: 0 item(s)
+Cash: 2084.0
+##################################################
+
+##################################################
+
+Kevin, the Clerk, cleans the store...
+Kevin, the Clerk, cleans the animal cage.
+Kevin, the Clerk, cleans the sick animal cage.
+Kevin, the Clerk, accidentally has escape Dog
+Kevin, the Clerk, catches Dog and puts it back in the cage
+##################################################
+
+##################################################
+The workday comes to an end...
+##################################################
+
+
+##################################################
+Sarah, the Trainer, enters the store...
+Day: 25
+
+##################################################
+
+
+#################################################
+Total Store Cash: 2084.0
+
+##################################################
+Sarah, the Trainer, goes through today's deliveries...
+Sarah, the Trainer, Leash has arrived and is added to the inventory.
+The employee returns to finish his other activities.
+##################################################
+
+##################################################
+
+
+##################################################
+Sarah, the Trainer, feeds a sick Dog and the pet remains ill...
+Sarah, the Trainer, feeds a sick Dog and the pet remains ill...
+Sarah, the Trainer, feeds a sick Dog and the pet remains ill...
+Sarah, the Trainer, feeds a sick Dog and the pet remains ill...
+Sarah, the Trainer, feeds a sick Dog and the pet remains ill...
+Sarah, the Trainer, feeds a sick Dog and the pet remains ill...
+Sarah, the Trainer, feeds a sick Bird and the pet remains ill...
+Sarah, the Trainer, feeds a sick Dog and the pet remains ill...
+##################################################
+
+Cash is sufficient.
+Total Bank Withdraw: 3000.0
+Cash: 2084.0
+##################################################
+
+
+##################################################
+Sarah, the Trainer, checking the inventory...
+Sarah, the Trainer, reporting the total inventory value. Total Value: $26.0
+Dog needs to be purchased.
+Sarah, the Trainer, purchasing Dog for $50.0
+Cat needs to be purchased.
+Sarah, the Trainer, purchasing Cat for $92.0
+Bird needs to be purchased.
+Sarah, the Trainer, purchasing Bird for $4.0
+Food needs to be purchased.
+Sarah, the Trainer, purchasing Food for $66.0
+Toy needs to be purchased.
+Sarah, the Trainer, purchasing Toy for $90.0
+CatLitter needs to be purchased.
+Sarah, the Trainer, purchasing CatLitter for $36.0
+##################################################
+
+##################################################
+
+Sarah, the Trainer, opens the store. 
+Current inventory: 1 item(s)
+Register: 1746.0
+8 potential customers enter the store...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+
+Current inventory: 1 item(s)
+Cash: 1746.0
+##################################################
+
+##################################################
+
+Sarah, the Trainer, cleans the store...
+Sarah, the Trainer, cleans the animal cage.
+Sarah, the Trainer, cleans the sick animal cage.
+Sarah, the Trainer, accidentally has escape Dog
+Sarah, the Trainer, catches Dog and puts it back in the cage
+##################################################
+
+##################################################
+The workday comes to an end...
+##################################################
+
+
+##################################################
+David, the Clerk, enters the store...
+Day: 26
+
+##################################################
+
+
+#################################################
+Total Store Cash: 1746.0
+
+##################################################
+David, the Clerk, goes through today's deliveries...
+David, the Clerk, Dog has arrived and is added to the inventory.
+David, the Clerk, Food has arrived and is added to the inventory.
+The employee returns to finish his other activities.
+##################################################
+
+##################################################
+
+
+##################################################
+David, the Clerk, visits a Dog, and the pet got sick...
+David, the Clerk, feeds a sick Dog and the pet remains ill...
+David, the Clerk, feeds a sick Dog and the pet remains ill...
+David, the Clerk, feeds a sick Dog and the pet remains ill...
+David, the Clerk, feeds a sick Dog and the pet remains ill...
+David, the Clerk, feeds a sick Dog and the pet remains ill...
+David, the Clerk, feeds a sick Dog and the pet remains ill...
+David, the Clerk, feeds a sick Bird and the pet remains ill...
+David, the Clerk, feeds a sick Dog and the pet remains ill...
+David, the Clerk, feeds a sick Dog and the pet remains ill...
+##################################################
+
+Cash is sufficient.
+Total Bank Withdraw: 3000.0
+Cash: 1746.0
+##################################################
+
+
+##################################################
+David, the Clerk, checking the inventory...
+David, the Clerk, reporting the total inventory value. Total Value: $92.0
+Dog needs to be purchased.
+David, the Clerk, purchasing Dog for $20.0
+Cat needs to be purchased.
+David, the Clerk, purchasing Cat for $27.0
+Bird needs to be purchased.
+David, the Clerk, purchasing Bird for $76.0
+Toy needs to be purchased.
+David, the Clerk, purchasing Toy for $79.0
+CatLitter needs to be purchased.
+David, the Clerk, purchasing CatLitter for $81.0
+##################################################
+
+##################################################
+
+David, the Clerk, opens the store. 
+Current inventory: 2 item(s)
+Register: 1463.0
+8 potential customers enter the store...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Food at $132.0
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+
+Current inventory: 1 item(s)
+Cash: 1595.0
+##################################################
+
+##################################################
+
+David, the Clerk, cleans the store...
+David, the Clerk, cleans the animal cage.
+David, the Clerk, cleans the sick animal cage.
+David, the Clerk, accidentally has escape Bird
+David, the Clerk, catches Bird and puts it back in the cage
+##################################################
+
+##################################################
+The workday comes to an end...
+##################################################
+
+
+##################################################
+David, the Clerk, enters the store...
+Day: 27
+
+##################################################
+
+
+#################################################
+Total Store Cash: 1595.0
+
+##################################################
+David, the Clerk, goes through today's deliveries...
+David, the Clerk, Cat has arrived and is added to the inventory.
+David, the Clerk, Food has arrived and is added to the inventory.
+David, the Clerk, Leash has arrived and is added to the inventory.
+David, the Clerk, Dog has arrived and is added to the inventory.
+David, the Clerk, Cat has arrived and is added to the inventory.
+David, the Clerk, Food has arrived and is added to the inventory.
+David, the Clerk, Toy has arrived and is added to the inventory.
+David, the Clerk, Toy has arrived and is added to the inventory.
+David, the Clerk, CatLitter has arrived and is added to the inventory.
+The employee returns to finish his other activities.
+##################################################
+
+##################################################
+
+
+##################################################
+David, the Clerk, visits a Cat
+David, the Clerk, feeds the Cat
+David, the Clerk, visits a Dog, and the pet got sick...
+David, the Clerk, visits a Cat, and the pet got sick...
+David, the Clerk, feeds a sick Dog and the pet remains ill...
+David, the Clerk, feeds a sick Dog and the pet remains ill...
+David, the Clerk, feeds a sick Dog and the pet remains ill...
+David, the Clerk, feeds a sick Dog and the pet remains ill...
+David, the Clerk, feeds a sick Dog and the pet remains ill...
+David, the Clerk, feeds a sick Dog and the pet remains ill...
+David, the Clerk, feeds a sick Bird and the pet remains ill...
+David, the Clerk, feeds a sick Dog and the pet remains ill...
+David, the Clerk, feeds a sick Dog and the pet remains ill...
+David, the Clerk, feeds a sick Dog and the pet remains ill...
+David, the Clerk, feeds a sick Cat and the pet remains ill...
+##################################################
+
+Cash is sufficient.
+Total Bank Withdraw: 3000.0
+Cash: 1595.0
+##################################################
+
+
+##################################################
+David, the Clerk, checking the inventory...
+David, the Clerk, reporting the total inventory value. Total Value: $408.0
+Dog needs to be purchased.
+David, the Clerk, purchasing Dog for $6.0
+Bird needs to be purchased.
+David, the Clerk, purchasing Bird for $63.0
+##################################################
+
+##################################################
+
+David, the Clerk, opens the store. 
+Current inventory: 8 item(s)
+Register: 1526.0
+9 potential customers enter the store...
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Toy at $162.0 after a 10% discount
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Toy at $112.0
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Cat at $169.0 after a 10% discount
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases CatLitter at $134.0
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Food at $2.0
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Food at $38.0 after a 10% discount
+
+Current inventory: 2 item(s)
+Cash: 2143.0
+##################################################
+
+##################################################
+
+David, the Clerk, cleans the store...
+David, the Clerk, cleans the animal cage.
+David, the Clerk, cleans the sick animal cage.
+David, the Clerk, accidentally has escape Dog
+David, the Clerk, catches Dog and puts it back in the cage
+##################################################
+
+##################################################
+The workday comes to an end...
+##################################################
+
+
+##################################################
+David, the Clerk, enters the store...
+Day: 28
+
+##################################################
+
+
+#################################################
+Total Store Cash: 2143.0
+
+##################################################
+David, the Clerk, goes through today's deliveries...
+David, the Clerk, Dog has arrived and is added to the inventory.
+David, the Clerk, Cat has arrived and is added to the inventory.
+David, the Clerk, Leash has arrived and is added to the inventory.
+David, the Clerk, Dog has arrived and is added to the inventory.
+David, the Clerk, Leash has arrived and is added to the inventory.
+David, the Clerk, Toy has arrived and is added to the inventory.
+David, the Clerk, Cat has arrived and is added to the inventory.
+David, the Clerk, Food has arrived and is added to the inventory.
+David, the Clerk, Leash has arrived and is added to the inventory.
+David, the Clerk, Toy has arrived and is added to the inventory.
+David, the Clerk, Cat has arrived and is added to the inventory.
+David, the Clerk, Food has arrived and is added to the inventory.
+David, the Clerk, CatLitter has arrived and is added to the inventory.
+David, the Clerk, Cat has arrived and is added to the inventory.
+David, the Clerk, Bird has arrived and is added to the inventory.
+David, the Clerk, Food has arrived and is added to the inventory.
+David, the Clerk, Dog has arrived and is added to the inventory.
+David, the Clerk, Cat has arrived and is added to the inventory.
+David, the Clerk, Cat has arrived and is added to the inventory.
+David, the Clerk, Toy has arrived and is added to the inventory.
+David, the Clerk, Food has arrived and is added to the inventory.
+David, the Clerk, Cat has arrived and is added to the inventory.
+David, the Clerk, Food has arrived and is added to the inventory.
+David, the Clerk, Toy has arrived and is added to the inventory.
+David, the Clerk, Bird has arrived and is added to the inventory.
+David, the Clerk, Toy has arrived and is added to the inventory.
+David, the Clerk, Dog has arrived and is added to the inventory.
+David, the Clerk, Toy has arrived and is added to the inventory.
+David, the Clerk, Dog has arrived and is added to the inventory.
+David, the Clerk, Dog has arrived and is added to the inventory.
+David, the Clerk, Cat has arrived and is added to the inventory.
+David, the Clerk, Food has arrived and is added to the inventory.
+David, the Clerk, Dog has arrived and is added to the inventory.
+David, the Clerk, Cat has arrived and is added to the inventory.
+David, the Clerk, Cat has arrived and is added to the inventory.
+David, the Clerk, Bird has arrived and is added to the inventory.
+David, the Clerk, Cat has arrived and is added to the inventory.
+David, the Clerk, Bird has arrived and is added to the inventory.
+The employee returns to finish his other activities.
+##################################################
+
+##################################################
+
+
+##################################################
+David, the Clerk, visits a Dog
+David, the Clerk, feeds the Dog
+David, the Clerk, visits a Cat
+David, the Clerk, feeds the Cat
+David, the Clerk, visits a Dog
+David, the Clerk, feeds the Dog
+David, the Clerk, visits a Cat, and the pet got sick...
+David, the Clerk, visits a Cat
+David, the Clerk, feeds the Cat
+David, the Clerk, visits a Cat, and the pet got sick...
+David, the Clerk, visits a Bird, and the pet got sick...
+David, the Clerk, visits a Dog, and the pet got sick...
+David, the Clerk, visits a Cat, and the pet got sick...
+David, the Clerk, visits a Cat, and the pet got sick...
+David, the Clerk, visits a Cat, and the pet got sick...
+David, the Clerk, visits a Bird
+David, the Clerk, feeds the Bird
+David, the Clerk, visits a Dog, and the pet got sick...
+David, the Clerk, visits a Dog
+David, the Clerk, feeds the Dog
+David, the Clerk, visits a Dog
+David, the Clerk, feeds the Dog
+David, the Clerk, visits a Cat, and the pet got sick...
+David, the Clerk, visits a Dog
+David, the Clerk, feeds the Dog
+David, the Clerk, visits a Cat
+David, the Clerk, feeds the Cat
+David, the Clerk, visits a Cat
+David, the Clerk, feeds the Cat
+David, the Clerk, visits a Bird
+David, the Clerk, feeds the Bird
+David, the Clerk, visits a Cat, and the pet got sick...
+David, the Clerk, visits a Bird
+David, the Clerk, feeds the Bird
+David, the Clerk, feeds a sick Dog and the pet remains ill...
+David, the Clerk, feeds a sick Dog and the pet remains ill...
+David, the Clerk, feeds a sick Dog and the pet remains ill...
+David, the Clerk, feeds a sick Dog and the pet remains ill...
+David, the Clerk, feeds a sick Dog and the pet remains ill...
+David, the Clerk, feeds a sick Dog and the pet remains ill...
+David, the Clerk, feeds a sick Bird and the pet remains ill...
+David, the Clerk, feeds a sick Dog and the pet remains ill...
+David, the Clerk, feeds a sick Dog and the pet remains ill...
+David, the Clerk, feeds a sick Dog and the pet remains ill...
+David, the Clerk, feeds a sick Cat and the pet remains ill...
+David, the Clerk, feeds a sick Cat and the pet remains ill...
+David, the Clerk, feeds a sick Cat and the pet remains ill...
+David, the Clerk, feeds a sick Bird and the pet remains ill...
+David, the Clerk, feeds a sick Dog and the pet remains ill...
+David, the Clerk, feeds a sick Cat and the pet remains ill...
+David, the Clerk, feeds a sick Cat and the pet recovered from its sickness...
+David, the Clerk, feeds a sick Cat and the pet recovered from its sickness...
+David, the Clerk, feeds a sick Dog and the pet remains ill...
+David, the Clerk, feeds a sick Cat and the pet remains ill...
+David, the Clerk, feeds a sick Cat and the pet recovered from its sickness...
+##################################################
+
+Cash is sufficient.
+Total Bank Withdraw: 3000.0
+Cash: 2143.0
+##################################################
+
+
+##################################################
+David, the Clerk, checking the inventory...
+David, the Clerk, reporting the total inventory value. Total Value: $1561.0
+##################################################
+
+##################################################
+
+David, the Clerk, opens the store. 
+Current inventory: 33 item(s)
+Register: 2143.0
+6 potential customers enter the store...
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Toy at $170.0
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Dog at $36.0 after a 10% discount
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Dog at $194.0
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Cat at $100.0 after a 10% discount
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Cat at $14.0 after a 10% discount
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Cat at $130.0
+
+Current inventory: 27 item(s)
+Cash: 2787.0
+##################################################
+
+##################################################
+
+David, the Clerk, cleans the store...
+David, the Clerk, cleans the animal cage.
+David, the Clerk, accidentally has escape Dog
+[-] Dog successfully escapes for freedom..........
+David, the Clerk, accidentally has escape Cat
+David, the Clerk, catches Cat and puts it back in the cage
+David, the Clerk, accidentally has escape Bird
+[-] Bird successfully escapes for freedom..........
+David, the Clerk, accidentally has escape Cat
+[-] Cat successfully escapes for freedom..........
+David, the Clerk, cleans the sick animal cage.
+##################################################
+
+##################################################
+The workday comes to an end...
+##################################################
+
+
+##################################################
+Kevin, the Clerk, enters the store...
+Day: 29
+
+##################################################
+
+
+#################################################
+Total Store Cash: 2787.0
+
+##################################################
+Kevin, the Clerk, goes through today's deliveries...
+Kevin, the Clerk, Dog has arrived and is added to the inventory.
+Kevin, the Clerk, Cat has arrived and is added to the inventory.
+Kevin, the Clerk, Bird has arrived and is added to the inventory.
+Kevin, the Clerk, Toy has arrived and is added to the inventory.
+Kevin, the Clerk, CatLitter has arrived and is added to the inventory.
+The employee returns to finish his other activities.
+##################################################
+
+##################################################
+
+
+##################################################
+Kevin, the Clerk, visits a Dog
+Kevin, the Clerk, feeds the Dog
+Kevin, the Clerk, visits a Cat
+Kevin, the Clerk, feeds the Cat
+Kevin, the Clerk, visits a Cat, and the pet got sick...
+Kevin, the Clerk, visits a Bird
+Kevin, the Clerk, feeds the Bird
+Kevin, the Clerk, visits a Dog
+Kevin, the Clerk, feeds the Dog
+Kevin, the Clerk, visits a Bird, and the pet got sick...
+Kevin, the Clerk, visits a Cat, and the pet got sick...
+Kevin, the Clerk, visits a Dog
+Kevin, the Clerk, feeds the Dog
+Kevin, the Clerk, visits a Cat
+Kevin, the Clerk, feeds the Cat
+Kevin, the Clerk, visits a Bird
+Kevin, the Clerk, feeds the Bird
+Kevin, the Clerk, feeds a sick Dog and the pet remains ill...
+Kevin, the Clerk, feeds a sick Dog and the pet remains ill...
+Kevin, the Clerk, feeds a sick Dog and the pet remains ill...
+Kevin, the Clerk, feeds a sick Dog and the pet remains ill...
+Kevin, the Clerk, feeds a sick Dog and the pet remains ill...
+Kevin, the Clerk, feeds a sick Dog and the pet remains ill...
+Kevin, the Clerk, feeds a sick Bird and the pet remains ill...
+Kevin, the Clerk, feeds a sick Dog and the pet remains ill...
+Kevin, the Clerk, feeds a sick Dog and the pet remains ill...
+Kevin, the Clerk, feeds a sick Dog and the pet remains ill...
+Kevin, the Clerk, feeds a sick Cat and the pet recovered from its sickness...
+Kevin, the Clerk, feeds a sick Cat and the pet remains ill...
+Kevin, the Clerk, feeds a sick Cat and the pet recovered from its sickness...
+Kevin, the Clerk, feeds a sick Bird and the pet recovered from its sickness...
+Kevin, the Clerk, feeds a sick Dog and the pet remains ill...
+Kevin, the Clerk, feeds a sick Cat and the pet remains ill...
+Kevin, the Clerk, feeds a sick Dog and the pet remains ill...
+Kevin, the Clerk, feeds a sick Cat and the pet remains ill...
+Kevin, the Clerk, feeds a sick Cat and the pet remains ill...
+Kevin, the Clerk, feeds a sick Bird and the pet remains ill...
+Kevin, the Clerk, feeds a sick Cat and the pet remains ill...
+##################################################
+
+Cash is sufficient.
+Total Bank Withdraw: 3000.0
+Cash: 2787.0
+##################################################
+
+
+##################################################
+Kevin, the Clerk, checking the inventory...
+Kevin, the Clerk, reporting the total inventory value. Total Value: $1446.0
+##################################################
+
+##################################################
+
+Kevin, the Clerk, opens the store. 
+Current inventory: 29 item(s)
+Register: 2787.0
+6 potential customers enter the store...
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Dog at $40.0 after a 10% discount
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Bird at $12.0
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Toy at $84.0 after a 10% discount
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Cat at $62.0
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Dog at $94.0 after a 10% discount
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Cat at $49.0 after a 10% discount
+
+Current inventory: 23 item(s)
+Cash: 3128.0
+##################################################
+
+##################################################
+
+Kevin, the Clerk, cleans the store...
+Kevin, the Clerk, cleans the animal cage.
+Kevin, the Clerk, accidentally has escape Dog
+Kevin, the Clerk, catches Dog and puts it back in the cage
+Kevin, the Clerk, accidentally has escape Bird
+Kevin, the Clerk, catches Bird and puts it back in the cage
+Kevin, the Clerk, accidentally has escape Cat
+Kevin, the Clerk, catches Cat and puts it back in the cage
+Kevin, the Clerk, accidentally has escape Cat
+Kevin, the Clerk, catches Cat and puts it back in the cage
+Kevin, the Clerk, cleans the sick animal cage.
+Kevin, the Clerk, accidentally has escape Dog
+Kevin, the Clerk, catches Dog and puts it back in the cage
+Kevin, the Clerk, accidentally has escape Bird
+Kevin, the Clerk, catches Bird and puts it back in the cage
+##################################################
+
+##################################################
+The workday comes to an end...
+##################################################
+
+
+##################################################
+Andrew, the Trainer, enters the store...
+Day: 30
+
+##################################################
+
+
+#################################################
+Total Store Cash: 3128.0
+
+##################################################
+Andrew, the Trainer, goes through today's deliveries...
+The employee returns to finish his other activities.
+##################################################
+
+##################################################
+
+
+##################################################
+Andrew, the Trainer, visits a Dog, and the pet got sick...
+Andrew, the Trainer, visits a Bird, and the pet got sick...
+Andrew, the Trainer, visits a Bird, and the pet got sick...
+Andrew, the Trainer, visits a Cat
+Andrew, the Trainer, feeds the Cat
+Andrew, the Trainer, visits a Cat
+Andrew, the Trainer, feeds the Cat
+Andrew, the Trainer, feeds a sick Dog and the pet remains ill...
+Andrew, the Trainer, feeds a sick Dog and the pet remains ill...
+Andrew, the Trainer, feeds a sick Dog and the pet remains ill...
+Andrew, the Trainer, feeds a sick Dog and the pet remains ill...
+Andrew, the Trainer, feeds a sick Dog and the pet remains ill...
+Andrew, the Trainer, feeds a sick Dog and the pet remains ill...
+Andrew, the Trainer, feeds a sick Bird and the pet remains ill...
+Andrew, the Trainer, feeds a sick Dog and the pet remains ill...
+Andrew, the Trainer, feeds a sick Dog and the pet remains ill...
+Andrew, the Trainer, feeds a sick Dog and the pet remains ill...
+Andrew, the Trainer, feeds a sick Cat and the pet remains ill...
+Andrew, the Trainer, feeds a sick Dog and the pet remains ill...
+Andrew, the Trainer, feeds a sick Cat and the pet remains ill...
+Andrew, the Trainer, feeds a sick Dog and the pet remains ill...
+Andrew, the Trainer, feeds a sick Cat and the pet remains ill...
+Andrew, the Trainer, feeds a sick Cat and the pet remains ill...
+Andrew, the Trainer, feeds a sick Bird and the pet remains ill...
+Andrew, the Trainer, feeds a sick Cat and the pet remains ill...
+Andrew, the Trainer, feeds a sick Dog and the pet remains ill...
+Andrew, the Trainer, feeds a sick Bird and the pet remains ill...
+Andrew, the Trainer, feeds a sick Bird and the pet remains ill...
+##################################################
+
+Cash is sufficient.
+Total Bank Withdraw: 3000.0
+Cash: 3128.0
+##################################################
+
+
+##################################################
+Andrew, the Trainer, checking the inventory...
+Andrew, the Trainer, reporting the total inventory value. Total Value: $1103.0
+Dog needs to be purchased.
+Andrew, the Trainer, purchasing Dog for $21.0
+Bird needs to be purchased.
+Andrew, the Trainer, purchasing Bird for $81.0
+##################################################
+
+##################################################
+
+Andrew, the Trainer, opens the store. 
+Current inventory: 20 item(s)
+Register: 3026.0
+9 potential customers enter the store...
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Food at $140.0
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Cat at $188.0
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases CatLitter at $148.0
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Cat at $38.0 after a 10% discount
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Food at $34.0 after a 10% discount
+The customer inspects the store's offerings...
+The customer inspects the store's offerings...
+[+] The customer has made a selection!
+[+] The customer purchases Toy at $74.0
+The customer inspects the store's offerings...
+
+Current inventory: 14 item(s)
+Cash: 3648.0
+##################################################
+
+##################################################
+
+Andrew, the Trainer, cleans the store...
+Andrew, the Trainer, cleans the animal cage.
+Andrew, the Trainer, cleans the sick animal cage.
+Andrew, the Trainer, accidentally has escape Dog
+[-] Dog desperately escapes for freedom..........
+##################################################
+
+##################################################
+The workday comes to an end...
+##################################################
+
+
+##################################################
+##################################################
+
+---------–------------STATS-----------------------
+
+Total Cash: $3648.0
+Total withdrawal: $3000.0
+
+---------–------------SALES-----------------------
+Leash $194.0, Sold on: DAY 1
+Cat $59.0, Sold on: DAY 1
+Cat Food $18.0, Sold on: DAY 3
+Toy $170.0, Sold on: DAY 3
+Bird $77.0, Sold on: DAY 4
+Leash $70.0, Sold on: DAY 5
+Bird $92.0, Sold on: DAY 5
+Cat $157.0, Sold on: DAY 5
+Cat Litter $60.0, Sold on: DAY 6
+Toy $148.0, Sold on: DAY 9
+Food $92.0, Sold on: DAY 10
+Bird $32.0, Sold on: DAY 12
+Toy $176.0, Sold on: DAY 12
+Dog $18.0, Sold on: DAY 13
+CatLitter $100.0, Sold on: DAY 13
+Bird $102.0, Sold on: DAY 15
+Food $142.0, Sold on: DAY 15
+Leash $48.0, Sold on: DAY 16
+Food $34.0, Sold on: DAY 17
+Cat $173.0, Sold on: DAY 17
+Leash $168.0, Sold on: DAY 17
+Leash $174.0, Sold on: DAY 17
+Dog $16.0, Sold on: DAY 17
+Toy $86.0, Sold on: DAY 18
+Leash $150.0, Sold on: DAY 19
+Cat $148.0, Sold on: DAY 19
+Bird $134.0, Sold on: DAY 19
+Food $16.0, Sold on: DAY 19
+Bird $168.0, Sold on: DAY 20
+Leash $81.0, Sold on: DAY 20
+CatLitter $68.0, Sold on: DAY 20
+Leash $28.0, Sold on: DAY 20
+CatLitter $80.0, Sold on: DAY 21
+Food $142.0, Sold on: DAY 22
+Leash $2.0, Sold on: DAY 22
+Toy $176.0, Sold on: DAY 23
+CatLitter $174.0, Sold on: DAY 24
+Bird $34.0, Sold on: DAY 24
+Food $132.0, Sold on: DAY 26
+Toy $162.0, Sold on: DAY 27
+Toy $112.0, Sold on: DAY 27
+Cat $169.0, Sold on: DAY 27
+CatLitter $134.0, Sold on: DAY 27
+Food $2.0, Sold on: DAY 27
+Food $38.0, Sold on: DAY 27
+Toy $170.0, Sold on: DAY 28
+Dog $36.0, Sold on: DAY 28
+Dog $194.0, Sold on: DAY 28
+Cat $100.0, Sold on: DAY 28
+Cat $14.0, Sold on: DAY 28
+Cat $130.0, Sold on: DAY 28
+Dog $40.0, Sold on: DAY 29
+Bird $12.0, Sold on: DAY 29
+Toy $84.0, Sold on: DAY 29
+Cat $62.0, Sold on: DAY 29
+Dog $94.0, Sold on: DAY 29
+Cat $49.0, Sold on: DAY 29
+Food $140.0, Sold on: DAY 30
+Cat $188.0, Sold on: DAY 30
+CatLitter $148.0, Sold on: DAY 30
+Cat $38.0, Sold on: DAY 30
+Food $34.0, Sold on: DAY 30
+Toy $74.0, Sold on: DAY 30
+
+--------–--------Remaining Items------------------
+Leash, Value: $52.0
+Leash, Value: $106.0
+Leash, Value: $104.0
+Leash, Value: $34.0
+Toy, Value: $60.0
+Food, Value: $188.0
+Leash, Value: $58.0
+Toy, Value: $192.0
+Food, Value: $128.0
+CatLitter, Value: $160.0
+Food, Value: $160.0
+Food, Value: $142.0
+Toy, Value: $38.0
+Toy, Value: $158.0
+
+----–--------Remaining Sick Animals---------------
+Shibainu, Value: $52.0
+Beagle, Value: $168.0
+Shibainu, Value: $174.0
+Beagle, Value: $160.0
+Bulldog, Value: $128.0
+Poodle, Value: $32.0
+Shibainu, Value: $190.0
+Shibainu, Value: $100.0
+Bulldog, Value: $112.0
+Poodle, Value: $148.0
+Beagle, Value: $62.0
+Shibainu, Value: $136.0
+Bulldog, Value: $144.0
+Shibainu, Value: $88.0
+Poodle, Value: $44.0
+Poodle, Value: $8.0
+Bulldog, Value: $64.0
+Bulldog, Value: $188.0
+Beagle, Value: $152.0
+Process finished with exit code 0
+
