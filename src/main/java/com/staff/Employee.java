@@ -264,7 +264,7 @@ public class Employee {
 					if(new SecureRandom().nextInt(100) < 50) { // clerk catches escaping animal
 						announce(" catches " + item.getName() + " and puts it back in the cage");
 					} else { // animal escaped
-						System.out.println("[-] " + item.getName() + " successfully escapes for freedom..........");
+						System.out.println("[-] " + item.getName() + " desperately escapes for freedom..........");
 						ESCAPING_ANIMALS.add(((Pet) item));
 					}
 				}
